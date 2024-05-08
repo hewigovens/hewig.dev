@@ -31,7 +31,7 @@
     "isolatedModules": true,
     // Add type definitions for our Vite runtime.
     "types": [
-      "vite/client"
+      // "vite/client"
     ],
     "baseUrl": ".",
     "paths": {

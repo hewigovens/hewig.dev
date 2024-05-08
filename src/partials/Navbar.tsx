@@ -35,8 +35,7 @@ const Navbar = () => (
 
       <NavMenu>
         <NavMenuItem href="/posts/">Blog</NavMenuItem>
-        <NavMenuItem href={AppConfig.social.github}>GitHub</NavMenuItem>
-        <NavMenuItem href={AppConfig.social.twitter}>X (Twitter)</NavMenuItem>
+        <NavMenuItem href={"mailto:" + AppConfig.social.email}>Say Hi</NavMenuItem>
       </NavMenu>
     </NavbarTwoColumns>
   </Section>

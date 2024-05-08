@@ -4,7 +4,7 @@ import {
   Section,
 } from 'astro-boilerplate-components';
 
-const CTA = () => (
+const SubscribeForm = () => (
   <Section>
     <Newsletter
       title={
@@ -18,4 +18,4 @@ const CTA = () => (
   </Section>
 );
 
-export { CTA };
+export { SubscribeForm };

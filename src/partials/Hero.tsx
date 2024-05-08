@@ -4,6 +4,7 @@ import {
   HeroSocial,
   Section,
 } from 'astro-boilerplate-components';
+import { AppConfig } from '@/utils/AppConfig';
 
 const Hero = () => (
   <Section>
@@ -28,7 +29,7 @@ const Hero = () => (
       }
       avatar={
         <img
-          className="h-80 w-80 rounded-full"
+          className="h-64 w-64 rounded-full"
           src="/assets/images/avatar.png"
           alt="Degen Trustee"
           loading="lazy"
@@ -36,28 +37,22 @@ const Hero = () => (
       }
       socialButtons={
         <>
-          <a href="/">
+          <a href={AppConfig.social.telegram}>
             <HeroSocial
-              src="/assets/images/twitter-icon.png"
+              src="/assets/images/tg-icon.png"
+              alt="Telegram icon"
+            />
+          </a>
+          <a href={AppConfig.social.twitter}>
+            <HeroSocial
+              src="/assets/images/x-icon.png"
               alt="Twitter icon"
             />
           </a>
-          <a href="/">
+          <a href={AppConfig.social.github}>
             <HeroSocial
-              src="/assets/images/facebook-icon.png"
-              alt="Facebook icon"
-            />
-          </a>
-          <a href="/">
-            <HeroSocial
-              src="/assets/images/linkedin-icon.png"
-              alt="Linkedin icon"
-            />
-          </a>
-          <a href="/">
-            <HeroSocial
-              src="/assets/images/youtube-icon.png"
-              alt="Youtube icon"
+              src="/assets/images/github-icon.png"
+              alt="GitHub icon"
             />
           </a>
         </>
