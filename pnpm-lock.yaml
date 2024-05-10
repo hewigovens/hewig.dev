@@ -8,9 +8,6 @@ importers:
 
   .:
     dependencies:
-      astro-boilerplate-components:
-        specifier: ^1.0.16
-        version: 1.0.16(astro@4.0.2(@types/node@20.5.1)(typescript@5.4.5))(date-fns@2.30.0)(react@18.3.1)
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -1282,13 +1279,6 @@ packages:
   astral-regex@2.0.0:
     resolution: {integrity: sha512-Z7tMw1ytTXt5jqMcOP+OQteU1VuNK9Y02uuJtKQ1Sv69jXQKKg5cibLwGJow8yzZP+eAc18EmLGPal0bp36rvQ==}
     engines: {node: '>=8'}
-
-  astro-boilerplate-components@1.0.16:
-    resolution: {integrity: sha512-n/gMdKdkcpptu3a/VFlq4+ebT1ukZB3OD83SVGLH49ns8bdB8j0P1IOtMJDb0DQ9Asbi3/kjIK+B9YELi7sMEg==}
-    peerDependencies:
-      astro: 4.0.2
-      date-fns: ^2.30.0
-      react: ^18.2.0
 
   astro-eslint-parser@0.16.3:
     resolution: {integrity: sha512-CGaBseNtunAV2DCpwBXqTKq8+9Tw65XZetMaC0FsMoZuLj0gxNIkbCf2QyKYScVrNOU7/ayfNdVw8ZCSHBiqCg==}
@@ -5638,12 +5628,6 @@ snapshots:
   ast-types-flow@0.0.8: {}
 
   astral-regex@2.0.0: {}
-
-  astro-boilerplate-components@1.0.16(astro@4.0.2(@types/node@20.5.1)(typescript@5.4.5))(date-fns@2.30.0)(react@18.3.1):
-    dependencies:
-      astro: 4.0.2(@types/node@20.5.1)(typescript@5.4.5)
-      date-fns: 2.30.0
-      react: 18.3.1
 
   astro-eslint-parser@0.16.3:
     dependencies:

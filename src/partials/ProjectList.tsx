@@ -1,10 +1,10 @@
 import {
   ColorTags,
-  GradientText,
   Project,
   Section,
   Tags,
-} from 'astro-boilerplate-components';
+} from '@/components';
+import { GradientText } from '@/components/GradientText';
 
 const ProjectList = () => (
   <Section
@@ -16,7 +16,7 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <Project
-        name="Project 1"
+        name="reqwest-enum"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
@@ -35,7 +35,7 @@ const ProjectList = () => (
         }
       />
       <Project
-        name="Project 2"
+        name="Wallet Core"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."
@@ -50,7 +50,7 @@ const ProjectList = () => (
         }
       />
       <Project
-        name="Project 3"
+        name="GhostTile & Inspect"
         description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse
         bibendum. Nunc non posuere consectetur, justo erat semper enim, non
         hendrerit dui odio id enim."

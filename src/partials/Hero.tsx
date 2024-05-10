@@ -3,7 +3,7 @@ import {
   HeroAvatar,
   HeroSocial,
   Section,
-} from 'astro-boilerplate-components';
+} from '@/components';
 import { AppConfig } from '@/utils/AppConfig';
 
 const Hero = () => (
@@ -11,7 +11,7 @@ const Hero = () => (
     <HeroAvatar
       title={
         <>
-          Hi there, I'm <GradientText>Tao</GradientText> 👋
+          Hello, I'm <GradientText>Tao</GradientText> 👋
         </>
       }
       description={

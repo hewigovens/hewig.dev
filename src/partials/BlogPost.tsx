@@ -1,5 +1,5 @@
-import type { IFrontmatter } from 'astro-boilerplate-components';
-import { PostContent, PostHeader, Section } from 'astro-boilerplate-components';
+import type { IFrontmatter } from '@/components';
+import { PostContent, PostHeader, Section } from '@/components';
 import type { ReactNode } from 'react';
 
 import { AppConfig } from '@/utils/AppConfig';

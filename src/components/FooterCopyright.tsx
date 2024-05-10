@@ -14,7 +14,7 @@ const FooterCopyright = (props: IFooterCopyrightProps) => (
             >
                 {props.site_name}
             </a>
-            , Forked from ixartz/Astro-boilerplate.
+            , All rights reserved.
         </div>
     </div>
 );

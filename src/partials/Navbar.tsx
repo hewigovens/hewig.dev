@@ -4,7 +4,7 @@ import {
   NavMenu,
   NavMenuItem,
   Section,
-} from 'astro-boilerplate-components';
+} from '@/components';
 import { AppConfig } from '@/utils/AppConfig';
 
 const Navbar = () => (
@@ -35,7 +35,7 @@ const Navbar = () => (
 
       <NavMenu>
         <NavMenuItem href="/posts/">Blog</NavMenuItem>
-        <NavMenuItem href={"mailto:" + AppConfig.social.email}>Say Hi</NavMenuItem>
+        <NavMenuItem href={"mailto:" + AppConfig.social.email}> 📭 Contact</NavMenuItem>
       </NavMenu>
     </NavbarTwoColumns>
   </Section>
