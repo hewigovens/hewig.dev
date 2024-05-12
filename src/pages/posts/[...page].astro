@@ -29,23 +29,21 @@ interface Props {
 }
 
 const { page } = Astro.props as Props;
-const titleSuffix = ` - ${AppConfig.site_name}`;
-const titleBase = `Blog page ${page.currentPage}`;
-const title = titleBase + titleSuffix;
-const description =
-  "Pagination example built with Astro styled with Tailwind CSS.";
+
+const title = `${AppConfig.title} - Blog (${page.currentPage})`;
+const description = "Tao Xu (hewig)'s Devlog";
 ---
 
 <Base head={{ title, description }}>
   <Section>
     <PaginationHeader
       title="Blog posts"
-      description="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+      description="A place to share my thoughts and experiences."
     />
   </Section>
 
   <Section>
-    <BlogGallery postList={page.data} />
+    <BlogGallery postList={page.data} perColumn={2} />
   </Section>
 
   <Section>

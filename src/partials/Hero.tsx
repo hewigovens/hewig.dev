@@ -11,20 +11,20 @@ const Hero = () => (
     <HeroAvatar
       title={
         <>
-          Hello, I'm <GradientText>Tao</GradientText> 👋
+          Hi, This is <GradientText>Tao</GradientText> ✋
         </>
       }
       description={
         <>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            malesuada
-          </a>{' '}
-          nisi tellus, non imperdiet nisi tempor at. Lorem ipsum dolor sit amet,{' '}
-          <a className="text-cyan-400 hover:underline" href="/">
-            consectetur
-          </a>{' '}
-          adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.
+          Tokyo-based, cryptocurrency-focused, and former <a className="text-cyan-400 hover:underline" href="https://trustwallet.com/">
+            Trust Wallet
+          </a> engineer. Proficient with major blockchains (not limited to BTC, ETH, and SOL) and full stack development of a wallet or dApp.
+          <br />
+          web3, cross-platform libs, mobile apps, and smart contracts are areas of expertise.
+          <br />
+          Contact me via <a className="text-cyan-400 hover:underline" href="/">
+            ↓↓
+          </a> or send an email.
         </>
       }
       avatar={

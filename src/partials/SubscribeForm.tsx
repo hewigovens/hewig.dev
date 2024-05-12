@@ -9,11 +9,10 @@ const SubscribeForm = () => (
     <Newsletter
       title={
         <>
-          Subscribe to my <GradientText>Newsletters</GradientText>
+          Subscribe to my <GradientText>Curated list</GradientText>
         </>
       }
-      description="Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero
-          esse non molestias eos excepturi, inventore atque cupiditate."
+      description="Share irregularly, it may might be a blog post, a tweet, a podcast, github project or youtube video."
     />
   </Section>
 );

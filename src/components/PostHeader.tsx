@@ -1,6 +1,6 @@
 import { format } from 'date-fns';
 
-import type { IFrontmatter } from '../types/IFrontMatter';
+import type { IFrontmatter } from './types/IFrontMatter';
 
 type IPostHeaderProps = {
   content: IFrontmatter;

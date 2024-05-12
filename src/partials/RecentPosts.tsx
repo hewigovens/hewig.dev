@@ -24,7 +24,7 @@ const RecentPosts = (props: IRecentPostsProps) => (
       </div>
     }
   >
-    <BlogGallery postList={props.postList} />
+    <BlogGallery postList={props.postList} perColumn={3} />
   </Section>
 );
 

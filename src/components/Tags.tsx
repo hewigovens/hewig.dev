@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 
-import type { Values } from '../types/TypeUnion';
+import type { Values } from './types/TypeUnion';
 
 export const ColorTags = {
   SLATE: 'SLATE',
@@ -25,6 +25,11 @@ export const ColorTags = {
   FUCHSIA: 'FUCHSIA',
   PINK: 'PINK',
   ROSE: 'ROSE',
+  RUST: 'RUST',
+  SWIFT: 'SWIFT',
+  CPP: 'CPP',
+  WEBASSEMBLY: 'WEBASSEMBLY',
+  OBJC: 'OBJC',
 } as const;
 
 type ITagsProps = {
@@ -55,13 +60,16 @@ const colorToClassMap = {
   [ColorTags.FUCHSIA]: 'bg-fuchsia-400 text-fuchsia-900',
   [ColorTags.PINK]: 'bg-pink-400 text-pink-900',
   [ColorTags.ROSE]: 'bg-rose-400 text-rose-900',
+  [ColorTags.RUST]: 'bg-[#d29c7c] text-[#341a16]',
+  [ColorTags.SWIFT]: 'bg-[#ffac33] text-[#461102]',
+  [ColorTags.CPP]: 'bg-[#df5273] text-[#440d20]',
+  [ColorTags.WEBASSEMBLY]: 'bg-[#091433] text-[#d8f0ff]',
+  [ColorTags.OBJC]: 'bg-[#4685f8] text-[#1d378b]',
 };
 
 const Tags = (props: ITagsProps) => (
   <div
-    className={`rounded-md px-2 py-1 text-xs font-semibold ${
-      colorToClassMap[props.color]
-    }`}
+    className={`rounded-md px-2 py-1 text-xs font-semibold ${colorToClassMap[props.color]}`}
   >
     {props.children}
   </div>

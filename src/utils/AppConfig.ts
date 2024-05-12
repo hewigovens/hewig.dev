@@ -1,10 +1,8 @@
-import { te } from "date-fns/locale";
-
 export const AppConfig = {
   site_name: 'hewig.dev',
-  title: 'Tao Xu (hewig)',
+  title: 'Tao\'s Devlog',
   description: 'Personal website built with Astro and Tailwind CSS',
-  author: 'Emma',
+  author: 'hewigovens',
   locale_region: 'en-us',
   locale: 'en',
   social: {
@@ -14,5 +12,6 @@ export const AppConfig = {
     twitter: 'https://x.com/hewigovens',
     youtube: 'https://www.youtube.com/hewigovens',
     email: 'hi@hewig.dev',
+    newsletter: 'https://quail.ink/hewig',
   },
 };
