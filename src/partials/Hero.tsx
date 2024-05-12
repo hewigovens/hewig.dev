@@ -16,11 +16,11 @@ const Hero = () => (
       }
       description={
         <>
-          Tokyo-based, cryptocurrency-focused, and former <a className="text-cyan-400 hover:underline" href="https://trustwallet.com/">
+          Tokyo-based, crypto-focused, and former <a className="text-cyan-400 hover:underline" href="https://trustwallet.com/">
             Trust Wallet
-          </a> engineer. Proficient with major blockchains (not limited to BTC, ETH, and SOL) and full stack development of a wallet or dApp.
+          </a> engineer. Proficient with major networks (not limited to BTC, ETH, and SOL) and full stack development of a wallet or dApp.
           <br />
-          web3, cross-platform libs, mobile apps, and smart contracts are areas of expertise.
+          web3, cross-platform SDK, mobile apps, and smart contracts are areas of expertise.
           <br />
           Contact me via <a className="text-cyan-400 hover:underline" href="/">
             ↓↓
