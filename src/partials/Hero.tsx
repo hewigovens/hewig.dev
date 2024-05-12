@@ -20,7 +20,7 @@ const Hero = () => (
             Trust Wallet
           </a> engineer. Proficient with major networks (not limited to BTC, ETH, and SOL) and full stack development of a wallet or dApp.
           <br />
-          web3, cross-platform SDK, mobile apps, and smart contracts are areas of expertise.
+          Blockchains, 🛠️ Cross-platform SDK, mobile apps, and smart contracts are areas of expertise.
           <br />
           Contact me via <a className="text-cyan-400 hover:underline" href="/">
             ↓↓
