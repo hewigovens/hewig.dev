@@ -20,6 +20,6 @@ const { description } = AppConfig;
 <Base head={{ title, description }}>
   <Hero />
   <ProjectList />
-  <RecentPosts postList={lastThreePosts} />
+  <RecentPosts postList={lastThreePosts} perColumn={3} />
   <SubscribeForm />
 </Base>

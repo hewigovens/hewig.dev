@@ -8,6 +8,7 @@ import {
 
 type IRecentPostsProps = {
   postList: MarkdownInstance<IFrontmatter>[];
+  perColumn: number;
 };
 
 const RecentPosts = (props: IRecentPostsProps) => (
@@ -24,7 +25,7 @@ const RecentPosts = (props: IRecentPostsProps) => (
       </div>
     }
   >
-    <BlogGallery postList={props.postList} perColumn={3} />
+    <BlogGallery postList={props.postList} perColumn={props.perColumn} />
   </Section>
 );
 
