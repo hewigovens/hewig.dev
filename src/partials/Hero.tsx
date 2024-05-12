@@ -18,9 +18,13 @@ const Hero = () => (
         <>
           Tokyo-based, crypto-focused, and former <a className="text-cyan-400 hover:underline" href="https://trustwallet.com/">
             Trust Wallet
-          </a> engineer. Proficient with major networks (not limited to BTC, ETH, and SOL) and full stack development of a wallet or dApp.
+          </a> engineer. Blockchains, Cross-platform SDK, mobile apps, and smart contracts are areas of expertise.
           <br />
-          Blockchains, 🛠️ Cross-platform SDK, mobile apps, and smart contracts are areas of expertise.
+          Proficient with major networks (not limited to {' '}
+          <img src="/assets/images/btc.svg" alt="BTC" className='h-6 w-6 inline-block mr-1' />
+          <img src="/assets/images/eth.svg" alt="ETH" className='h-6 w-6 inline-block mr-1' />
+          <img src="/assets/images/bnb.svg" alt="BNB" className='h-6 w-6 inline-block mr-1' />
+          <img src="/assets/images/sol.svg" alt="SOL" className='h-7 w-7 inline-block' />) and full stack development of a wallet or dApp.
           <br />
           Contact me via <a className="text-cyan-400 hover:underline" href="/">
             ↓↓
