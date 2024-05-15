@@ -29,3 +29,8 @@ In a few clicks you can download ARM Windows 11 and install it.
 ![Download Arm Windows](/assets/images/vmware-arm-windows.png)
 
 Enjoy!
+
+<div class="flex justify-center">
+<img src="/assets/images/vmware-screen.png" alt="Windows 11 VM" width="%45"/>
+<img src="/assets/images/vmware-desktop.png" alt="Windows 11 VM" width="%45"/>
+</div>
