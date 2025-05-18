@@ -5,7 +5,7 @@ import {
 } from '@/components';
 
 const SubscribeForm = () => (
-  <Section>
+  <Section id="newsletter">
     <Newsletter
       title={
         <>

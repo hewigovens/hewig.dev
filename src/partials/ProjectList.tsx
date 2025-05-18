@@ -16,6 +16,74 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <Project
+        name="App Detective"
+        description="A tool to detect macOS apps' GUI tech stack, helping developers understand the underlying technologies used in applications."
+        link="https://github.com/hewigovens/app-detective"
+        img={{
+          src: '/assets/images/project-app-detective.png',
+          alt: 'App Detective',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.SWIFT}>Swift</Tags>
+            <Tags color={ColorTags.FUCHSIA}>macOS</Tags>
+            <Tags color={ColorTags.VIOLET}>Reverse Engineering</Tags>
+            <Tags color={ColorTags.EMERALD}>Diagnostics</Tags>
+          </>
+        }
+      />
+      <Project
+        name="Solana Primitives"
+        description="A Rust crate providing fundamental data structures and tools for constructing and submitting Solana transactions."
+        link="https://github.com/hewigovens/solana-primitives"
+        img={{
+          src: '/assets/images/project-cargo.png',
+          alt: 'Solana Primitives',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.RUST}>Rust</Tags>
+            <Tags color={ColorTags.LIME}>Blockchain</Tags>
+            <Tags color={ColorTags.VIOLET}>Solana</Tags>
+            <Tags color={ColorTags.INDIGO}>SDK</Tags>
+          </>
+        }
+      />
+      <Project
+        name="Staged Launcher"
+        description="The easiest way to manage and delay the launch of applications across different stages on your Mac."
+        link="https://github.com/hewigovens/StagedLauncher"
+        img={{
+          src: '/assets/images/project-staged-launcher.png',
+          alt: 'Staged Launcher',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.SWIFT}>Swift</Tags>
+            <Tags color={ColorTags.FUCHSIA}>macOS</Tags>
+            <Tags color={ColorTags.ROSE}>Productivity</Tags>
+            <Tags color={ColorTags.INDIGO}>Automation</Tags>
+          </>
+        }
+      />
+      <Project
+        name="Aya DevContainer"
+        description="DevContainer (Docker) image for Aya-rs, providing a pre-configured development environment for eBPF programming with Rust."
+        link="https://github.com/hewigovens/aya-devcontainer"
+        img={{
+          src: '/assets/images/project-aya-container.png',
+          alt: 'Aya DevContainer',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.RUST}>Rust</Tags>
+            <Tags color={ColorTags.BLUE}>Docker</Tags>
+            <Tags color={ColorTags.VIOLET}>eBPF</Tags>
+            <Tags color={ColorTags.EMERALD}>DevContainer</Tags>
+          </>
+        }
+      />
+      <Project
         name="reqwest-enum"
         description="Type-safe and enum style API for Rust, tt abstracts away repetitive boilerplate code like url formatting,
         query / header encoding and response deserialization, plus async by default and lightweight JSON-RPC support."
