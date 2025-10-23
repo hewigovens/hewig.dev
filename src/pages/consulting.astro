@@ -1,0 +1,136 @@
+---
+import { Section } from "@/components";
+import { GradientText } from "@/components";
+import Base from "@/templates/Base.astro";
+import { AppConfig } from "@/utils/AppConfig";
+
+const title = "技術コンサルティングサービス";
+const description = "ブロックチェーン技術および暗号資産関連分野を中心とした技術コンサルティングサービス。システムアーキテクチャ、スマートコントラクト、セキュリティを専門としています。";
+---
+
+<Base head={{ title, description }}>
+  <Section>
+    <div class="mb-8">
+      <h1 class="text-center text-4xl font-bold">
+        <GradientText>技術コンサルティング</GradientText>
+      </h1>
+      <p class="mt-4 text-center text-xl text-gray-300">
+        ブロックチェーン・暗号資産技術コンサルティング
+      </p>
+    </div>
+
+    <div class="space-y-8">
+      <!-- Business Overview -->
+      <div class="rounded-lg border border-gray-700 bg-slate-800 p-6">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-400">事業概要</h2>
+        <p class="text-gray-300">
+          当事業は、ブロックチェーン技術および関連分野を中心とした技術コンサルティングを行います。
+          業務要件の分析、最適な技術構成の立案、システム設計・実装支援を提供します。
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div class="rounded-lg border border-gray-700 bg-slate-800 p-6">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-400">具体的業務内容</h2>
+        <div class="space-y-4">
+          <div>
+            <h3 class="mb-2 text-lg font-semibold text-gray-200">新技術の調査・評価</h3>
+            <ul class="list-inside list-disc space-y-1 text-gray-300">
+              <li>ブロックチェーン技術の評価</li>
+              <li>暗号資産ウォレットソリューション</li>
+              <li>スマートコントラクトプラットフォーム</li>
+              <li>API連携戦略</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-2 text-lg font-semibold text-gray-200">システムアーキテクチャ設計</h3>
+            <ul class="list-inside list-disc space-y-1 text-gray-300">
+              <li>システムアーキテクチャ設計</li>
+              <li>技術選定・評価</li>
+              <li>セキュリティ方針の策定</li>
+              <li>スケーラビリティ計画</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-2 text-lg font-semibold text-gray-200">システム開発・実装</h3>
+            <ul class="list-inside list-disc space-y-1 text-gray-300">
+              <li>プロトタイプ／PoCの開発</li>
+              <li>ウォレット機能の実装</li>
+              <li>スマートコントラクト開発</li>
+              <li>バックエンドAPI開発</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-2 text-lg font-semibold text-gray-200">性能最適化およびセキュリティ検討</h3>
+            <ul class="list-inside list-disc space-y-1 text-gray-300">
+              <li>性能最適化</li>
+              <li>鍵管理ソリューション</li>
+              <li>署名機能の実装</li>
+              <li>認証・アクセス制御</li>
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="mb-2 text-lg font-semibold text-gray-200">技術文書作成・導入支援</h3>
+            <ul class="list-inside list-disc space-y-1 text-gray-300">
+              <li>技術文書の作成</li>
+              <li>仕様書の作成</li>
+              <li>導入・運用支援</li>
+              <li>技術研修</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contract Types -->
+      <div class="rounded-lg border border-gray-700 bg-slate-800 p-6">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-400">取引形態</h2>
+        <div class="space-y-3 text-gray-300">
+          <p>業務委託契約に基づき、主としてオンラインで役務提供します。</p>
+          <div class="space-y-2">
+            <h3 class="font-semibold text-gray-200">納品物の例：</h3>
+            <ul class="list-inside list-disc space-y-1">
+              <li>技術報告書</li>
+              <li>設計書</li>
+              <li>ソースコード</li>
+              <li>運用手順書</li>
+            </ul>
+          </div>
+          <div class="space-y-2">
+            <h3 class="font-semibold text-gray-200">契約形態：</h3>
+            <ul class="list-inside list-disc space-y-1">
+              <li>月額顧問</li>
+              <li>準委任（タイムチャージ）</li>
+              <li>請負（固定価格）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Target Clients -->
+      <div class="rounded-lg border border-gray-700 bg-slate-800 p-6">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-400">取引先の想定</h2>
+        <p class="text-gray-300">
+          国内外の企業・スタートアップ・開発チーム等。
+        </p>
+      </div>
+
+      <!-- Contact -->
+      <div class="rounded-lg border border-gray-700 bg-slate-800 p-6 text-center">
+        <h2 class="mb-4 text-2xl font-bold text-cyan-400">お問い合わせ</h2>
+        <p class="mb-4 text-gray-300">
+          プロジェクトのご相談やサービスについてのお問い合わせはこちらから
+        </p>
+        <a
+          href={"mailto:" + AppConfig.social.email}
+          class="inline-block rounded-lg bg-cyan-600 px-6 py-3 font-semibold text-white transition hover:bg-cyan-700"
+        >
+          メールで問い合わせる
+        </a>
+      </div>
+    </div>
+  </Section>
+</Base>

@@ -34,9 +34,9 @@ const Navbar = () => (
       </a>
 
       <NavMenu>
-        <NavMenuItem href="https://a1.hewig.dev">Glance</NavMenuItem>
-        <NavMenuItem href="/posts/">Blog</NavMenuItem>
-        <NavMenuItem href={"mailto:" + AppConfig.social.email}> 📭 Email </NavMenuItem>
+        <NavMenuItem href="https://a1.hewig.dev">📊 Glance</NavMenuItem>
+        <NavMenuItem href="/posts/">✍️ Blog</NavMenuItem>
+        <NavMenuItem href="/consulting/">💼 Consulting</NavMenuItem>
       </NavMenu>
     </NavbarTwoColumns>
   </Section>
