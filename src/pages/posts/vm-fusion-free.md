@@ -15,8 +15,8 @@ There aren't many free virtual machine options for Apple M series Macs, I was us
 
 I extracted the download links here:
 
-- [VMware Fusion Pro Download](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Fusion)
-- [VMware Workstation Pro Download](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware+Workstation+Pro)
+- [VMware Fusion Pro Download](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Fusion&freeDownloads=true)
+- [VMware Workstation Pro Download](https://support.broadcom.com/group/ecx/productdownloads?subfamily=VMware%20Workstation%20Pro&freeDownloads=true)
 
 All you need to do is to signup a Broadcom account and download the VMware Fusion Pro or Workstation Pro.
 
