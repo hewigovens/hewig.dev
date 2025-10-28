@@ -16,6 +16,23 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <Project
+        name="amux"
+        description="A tiny Rust CLI that keeps your fleet of local AI/code agents organised inside tmux with consistent commands to launch, attach, detach, and prune sessions."
+        link="https://github.com/hewigovens/amux"
+        img={{
+          src: '/assets/images/project-amux.svg',
+          alt: 'amux CLI',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.RUST}>Rust</Tags>
+            <Tags color={ColorTags.SLATE}>CLI</Tags>
+            <Tags color={ColorTags.GREEN}>tmux</Tags>
+            <Tags color={ColorTags.INDIGO}>Agents</Tags>
+          </>
+        }
+      />
+      <Project
         name="App Detective"
         description="A tool to detect macOS apps' GUI tech stack, helping developers understand the underlying technologies used in applications."
         link="https://github.com/hewigovens/app-detective"
