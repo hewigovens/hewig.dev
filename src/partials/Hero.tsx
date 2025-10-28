@@ -69,7 +69,7 @@ const Hero = () => {
               alt="Solana" 
               className="h-7 w-7 inline-block mx-1"
               loading="lazy"
-            />.<br /> Let's connect! Check out my{' '}
+            /><br /> Let's connect! Check out my{' '}
             <a 
               href="#newsletter"
               onClick={(e) => handleScrollTo(e, 'newsletter')}
