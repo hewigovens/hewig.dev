@@ -16,6 +16,23 @@ const ProjectList = () => (
   >
     <div className="flex flex-col gap-6">
       <Project
+        name="hw-core"
+        description="Cross platform hardware wallet interface. A Rust-based library implementing low-level wallet functionality, including Trezor Host Protocol."
+        link="https://github.com/hewigovens/hw-core"
+        img={{
+          src: '/assets/images/project-hw-core.png',
+          alt: 'hw-core',
+        }}
+        category={
+          <>
+            <Tags color={ColorTags.RUST}>Rust</Tags>
+            <Tags color={ColorTags.CYAN}>Hardware Wallet</Tags>
+            <Tags color={ColorTags.GREEN}>Trezor</Tags>
+            <Tags color={ColorTags.INDIGO}>BLE</Tags>
+          </>
+        }
+      />
+      <Project
         name="amux"
         description="A tiny Rust CLI that keeps your fleet of local AI/code agents organised inside tmux with consistent commands to launch, attach, detach, and prune sessions."
         link="https://github.com/hewigovens/amux"
