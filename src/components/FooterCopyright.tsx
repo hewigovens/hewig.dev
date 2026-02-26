@@ -8,13 +8,23 @@ const FooterCopyright = (props: IFooterCopyrightProps) => (
             © Copyright {new Date().getFullYear()} {' '}
             <a
                 className="text-cyan-400 hover:underline"
-                href={props.site_name}
+                href={`https://${props.site_name}`}
                 target="_blank"
                 rel="noopener noreferrer"
             >
                 {props.site_name}
             </a>
-            , All rights reserved. tweaked from <a className="text-cyan-400 hover:underline" target="_blank" href="https://github.com/ixartz/Astro-boilerplate">astro-boilerplate</a>.
+            , All rights reserved.
+            {' '}Managed by{' '}
+            <a
+                className="text-cyan-400 hover:underline"
+                href="https://shiorix.com"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                ShioriX 🔖
+            </a>
+            .
         </div>
     </div>
 );
