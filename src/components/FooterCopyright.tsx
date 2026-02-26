@@ -14,7 +14,7 @@ const FooterCopyright = (props: IFooterCopyrightProps) => (
             >
                 {props.site_name}
             </a>
-            , All rights reserved. tweaked from <a className="text-cyan-400 hover:underline" target="_blank" href="https://github.com/ixartz/Astro-boilerplate">astro-boilerplate</a>.
+            , All rights reserved.
             {' '}Managed by{' '}
             <a
                 className="text-cyan-400 hover:underline"
