@@ -1,0 +1,46 @@
+---
+import { Section } from "@/components";
+import { GradientText } from "@/components";
+import { ColorTags, Tags } from "@/components/Tags";
+import Base from "@/templates/Base.astro";
+
+const title = "GhostTile – Hide Apps from Dock";
+const description =
+  "Hide your running applications from Dock like a charm.";
+---
+
+<Base head={{ title, description }}>
+  <Section>
+    <div class="mx-auto max-w-2xl">
+      <div class="flex flex-col items-center gap-6 rounded-lg border border-gray-700 bg-slate-800 p-8">
+        <img
+          class="h-32 w-32 rounded-2xl"
+          src="/assets/images/project-ghost.png"
+          alt="GhostTile macOS app"
+        />
+
+        <h1 class="text-3xl font-bold">
+          <GradientText>GhostTile</GradientText>
+        </h1>
+
+        <p class="text-center text-gray-300">
+          {description}
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-2">
+          <Tags color={ColorTags.OBJC}>ObjcC</Tags>
+          <Tags color={ColorTags.GREEN}>XPC</Tags>
+          <Tags color={ColorTags.ROSE}>Code injection</Tags>
+          <Tags color={ColorTags.FUCHSIA}>macOS</Tags>
+        </div>
+
+        <a
+          href="https://ghosttile.kernelpanic.im/"
+          class="inline-block rounded-lg bg-cyan-600 px-6 py-3 font-semibold text-white transition hover:bg-cyan-700"
+        >
+          Visit GhostTile
+        </a>
+      </div>
+    </div>
+  </Section>
+</Base>
