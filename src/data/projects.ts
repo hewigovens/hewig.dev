@@ -145,7 +145,7 @@ export const projects: ProjectEntry[] = [
     ],
     link: {
       kind: 'external',
-      url: 'https://github.com/hewigovens/StagedLauncher',
+      url: 'https://a1.hewig.dev/staged/',
     },
   },
   {
