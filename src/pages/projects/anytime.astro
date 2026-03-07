@@ -1,0 +1,46 @@
+---
+import { Section } from "@/components";
+import { GradientText } from "@/components";
+import { ColorTags, Tags } from "@/components/Tags";
+import Base from "@/templates/Base.astro";
+
+const title = "Anytime – World Clock";
+const description =
+  "A timezone-aware world clock app for Mac and iPhone. Quickly see what time it is for your team, anywhere.";
+---
+
+<Base head={{ title, description }}>
+  <Section>
+    <div class="mx-auto max-w-2xl">
+      <div class="flex flex-col items-center gap-6 rounded-lg border border-gray-700 bg-slate-800 p-8">
+        <img
+          class="h-32 w-32 rounded-2xl"
+          src="/assets/images/project-anytime.png"
+          alt="Anytime"
+        />
+
+        <h1 class="text-3xl font-bold">
+          <GradientText>Anytime</GradientText>
+        </h1>
+
+        <p class="text-center text-gray-300">
+          {description}
+        </p>
+
+        <div class="flex flex-wrap justify-center gap-2">
+          <Tags color={ColorTags.SWIFT}>Swift</Tags>
+          <Tags color={ColorTags.FUCHSIA}>macOS</Tags>
+          <Tags color={ColorTags.SKY}>iOS</Tags>
+          <Tags color={ColorTags.EMERALD}>Productivity</Tags>
+        </div>
+
+        <a
+          href="#"
+          class="inline-block rounded-lg bg-cyan-600 px-6 py-3 font-semibold text-white transition hover:bg-cyan-700"
+        >
+          Download on the App Store
+        </a>
+      </div>
+    </div>
+  </Section>
+</Base>
