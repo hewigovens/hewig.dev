@@ -39,8 +39,44 @@ export const categoryOrder: ProjectCategory[] = [
   'contributions',
 ];
 
+/** Resolve a ProjectLink to a plain URL string. */
+export function resolveLink(entry: ProjectEntry): string {
+  return entry.link.kind === 'internal' ? entry.link.path : entry.link.url;
+}
+
+/**
+ * All projects. Array order = recency (newest first) for the home page.
+ * The `category` field drives grouping on the All Projects page.
+ */
 export const projects: ProjectEntry[] = [
-  // ── Rust ──────────────────────────────────────────────
+  {
+    name: 'amux',
+    description:
+      'A tiny Rust CLI that keeps your fleet of local AI/code agents organised inside tmux with consistent commands to launch, attach, detach, and prune sessions.',
+    img: { src: '/assets/images/project-amux.svg', alt: 'amux CLI' },
+    category: 'rust',
+    tags: [
+      { color: ColorTags.RUST, label: 'Rust' },
+      { color: ColorTags.SLATE, label: 'CLI' },
+      { color: ColorTags.GREEN, label: 'tmux' },
+      { color: ColorTags.INDIGO, label: 'Agents' },
+    ],
+    link: { kind: 'external', url: 'https://github.com/hewigovens/amux' },
+  },
+  {
+    name: 'Miso',
+    description:
+      'A lightweight macOS menu bar utility providing a floating HUD overlay for quick input method switching. Zero permissions required.',
+    img: { src: '/assets/images/project-miso.png', alt: 'Miso' },
+    category: 'macos',
+    tags: [
+      { color: ColorTags.SWIFT, label: 'Swift' },
+      { color: ColorTags.FUCHSIA, label: 'macOS' },
+      { color: ColorTags.SLATE, label: 'Menu Bar' },
+      { color: ColorTags.EMERALD, label: 'Input Method' },
+    ],
+    link: { kind: 'external', url: 'https://github.com/hewigovens/miso' },
+  },
   {
     name: 'hw-core',
     description:
@@ -56,18 +92,24 @@ export const projects: ProjectEntry[] = [
     link: { kind: 'external', url: 'https://github.com/hewigovens/hw-core' },
   },
   {
-    name: 'amux',
+    name: 'App Detective',
     description:
-      'A tiny Rust CLI that keeps your fleet of local AI/code agents organised inside tmux with consistent commands to launch, attach, detach, and prune sessions.',
-    img: { src: '/assets/images/project-amux.svg', alt: 'amux CLI' },
-    category: 'rust',
+      "A tool to detect macOS apps' GUI tech stack, helping developers understand the underlying technologies used in applications.",
+    img: {
+      src: '/assets/images/project-app-detective.png',
+      alt: 'App Detective',
+    },
+    category: 'macos',
     tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.SLATE, label: 'CLI' },
-      { color: ColorTags.GREEN, label: 'tmux' },
-      { color: ColorTags.INDIGO, label: 'Agents' },
+      { color: ColorTags.SWIFT, label: 'Swift' },
+      { color: ColorTags.FUCHSIA, label: 'macOS' },
+      { color: ColorTags.VIOLET, label: 'Reverse Engineering' },
+      { color: ColorTags.EMERALD, label: 'Diagnostics' },
     ],
-    link: { kind: 'external', url: 'https://github.com/hewigovens/amux' },
+    link: {
+      kind: 'external',
+      url: 'https://github.com/hewigovens/app-detective',
+    },
   },
   {
     name: 'Solana Primitives',
@@ -87,20 +129,23 @@ export const projects: ProjectEntry[] = [
     },
   },
   {
-    name: 'reqwest-enum',
+    name: 'Staged Launcher',
     description:
-      'Type-safe and enum style API for Rust, it abstracts away repetitive boilerplate code like url formatting, query / header encoding and response deserialization, plus async by default and lightweight JSON-RPC support.',
-    img: { src: '/assets/images/project-cargo.png', alt: 'reqwest-enum' },
-    category: 'rust',
+      'The easiest way to manage and delay the launch of applications across different stages on your Mac.',
+    img: {
+      src: '/assets/images/project-staged-launcher.png',
+      alt: 'Staged Launcher',
+    },
+    category: 'macos',
     tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.SWIFT, label: 'Enum' },
-      { color: ColorTags.SKY, label: 'HTTP' },
-      { color: ColorTags.LIME, label: 'JSONRPC' },
+      { color: ColorTags.SWIFT, label: 'Swift' },
+      { color: ColorTags.FUCHSIA, label: 'macOS' },
+      { color: ColorTags.ROSE, label: 'Productivity' },
+      { color: ColorTags.INDIGO, label: 'Automation' },
     ],
     link: {
       kind: 'external',
-      url: 'https://github.com/hewigovens/reqwest-enum',
+      url: 'https://github.com/hewigovens/StagedLauncher',
     },
   },
   {
@@ -123,46 +168,21 @@ export const projects: ProjectEntry[] = [
       url: 'https://github.com/hewigovens/aya-devcontainer',
     },
   },
-
-  // ── macOS ─────────────────────────────────────────────
   {
-    name: 'App Detective',
+    name: 'reqwest-enum',
     description:
-      "A tool to detect macOS apps' GUI tech stack, helping developers understand the underlying technologies used in applications.",
-    img: {
-      src: '/assets/images/project-app-detective.png',
-      alt: 'App Detective',
-    },
-    category: 'macos',
+      'Type-safe and enum style API for Rust, it abstracts away repetitive boilerplate code like url formatting, query / header encoding and response deserialization, plus async by default and lightweight JSON-RPC support.',
+    img: { src: '/assets/images/project-cargo.png', alt: 'reqwest-enum' },
+    category: 'rust',
     tags: [
-      { color: ColorTags.SWIFT, label: 'Swift' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.VIOLET, label: 'Reverse Engineering' },
-      { color: ColorTags.EMERALD, label: 'Diagnostics' },
+      { color: ColorTags.RUST, label: 'Rust' },
+      { color: ColorTags.SWIFT, label: 'Enum' },
+      { color: ColorTags.SKY, label: 'HTTP' },
+      { color: ColorTags.LIME, label: 'JSONRPC' },
     ],
     link: {
       kind: 'external',
-      url: 'https://github.com/hewigovens/app-detective',
-    },
-  },
-  {
-    name: 'Staged Launcher',
-    description:
-      'The easiest way to manage and delay the launch of applications across different stages on your Mac.',
-    img: {
-      src: '/assets/images/project-staged-launcher.png',
-      alt: 'Staged Launcher',
-    },
-    category: 'macos',
-    tags: [
-      { color: ColorTags.SWIFT, label: 'Swift' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.ROSE, label: 'Productivity' },
-      { color: ColorTags.INDIGO, label: 'Automation' },
-    ],
-    link: {
-      kind: 'external',
-      url: 'https://github.com/hewigovens/StagedLauncher',
+      url: 'https://github.com/hewigovens/reqwest-enum',
     },
   },
   {
@@ -189,7 +209,7 @@ export const projects: ProjectEntry[] = [
       src: '/assets/images/project-anytime.png',
       alt: 'Anytime',
     },
-    category: 'macos',
+    category: 'ios',
     tags: [
       { color: ColorTags.SWIFT, label: 'Swift' },
       { color: ColorTags.FUCHSIA, label: 'macOS' },
@@ -198,8 +218,6 @@ export const projects: ProjectEntry[] = [
     ],
     link: { kind: 'internal', path: '/projects/anytime' },
   },
-
-  // ── iOS ───────────────────────────────────────────────
   {
     name: 'Inspect',
     description:
@@ -217,8 +235,6 @@ export const projects: ProjectEntry[] = [
     ],
     link: { kind: 'internal', path: '/projects/inspect' },
   },
-
-  // ── Contributions ─────────────────────────────────────
   {
     name: 'Wallet Core',
     description:
