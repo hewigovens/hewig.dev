@@ -98,7 +98,7 @@ const Hero = () => {
               className="hover:scale-110 transition-transform"
             >
               <HeroSocial
-                src="/assets/images/tg-icon.png"
+                src="/assets/images/tg-icon.svg"
                 alt="Telegram"
               />
             </a>
@@ -110,7 +110,7 @@ const Hero = () => {
               className="hover:scale-110 transition-transform"
             >
               <HeroSocial
-                src="/assets/images/x-icon.png"
+                src="/assets/images/x-icon.svg"
                 alt="Twitter"
               />
             </a>
