@@ -13,5 +13,6 @@ export const AppConfig = {
     youtube: 'https://www.youtube.com/hewigovens',
     email: 'hi@hewig.dev',
     newsletter: 'https://quail.ink/hewig',
+    sponsor: 'https://github.com/sponsors/hewigovens',
   },
 };

@@ -89,7 +89,7 @@ const Hero = () => {
           />
         }
         socialButtons={
-          <div className="flex space-x-4">
+          <div className="flex items-center space-x-4">
             <a 
               href={AppConfig.social.telegram}
               target="_blank"
@@ -98,7 +98,7 @@ const Hero = () => {
               className="hover:scale-110 transition-transform"
             >
               <HeroSocial
-                src="/assets/images/tg-icon.png"
+                src="/assets/images/tg-icon.svg"
                 alt="Telegram"
               />
             </a>
@@ -110,20 +110,20 @@ const Hero = () => {
               className="hover:scale-110 transition-transform"
             >
               <HeroSocial
-                src="/assets/images/x-icon.png"
+                src="/assets/images/x-icon.svg"
                 alt="Twitter"
               />
             </a>
-            <a 
-              href={AppConfig.social.github}
+            <a
+              href={AppConfig.social.sponsor}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="GitHub"
+              aria-label="GitHub Sponsors"
               className="hover:scale-110 transition-transform"
             >
               <HeroSocial
-                src="/assets/images/github-icon.png"
-                alt="GitHub"
+                src="/assets/images/github-sponsor-icon.svg"
+                alt="GitHub Sponsors"
               />
             </a>
           </div>
