@@ -115,27 +115,15 @@ const Hero = () => {
               />
             </a>
             <a
-              href={AppConfig.social.github}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="GitHub"
-              className="hover:scale-110 transition-transform"
-            >
-              <HeroSocial
-                src="/assets/images/github-icon.png"
-                alt="GitHub"
-              />
-            </a>
-            <a
               href={AppConfig.social.sponsor}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Sponsor"
+              aria-label="GitHub Sponsors"
               className="hover:scale-110 transition-transform"
             >
               <HeroSocial
-                src="/assets/images/sponsor-icon.svg"
-                alt="Sponsor"
+                src="/assets/images/github-sponsor-icon.svg"
+                alt="GitHub Sponsors"
               />
             </a>
           </div>
