@@ -1,5 +1,5 @@
 ---
-import type { IFrontmatter } from "@/components";
+import type { IFrontmatter, MarkdownInstance } from "@/components";
 
 import { SubscribeForm } from "@/partials/SubscribeForm";
 import { Hero } from "@/partials/Hero";
@@ -9,7 +9,7 @@ import Base from "@/templates/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
 import { sortByDate } from "@/utils/Posts";
 
-const allPosts = await Astro.glob<IFrontmatter>("./posts/*.md");
+const allPosts = Object.values(import.meta.glob<MarkdownInstance<IFrontmatter>>("./posts/*.md", { eager: true }));
 const sortedPosts = sortByDate(allPosts);
 const lastThreePosts = sortedPosts.slice(0, 3);
 

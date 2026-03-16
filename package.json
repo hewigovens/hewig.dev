@@ -13,10 +13,9 @@
     "prepare": "husky install"
   },
   "devDependencies": {
-    "@astrojs/react": "^4.3.0",
-    "@astrojs/rss": "^4.0.11",
-    "@astrojs/sitemap": "^3.4.0",
-    "@astrojs/tailwind": "^6.0.2",
+    "@astrojs/react": "^5.0.0",
+    "@astrojs/rss": "^4.0.17",
+    "@astrojs/sitemap": "^3.7.1",
     "@commitlint/cli": "^17.8.1",
     "@commitlint/config-conventional": "^17.8.1",
     "@jridgewell/sourcemap-codec": "^1.4.15",
@@ -25,10 +24,11 @@
     "@types/react": "^18.2.42",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
-    "astro": "5.15.9",
+    "astro": "6.0.4",
     "astro-eslint-parser": "^0.16.0",
     "astro-imagetools": "^0.6.17",
     "astro-robots-txt": "^0.3.12",
+    "autoprefixer": "^10.4.27",
     "eslint": "^8.57.1",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -50,6 +50,7 @@
     "tailwindcss": "^3.3.6"
   },
   "dependencies": {
+    "@types/node": "^22",
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
