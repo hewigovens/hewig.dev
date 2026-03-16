@@ -89,7 +89,7 @@ const Hero = () => {
           />
         }
         socialButtons={
-          <div className="flex space-x-4">
+          <div className="flex items-center space-x-4">
             <a 
               href={AppConfig.social.telegram}
               target="_blank"
