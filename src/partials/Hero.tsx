@@ -114,7 +114,7 @@ const Hero = () => {
                 alt="Twitter"
               />
             </a>
-            <a 
+            <a
               href={AppConfig.social.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -124,6 +124,18 @@ const Hero = () => {
               <HeroSocial
                 src="/assets/images/github-icon.png"
                 alt="GitHub"
+              />
+            </a>
+            <a
+              href={AppConfig.social.sponsor}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Sponsor"
+              className="hover:scale-110 transition-transform"
+            >
+              <HeroSocial
+                src="/assets/images/sponsor-icon.svg"
+                alt="Sponsor"
               />
             </a>
           </div>
