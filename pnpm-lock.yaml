@@ -15,9 +15,6 @@ importers:
 
   .:
     dependencies:
-      '@types/node':
-        specifier: ^22
-        version: 22.19.15
       date-fns:
         specifier: ^2.30.0
         version: 2.30.0
@@ -37,15 +34,15 @@ importers:
       '@astrojs/sitemap':
         specifier: ^3.7.1
         version: 3.7.1
-      '@jridgewell/sourcemap-codec':
-        specifier: ^1.4.15
-        version: 1.5.5
       '@tailwindcss/aspect-ratio':
         specifier: ^0.4.2
         version: 0.4.2(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@22.19.15)(typescript@5.4.5)))
       '@tailwindcss/typography':
         specifier: ^0.5.10
         version: 0.5.13(tailwindcss@3.4.3(ts-node@10.9.2(@types/node@22.19.15)(typescript@5.4.5)))
+      '@types/node':
+        specifier: 22.19.15
+        version: 22.19.15
       '@types/react':
         specifier: ^18.2.42
         version: 18.3.28
@@ -61,12 +58,6 @@ importers:
       oxlint:
         specifier: ^1.56.0
         version: 1.56.0
-      path-browserify:
-        specifier: ^1.0.1
-        version: 1.0.1
-      rimraf:
-        specifier: ^5.0.5
-        version: 5.0.5
       tailwindcss:
         specifier: ^3.3.6
         version: 3.4.3(ts-node@10.9.2(@types/node@22.19.15)(typescript@5.4.5))
@@ -1710,9 +1701,6 @@ packages:
   parse5@7.3.0:
     resolution: {integrity: sha512-IInvU7fabl34qmi9gY8XOVxhYyMyuH2xUNpb2q8/Y+7552KlejkRvqvD19nMoUW/uQGGbqNpA6Tufu5FL5BZgw==}
 
-  path-browserify@1.0.1:
-    resolution: {integrity: sha512-b7uo2UCUOYZcnF/3ID0lulOJi/bafxa1xPe7ZPsammBSpjSWQkjNxlt635YGS2MiR9GjvuXCtz2emr3jbsz98g==}
-
   path-expression-matcher@1.1.3:
     resolution: {integrity: sha512-qdVgY8KXmVdJZRSS1JdEPOKPdTiEK/pi0RkcT2sw1RhXxohdujUlJFPuS1TSkevZ9vzd3ZlL7ULl1MHGTApKzQ==}
     engines: {node: '>=14.0.0'}
@@ -1891,11 +1879,6 @@ packages:
   reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
-
-  rimraf@5.0.5:
-    resolution: {integrity: sha512-CqDakW+hMe/Bz202FPEymy68P+G50RfMQK+Qo5YUqc9SPipvbGjCGKd0RSKEelbsfQuw3g5NZDSrlZZAJurH1A==}
-    engines: {node: '>=14'}
-    hasBin: true
 
   rollup@4.53.3:
     resolution: {integrity: sha512-w8GmOxZfBmKknvdXU1sdM9NHcoQejwF/4mNgj2JuEEdRaHwwF12K7e9eXn1nLZ07ad+du76mkVsyeb2rKGllsA==}
@@ -4131,8 +4114,6 @@ snapshots:
     dependencies:
       entities: 6.0.1
 
-  path-browserify@1.0.1: {}
-
   path-expression-matcher@1.1.3: {}
 
   path-key@3.1.1: {}
@@ -4339,10 +4320,6 @@ snapshots:
       unified: 11.0.5
 
   reusify@1.0.4: {}
-
-  rimraf@5.0.5:
-    dependencies:
-      glob: 10.3.12
 
   rollup@4.53.3:
     dependencies:
