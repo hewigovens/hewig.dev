@@ -199,7 +199,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.ROSE, label: 'Code injection' },
       { color: ColorTags.FUCHSIA, label: 'macOS' },
     ],
-    link: { kind: 'internal', path: '/projects/ghosttile' },
+    link: { kind: 'internal', path: '/projects/ghosttile/' },
   },
   {
     name: 'Anytime',
@@ -216,7 +216,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.SKY, label: 'iOS' },
       { color: ColorTags.EMERALD, label: 'Productivity' },
     ],
-    link: { kind: 'internal', path: '/projects/anytime' },
+    link: { kind: 'internal', path: '/projects/anytime/' },
   },
   {
     name: 'Inspect',
@@ -233,7 +233,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.BLUE, label: 'OpenSSL' },
       { color: ColorTags.FUCHSIA, label: 'iOS' },
     ],
-    link: { kind: 'internal', path: '/projects/inspect' },
+    link: { kind: 'internal', path: '/projects/inspect/' },
   },
   {
     name: 'Wallet Core',
