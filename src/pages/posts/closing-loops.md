@@ -56,3 +56,7 @@ The more ambitious version of that right now is [hw-core](https://github.com/hew
 [Jayjay](https://github.com/hewigovens/jayjay) is another version of the same instinct — a native macOS GUI for [Jujutsu](https://github.com/jj-vcs/jj), written in Rust and SwiftUI. Rust and SwiftUI I already love — I wrote [a whole post](/posts/native-obsession/) about why that is the native combination. What was new to me was jj itself. So building Jayjay from scratch turned out to be the most direct way to actually learn the tool.
 
 Rewriting the old stuff was about closing loops. Building the new thing is about opening them.
+
+---
+
+title image credit to <a href="https://unsplash.com/@pixelprovibes">PixelPro Vibes</a> on <a href="https://unsplash.com/photos/FpC3XIFM2Bg">Unsplash</a>
