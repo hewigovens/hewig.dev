@@ -1,7 +1,7 @@
 ---
 layout: '@/templates/BasePost.astro'
 title: 'Rewriting GhostTile for Modern macOS'
-description: GhostTile was my first polished paid Mac app. This is the story of why it faded, why I rewrote it, and why I am making the new repo public.
+description: 'GhostTile was my first polished paid Mac app. This is the story of why it faded, why I rewrote it, and why I am making the new repo public.'
 pubDate: 2026-04-22T00:00:00Z
 imgSrc: '/assets/images/ghosttile-2.0.png'
 imgAlt: 'GhostTile 2.0 screenshot'

@@ -5,6 +5,7 @@ description: 'Three old apps, a decade apart — and what rewriting them taught 
 pubDate: 2026-04-22T00:00:00Z
 imgSrc: '/assets/images/closing-loops.jpg'
 imgAlt: 'Glowing concentric rings'
+draft: false
 ---
 
 For the past few weeks I have been rewriting three of my old apps:
