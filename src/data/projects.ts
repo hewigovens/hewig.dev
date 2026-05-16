@@ -145,7 +145,7 @@ export const projects: ProjectEntry[] = [
     ],
     link: {
       kind: 'external',
-      url: 'https://a1.hewig.dev/staged/',
+      url: 'https://glance.hewig.dev/staged/',
     },
   },
   {
