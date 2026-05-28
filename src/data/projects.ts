@@ -50,6 +50,20 @@ export function resolveLink(entry: ProjectEntry): string {
  */
 export const projects: ProjectEntry[] = [
   {
+    name: 'jayjay',
+    description:
+      'A native macOS GUI for Jujutsu (jj) with a DAG graph, side-by-side diffs, interdiff, and conflict resolution. Built with Rust and SwiftUI.',
+    img: { src: '/assets/images/project-jayjay.svg', alt: 'jayjay macOS app' },
+    category: 'macos',
+    tags: [
+      { color: ColorTags.RUST, label: 'Rust' },
+      { color: ColorTags.SWIFT, label: 'SwiftUI' },
+      { color: ColorTags.FUCHSIA, label: 'macOS' },
+      { color: ColorTags.VIOLET, label: 'Jujutsu' },
+    ],
+    link: { kind: 'external', url: 'https://github.com/hewigovens/jayjay' },
+  },
+  {
     name: 'amux',
     description:
       'A tiny Rust CLI that keeps your fleet of local AI/code agents organised inside tmux with consistent commands to launch, attach, detach, and prune sessions.',

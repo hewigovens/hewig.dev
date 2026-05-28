@@ -3,6 +3,7 @@ import { GradientText } from '@/components/GradientText';
 import { projects, resolveLink } from '@/data/projects';
 
 const recentNames = [
+  'jayjay',
   'hw-core',
   'Solana Primitives',
   'Inspect',
