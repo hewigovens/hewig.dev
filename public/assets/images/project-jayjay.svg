@@ -1,12 +1,36 @@
-<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="512" height="512" rx="112" fill="#0F172A"/>
-  <path d="M104 364C150 284 205 234 272 214C329 197 378 203 408 218" stroke="#A78BFA" stroke-width="28" stroke-linecap="round"/>
-  <path d="M104 268C155 216 203 190 248 190C306 190 348 223 408 290" stroke="#38BDF8" stroke-width="28" stroke-linecap="round"/>
-  <circle cx="124" cy="364" r="34" fill="#FDBA74" stroke="#FFF7ED" stroke-width="10"/>
-  <circle cx="256" cy="206" r="34" fill="#38BDF8" stroke="#ECFEFF" stroke-width="10"/>
-  <circle cx="388" cy="236" r="34" fill="#A78BFA" stroke="#F5F3FF" stroke-width="10"/>
-  <circle cx="388" cy="302" r="26" fill="#34D399" stroke="#ECFDF5" stroke-width="10"/>
-  <path d="M150 128H210C234 128 248 142 248 166V320C248 362 224 386 182 386H152" stroke="#F8FAFC" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M272 128H332C356 128 370 142 370 166V342C370 384 346 408 304 408H274" stroke="#F8FAFC" stroke-width="30" stroke-linecap="round" stroke-linejoin="round" opacity="0.92"/>
-  <path d="M194 270H304" stroke="#F8FAFC" stroke-width="30" stroke-linecap="round" opacity="0.92"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 1024 1024">
+  <defs>
+    <linearGradient id="head" x1="200" y1="200" x2="900" y2="900" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#3B82F6"/>
+      <stop offset="1" stop-color="#1E3A8A"/>
+    </linearGradient>
+    <linearGradient id="crest" x1="380" y1="100" x2="500" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#93C5FD"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Body — emerging from bottom-right, mostly off-canvas -->
+  <ellipse cx="760" cy="820" rx="380" ry="340" fill="url(#head)"/>
+
+  <!-- Head — centered -->
+  <circle cx="480" cy="480" r="240" fill="url(#head)"/>
+
+  <!-- Crest — spikes pointing up-left -->
+  <polygon points="420,480 340,200 440,360" fill="url(#crest)"/>
+  <polygon points="460,450 400,170 480,340" fill="#60A5FA" opacity="0.75"/>
+
+  <!-- Wing sweep on body -->
+  <path d="M620 560 Q560 700 720 880 Q840 800 800 620 Z" fill="#1D4ED8" opacity="0.4"/>
+
+  <!-- Chest highlight -->
+  <ellipse cx="560" cy="620" rx="110" ry="130" fill="white" opacity="0.07"/>
+
+  <!-- Eye — facing left -->
+  <circle cx="390" cy="450" r="48" fill="#EFF6FF"/>
+  <circle cx="378" cy="442" r="28" fill="#0F172A"/>
+  <circle cx="368" cy="432" r="10" fill="white"/>
+
+  <!-- Beak — pointing left -->
+  <polygon points="240,480 160,512 240,544" fill="#F59E0B"/>
 </svg>
