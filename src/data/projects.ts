@@ -52,7 +52,7 @@ export const projects: ProjectEntry[] = [
   {
     name: 'jayjay',
     description:
-      'A native macOS GUI for Jujutsu (jj) with a DAG graph, side-by-side diffs, interdiff, and conflict resolution. Built with Rust and SwiftUI.',
+      'A native macOS GUI for Jujutsu (jj) with a DAG, side-by-side diffs, interdiff, and conflict resolution. Built with Rust and SwiftUI.',
     img: { src: '/assets/images/project-jayjay.svg', alt: 'jayjay macOS app' },
     category: 'macos',
     tags: [
