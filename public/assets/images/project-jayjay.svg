@@ -16,6 +16,7 @@
   <g clip-path="url(#icon-clip)">
     <rect width="1024" height="1024" rx="220" fill="#FFFFFF"/>
 
+    <g transform="translate(512 512) scale(0.85) translate(-512 -512)">
     <!-- Body — emerging from bottom-right, mostly off-canvas -->
     <ellipse cx="760" cy="820" rx="380" ry="340" fill="url(#head)"/>
 
@@ -39,5 +40,6 @@
 
     <!-- Beak — pointing left -->
     <polygon points="240,480 160,512 240,544" fill="#F59E0B"/>
+    </g>
   </g>
 </svg>
