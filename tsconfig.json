@@ -3,8 +3,8 @@
     // Enable top-level await, and other modern ESM features.
     "target": "ESNext",
     "module": "ESNext",
-    // Enable node-style module resolution, for things like npm package imports.
-    "moduleResolution": "node",
+    // Use modern bundler-style resolution for Vite/Astro and path aliases.
+    "moduleResolution": "bundler",
     // Enable JSON imports.
     "resolveJsonModule": true,
     "removeComments": true,
@@ -33,7 +33,6 @@
     "types": [
       // "vite/client"
     ],
-    "baseUrl": ".",
     "paths": {
       "@/*": [
         "./src/*"
