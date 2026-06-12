@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>名刺 C案（縦書き）— hewig.dev</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+  * { box-sizing: border-box; }
+  :root { --ppmm: 3.7795275591; } /* px per mm (96dpi default); adjust via the calibration slider */
+  body {
+    margin: 0;
+    background: #0b1120;
+    color: #e2e8f0;
+    font-family: 'Noto Sans JP', 'Inter', sans-serif;
+    padding: 48px 24px 96px;
+  }
+  main { max-width: 960px; margin: 0 auto; }
+  h1 {
+    font-size: 26px; font-weight: 900; margin: 0 0 4px;
+    background: linear-gradient(to bottom right, #0ea5e9, #22d3ee);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+    display: inline-block;
+  }
+  .subtitle { color: #94a3b8; font-size: 14px; margin-bottom: 24px; }
+  .toolbar {
+    position: sticky; top: 0; z-index: 10;
+    display: flex; justify-content: flex-end; padding: 10px 0;
+    background: linear-gradient(#0b1120 70%, transparent);
+  }
+  .toolbar label {
+    font-size: 12px; color: #94a3b8; cursor: pointer; user-select: none;
+    display: flex; align-items: center; gap: 6px;
+    background: #0f172a; border: 1px solid #1e293b; border-radius: 999px; padding: 6px 14px;
+  }
+  .toolbar input { accent-color: #22d3ee; }
+  .calib { margin: 14px 0 4px; padding: 12px 16px; border: 1px solid #1e293b; border-radius: 10px; background: #0f172a; font-size: 12.5px; color: #94a3b8; line-height: 1.7; }
+  .calib .row { display: flex; align-items: center; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+  .calib input[type=range] { flex: 1; min-width: 200px; accent-color: #22d3ee; }
+  .calib b { color: #e2e8f0; }
+  .cc-ref { margin-top: 12px; border: 1.5px dashed #475569; border-radius: 8px; display: flex; align-items: center; justify-content: center; text-align: center; color: #64748b; font-size: 11px; width: calc(85.6 * var(--ppmm) * 1px); height: calc(53.98 * var(--ppmm) * 1px); }
+  .pair { display: flex; flex-wrap: wrap; gap: 26px; margin-top: 8px; }
+  figure { margin: 0; }
+  figcaption {
+    font-size: 11px; color: #64748b; margin-top: 9px;
+    font-family: 'JetBrains Mono', monospace; letter-spacing: .05em;
+  }
+  svg.card {
+    width: calc(91 * var(--ppmm) * 1px); height: calc(55 * var(--ppmm) * 1px); display: block;
+    border-radius: 8px;
+    box-shadow: 0 24px 48px -16px rgba(0,0,0,.65), 0 0 0 1px rgba(148,163,184,.12);
+  }
+  .latin { font-family: 'Inter', 'Noto Sans JP', sans-serif; }
+  .jp    { font-family: 'Noto Sans JP', sans-serif; }
+  .mono  { font-family: 'JetBrains Mono', monospace; }
+  .guides { display: none; }
+  body.show-guides .guides { display: block; }
+  .specs {
+    font-size: 12.5px; color: #94a3b8; line-height: 2;
+    border: 1px solid #1e293b; border-radius: 10px;
+    padding: 14px 18px; margin-top: 40px; background: #0f172a;
+  }
+  .specs b { color: #e2e8f0; font-weight: 700; }
+  .specs code { font-family: 'JetBrains Mono', monospace; color: #22d3ee; font-size: 11.5px; }
+</style>
+</head>
+<body>
+<main>
+  <div class="toolbar">
+    <label><input type="checkbox" id="guides-toggle"> 安全マージン（4mm）を表示</label>
+  </div>
+
+  <h1>名刺 — C案（縦書き）最終調整</h1>
+  <div class="subtitle">表＝白・縦書き ／ 裏＝ダーク　·　91×55mm　·　読み: ジョ・トウ　·　裏: web / mail / telegram ＋ LINE 友だち追加QR</div>
+
+  <div class="calib">
+    <b>実寸プレビュー</b>（カード = 91×55mm）。画面の実寸はモニターのDPIで変わります。下の点線枠に <b>実物のクレジットカード</b>（または名刺・定規）を当て、ぴったり重なるまでスライダーを調整してください。調整するとカードも実寸になります。
+    <div class="row">
+      <span>調整:</span>
+      <input type="range" id="ppmm" min="2.6" max="6" step="0.005" value="3.7795275591">
+      <span id="ppmm-val"></span>
+    </div>
+    <div class="cc-ref" id="cc-ref">クレジットカードをここに重ねる（85.6 × 54mm）</div>
+  </div>
+
+  <div class="pair">
+
+    <figure>
+      <svg class="card" viewBox="0 0 91 55" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gF" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#22d3ee"/>
+          </linearGradient>
+        </defs>
+        <rect width="91" height="55" fill="#ffffff"/>
+        <circle cx="28" cy="26" r="16" fill="none" stroke="#e2e8f0" stroke-width="1.1"/>
+        <!-- vertical columns (right to left): name / rule / title -->
+        <text class="vt" data-chars="ジョ・トウ" data-x="81" data-y="11.5" data-dy="6.4" data-cls="jp" data-size="6" data-weight="700" data-fill="#0f172a"></text>
+        <rect x="74.6" y="8" width="0.45" height="30" rx="0.22" fill="url(#gF)"/>
+        <text class="vt" data-chars="技術コンサルタント" data-x="70.5" data-y="10.5" data-dy="2.85" data-cls="jp" data-size="2.5" data-weight="500" data-fill="#334155"></text>
+        <!-- bottom-left horizontal info -->
+        <text class="latin" x="7" y="41.5" font-size="4.4" font-weight="800" fill="#0f172a">Tao Xu</text>
+        <text class="mono" x="7" y="46.4" font-size="2.2" fill="#334155">hi@hewig.dev・東京</text>
+        <text class="jp" x="7" y="50.2" font-size="2" fill="#64748b">AI・ブロックチェーン・ソフトウェア開発</text>
+        <!-- hanko: solid ink for print (no small-area gradient) -->
+        <rect x="78" y="43.5" width="6.5" height="6.5" rx="1" fill="#0891b2"/>
+        <text class="latin" x="81.25" y="48.1" font-size="2.8" font-weight="800" fill="#ffffff" text-anchor="middle">TX</text>
+        <g class="guides"><rect x="4" y="4" width="83" height="47" fill="none" stroke="#f43f5e" stroke-width="0.25" stroke-dasharray="1.2 1"/></g>
+      </svg>
+      <figcaption>表（日本語・縦書き / 白）</figcaption>
+    </figure>
+
+    <figure>
+      <svg class="card" viewBox="0 0 91 55" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="gB" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#22d3ee"/>
+          </linearGradient>
+        </defs>
+        <rect width="91" height="55" fill="#0f172a"/>
+        <path d="M91 0 L91 9 L82 0 Z" fill="url(#gB)" opacity="0.9"/>
+        <text class="latin" x="7" y="19.5" font-size="7" font-weight="800" fill="url(#gB)">Tao Xu</text>
+        <text class="latin" x="7" y="26" font-size="2.6" font-weight="600" fill="#e2e8f0">Technical Consultant</text>
+        <text class="latin" x="7" y="30.4" font-size="2.3" fill="#94a3b8">AI · Blockchain · Software architecture — Tokyo, Japan</text>
+        <line x1="7" y1="34.8" x2="52" y2="34.8" stroke="#334155" stroke-width="0.3"/>
+        <text class="mono" x="7" y="40.2" font-size="2.3" fill="#22d3ee">web</text>
+        <text class="mono" x="20" y="40.2" font-size="2.3" fill="#d1d5db">hewig.dev</text>
+        <text class="mono" x="7" y="44.6" font-size="2.3" fill="#22d3ee">mail</text>
+        <text class="mono" x="20" y="44.6" font-size="2.3" fill="#d1d5db">hi@hewig.dev</text>
+        <text class="mono" x="7" y="49" font-size="2.3" fill="#22d3ee">telegram</text>
+        <text class="mono" x="20" y="49" font-size="2.3" fill="#d1d5db">@hewig</text>
+        <!-- LINE QR — external file; swap design/meishi-c-qr-line.svg to replace (no HTML edit needed) -->
+        <rect x="68.5" y="34.8" width="16" height="16" rx="1.2" fill="#f8fafc"/>
+        <image href="meishi-c-qr-line.svg" x="68.5" y="34.8" width="16" height="16"/>
+        <g class="guides"><rect x="4" y="4" width="83" height="47" fill="none" stroke="#f43f5e" stroke-width="0.25" stroke-dasharray="1.2 1"/></g>
+      </svg>
+      <figcaption>裏（英語 / ダーク・web / mail / telegram ＋ LINE 友だち追加QR）</figcaption>
+    </figure>
+
+  </div>
+
+  <div class="specs">
+    <b>印刷向け調整（モック比）:</b><br>
+    ・表面を純白 <code>#ffffff</code> に。淡い文字色を一段濃く（<code>#94a3b8</code> → <code>#64748b</code>、<code>#475569</code> → <code>#334155</code>）<br>
+    ・最小文字サイズ 2.0mm（約5.7pt）以上、罫線 0.3mm 以上に統一<br>
+    ・ハンコ「TX」は小面積グラデーションをやめて <code>cyan-600 #0891b2</code> のベタ1色に（網点ムラ回避・特色化も容易）<br>
+    ・QR は <b>LINE 友だち追加</b>: <code>https://line.me/ti/p/~hewigovens</code>（LINE ID: hewigovens）<br>
+    　→ スキャンで LINE 友だち追加（電話番号・年齢確認なしで連絡可）。中央に LINE ロゴ＝誤り訂正レベル H（約30%復元）。<br>
+    　→ QRは別ファイル <code>meishi-c-qr-line.svg</code>、差し替えるだけで更新（HTML編集不要）。印刷時は「LINE」をアウトライン化<br>
+    ・裏面の紺ベタはリッチブラック指定推奨: 目安 <code>C85 M70 Y45 K55</code> 前後・総インキ量300%以下（RIP側の推奨値に従う）<br>
+    ・グラデーション（名前・コーナー・罫線）は CMYK 変換で彩度がやや沈みます。色味重視なら特色 <code>PANTONE 311C</code> 近辺の指定を検討<br>
+    <br>
+    <b>名前の表記:</b> 読みは頂いた通り「ジョ・トウ」（カタカナ）。ひらがな「じょ・とう」への変更、または漢字を大きく＋ふりがな構成への変更もすぐできます。<br>
+    <b>入稿:</b> 仕上がり 91×55mm ＋ 周囲3mm塗り足し。Noto Sans JP / Inter / JetBrains Mono はすべて埋め込み可の無料フォント。
+  </div>
+</main>
+
+<script>
+// ---- vertical text (tategaki) builder with small-kana + rotation handling ----
+(function () {
+  const ROTATE = 'ー〜～…‥（）()「」｜';
+  const SMALL = 'ョッュャァィゥェォゃゅょっぁぃぅぇぉ';
+  const NS = 'http://www.w3.org/2000/svg';
+  document.querySelectorAll('text.vt').forEach((t) => {
+    const chars = [...t.dataset.chars];
+    const x = +t.dataset.x;
+    const dy = +t.dataset.dy;
+    const size = +t.dataset.size;
+    let y = +t.dataset.y;
+    chars.forEach((ch) => {
+      const small = SMALL.includes(ch);
+      if (small) y -= dy * 0.22; // tuck small kana toward previous glyph
+      const el = document.createElementNS(NS, 'text');
+      el.textContent = ch;
+      el.setAttribute('x', small ? x + size * 0.1 : x);
+      el.setAttribute('y', y);
+      el.setAttribute('class', t.dataset.cls || 'jp');
+      el.setAttribute('font-size', size);
+      el.setAttribute('font-weight', t.dataset.weight || '400');
+      el.setAttribute('fill', t.dataset.fill);
+      el.setAttribute('text-anchor', 'middle');
+      if (ROTATE.includes(ch)) {
+        el.setAttribute('transform', `rotate(90 ${x} ${y - dy * 0.32})`);
+      }
+      t.parentNode.appendChild(el);
+      y += dy;
+    });
+    t.remove();
+  });
+})();
+
+document.getElementById('guides-toggle').addEventListener('change', (e) => {
+  document.body.classList.toggle('show-guides', e.target.checked);
+});
+
+// ---- real-size calibration ----
+(function () {
+  const s = document.getElementById('ppmm');
+  const out = document.getElementById('ppmm-val');
+  const upd = () => {
+    document.documentElement.style.setProperty('--ppmm', s.value);
+    out.textContent = Math.round(s.value * 25.4) + ' dpi';
+  };
+  s.addEventListener('input', upd);
+  upd();
+})();
+</script>
+</body>
+</html>

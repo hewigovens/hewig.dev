@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 名刺 表（日本語・縦書き）91×55mm 仕上がり / 塗り足し3mm別途 / fonts: Noto Sans JP, Inter, JetBrains Mono -->
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="55mm" viewBox="0 0 91 55">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
+  </style>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="91" height="55" fill="#ffffff"/>
+  <circle cx="28" cy="26" r="16" fill="none" stroke="#e2e8f0" stroke-width="1.1"/>
+  <!-- 縦書き（右から）: 名前 / 罫線 / 肩書 -->
+  <g font-family="'Noto Sans JP', sans-serif" font-size="6" font-weight="700" fill="#0f172a" text-anchor="middle">
+    <text x="81" y="11.5">ジ</text>
+    <text x="81.6" y="16.492">ョ</text>
+    <text x="81" y="22.892">・</text>
+    <text x="81" y="29.292">ト</text>
+    <text x="81" y="35.692">ウ</text>
+  </g>
+  <rect x="74.6" y="8" width="0.45" height="30" rx="0.22" fill="url(#grad)"/>
+  <g font-family="'Noto Sans JP', sans-serif" font-size="2.5" font-weight="500" fill="#334155" text-anchor="middle">
+    <text x="70.5" y="10.5">技</text>
+    <text x="70.5" y="13.35">術</text>
+    <text x="70.5" y="16.2">コ</text>
+    <text x="70.5" y="19.05">ン</text>
+    <text x="70.5" y="21.9">サ</text>
+    <text x="70.5" y="24.75">ル</text>
+    <text x="70.5" y="27.6">タ</text>
+    <text x="70.5" y="30.45">ン</text>
+    <text x="70.5" y="33.3">ト</text>
+  </g>
+  <!-- 左下 横書きブロック -->
+  <text x="7" y="41.5" font-family="'Inter', 'Noto Sans JP', sans-serif" font-size="4.4" font-weight="800" fill="#0f172a">Tao Xu</text>
+  <text x="7" y="46.4" font-family="'JetBrains Mono', monospace" font-size="2.2" fill="#334155">hi@hewig.dev・東京</text>
+  <text x="7" y="50.2" font-family="'Noto Sans JP', sans-serif" font-size="2" fill="#64748b">AI・ブロックチェーン・ソフトウェア開発</text>
+  <!-- ハンコ -->
+  <rect x="78" y="43.5" width="6.5" height="6.5" rx="1" fill="#0891b2"/>
+  <text x="81.25" y="48.1" font-family="'Inter', 'Noto Sans JP', sans-serif" font-size="2.8" font-weight="800" fill="#ffffff" text-anchor="middle">TX</text>
+  <g id="guides" display="none">
+    <rect x="4" y="4" width="83" height="47" fill="none" stroke="#f43f5e" stroke-width="0.25" stroke-dasharray="1.2 1"/>
+  </g>
+</svg>

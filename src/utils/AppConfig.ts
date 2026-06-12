@@ -8,6 +8,7 @@ export const AppConfig = {
   social: {
     github: 'https://github.com/hewigovens',
     telegram: 'https://t.me/hewig',
+    line: 'https://line.me/ti/p/~hewigovens',
     farcaster: 'https://warpcast.com/h1',
     twitter: 'https://x.com/hewigovens',
     youtube: 'https://www.youtube.com/hewigovens',
