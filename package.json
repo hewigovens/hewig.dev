@@ -12,14 +12,14 @@
     "build-types": "tsc --noEmit --pretty"
   },
   "devDependencies": {
-    "@astrojs/react": "^5.0.0",
-    "@astrojs/rss": "^4.0.17",
-    "@astrojs/sitemap": "^3.7.1",
+    "@astrojs/react": "^5.0.7",
+    "@astrojs/rss": "^4.0.18",
+    "@astrojs/sitemap": "^3.7.3",
     "@tailwindcss/aspect-ratio": "^0.4.2",
-    "@tailwindcss/typography": "^0.5.10",
+    "@tailwindcss/typography": "^0.5.20",
     "@types/node": "22.19.15",
     "@types/react": "^18.2.42",
-    "astro": "6.1.10",
+    "astro": "^6.4.6",
     "astro-robots-txt": "^0.3.12",
     "autoprefixer": "^10.4.27",
     "oxlint": "^1.56.0",
@@ -30,6 +30,16 @@
     "date-fns": "^2.30.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "brace-expansion": ">=2.0.3",
+      "minimatch": ">=9.0.7",
+      "glob": ">=10.5.0",
+      "esbuild": ">=0.28.1",
+      "yaml": ">=2.8.3",
+      "postcss": ">=8.5.10"
+    }
   },
   "author": "Ixartz (https://github.com/ixartz)"
 }

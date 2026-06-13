@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900" font-family="Georgia, 'Times New Roman', Times, serif">
+  <rect width="1600" height="900" fill="#ff7c99"/>
+  <text x="132" y="410" font-size="100" fill="#1A1A18">How do you review</text>
+  <g font-size="100">
+    <text x="132" y="536" fill="#1A1A18">a</text>
+    <text x="205" y="536" fill="#FFFFFF" font-weight="700">million</text>
+    <text x="602" y="536" fill="#1A1A18">lines of code?</text>
+  </g>
+</svg>
