@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 名刺 裏（英語・ダーク）91×55mm 仕上がり / 塗り足し3mm別途 / 紺ベタはリッチブラック指定推奨 -->
+<!-- QR = LINE friend-add: https://line.me/ti/p/~hewigovens (LINE ID: hewigovens) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="91mm" height="55mm" viewBox="0 0 91 55">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&amp;family=Noto+Sans+JP:wght@400;500;700;900&amp;family=JetBrains+Mono:wght@400;500;700&amp;display=swap');
+  </style>
+  <defs>
+    <linearGradient id="grad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0ea5e9"/><stop offset="1" stop-color="#22d3ee"/>
+    </linearGradient>
+  </defs>
+  <rect width="91" height="55" fill="#0f172a"/>
+  <path d="M91 0 L91 9 L82 0 Z" fill="url(#grad)" opacity="0.9"/>
+  <text x="7" y="19.5" font-family="'Inter', 'Noto Sans JP', sans-serif" font-size="7" font-weight="800" fill="url(#grad)">Tao Xu</text>
+  <text x="7" y="26" font-family="'Inter', 'Noto Sans JP', sans-serif" font-size="2.6" font-weight="600" fill="#e2e8f0">Technical Consultant</text>
+  <text x="7" y="30.4" font-family="'Inter', 'Noto Sans JP', sans-serif" font-size="2.3" fill="#94a3b8">AI · Blockchain · Software architecture — Tokyo, Japan</text>
+  <line x1="7" y1="34.8" x2="52" y2="34.8" stroke="#334155" stroke-width="0.3"/>
+  <text x="7" y="40.2" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#22d3ee">web</text>
+  <text x="20" y="40.2" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#d1d5db">hewig.dev</text>
+  <text x="7" y="44.6" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#22d3ee">mail</text>
+  <text x="20" y="44.6" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#d1d5db">hi@hewig.dev</text>
+  <text x="7" y="49" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#22d3ee">telegram</text>
+  <text x="20" y="49" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#d1d5db">@hewig</text>
+  <!-- LINE QR — external file; swap meishi-c-qr-line.svg to replace -->
+  <rect x="68.5" y="34.8" width="16" height="16" rx="1.2" fill="#f8fafc"/>
+  <image href="meishi-c-qr-line.svg" x="68.5" y="34.8" width="16" height="16"/>
+  <g id="guides" display="none">
+    <rect x="4" y="4" width="83" height="47" fill="none" stroke="#f43f5e" stroke-width="0.25" stroke-dasharray="1.2 1"/>
+  </g>
+</svg>

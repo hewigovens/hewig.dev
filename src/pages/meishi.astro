@@ -1,0 +1,172 @@
+---
+import { GradientText, Section } from "@/components";
+import Base from "@/templates/Base.astro";
+import { AppConfig } from "@/utils/AppConfig";
+
+const title = "名刺 — Tao Xu";
+const description =
+  "Tao Xu（ジョ・トウ）の名刺。Technical Consultant — AI・ブロックチェーン・ソフトウェア設計。Tokyo, Japan.";
+const lineUrl = AppConfig.social.line;
+const btn =
+  "rounded-lg border border-cyan-600/40 bg-slate-800 px-5 py-2.5 text-sm font-semibold text-cyan-300 transition hover:bg-cyan-600 hover:text-white";
+---
+
+<Base head={{ title, description }}>
+  <style is:global>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=JetBrains+Mono:wght@400;500;700&display=swap');
+  </style>
+
+  <Section>
+    <div class="mb-8 text-center">
+      <h1 class="text-4xl font-bold"><GradientText>名刺</GradientText></h1>
+      <p class="mt-3 text-lg text-gray-300">Tao Xu · Technical Consultant</p>
+      <p class="mt-1 text-sm text-gray-400">
+        対面ではLINEで裏面のQRを読み取り、リモートでは下のリンクから。<br />
+        In person, scan the back QR with LINE — or tap a link below.
+      </p>
+    </div>
+
+    <div
+      class="mx-auto flex max-w-3xl flex-col items-center justify-center gap-6 sm:flex-row sm:items-start"
+    >
+      <figure class="w-full max-w-md">
+        <div class="overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10">
+          <svg
+            class="block h-auto w-full"
+            viewBox="0 0 91 55"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="名刺 表面（日本語・縦書き）"
+          >
+            <defs>
+              <linearGradient id="gradF" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#0ea5e9" />
+                <stop offset="1" stop-color="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <rect width="91" height="55" fill="#ffffff" />
+            <circle cx="28" cy="26" r="16" fill="none" stroke="#e2e8f0" stroke-width="1.1" />
+            <g
+              font-family="'Noto Sans JP', sans-serif"
+              font-size="6"
+              font-weight="700"
+              fill="#0f172a"
+              text-anchor="middle"
+            >
+              <text x="81" y="11.5">ジ</text>
+              <text x="81.6" y="16.492">ョ</text>
+              <text x="81" y="22.892">・</text>
+              <text x="81" y="29.292">ト</text>
+              <text x="81" y="35.692">ウ</text>
+            </g>
+            <rect x="74.6" y="8" width="0.45" height="30" rx="0.22" fill="url(#gradF)" />
+            <g
+              font-family="'Noto Sans JP', sans-serif"
+              font-size="2.5"
+              font-weight="500"
+              fill="#334155"
+              text-anchor="middle"
+            >
+              <text x="70.5" y="10.5">技</text>
+              <text x="70.5" y="13.35">術</text>
+              <text x="70.5" y="16.2">コ</text>
+              <text x="70.5" y="19.05">ン</text>
+              <text x="70.5" y="21.9">サ</text>
+              <text x="70.5" y="24.75">ル</text>
+              <text x="70.5" y="27.6">タ</text>
+              <text x="70.5" y="30.45">ン</text>
+              <text x="70.5" y="33.3">ト</text>
+            </g>
+            <text
+              x="7"
+              y="41.5"
+              font-family="'Inter', 'Noto Sans JP', sans-serif"
+              font-size="4.4"
+              font-weight="800"
+              fill="#0f172a">Tao Xu</text>
+            <text
+              x="7"
+              y="46.4"
+              font-family="'JetBrains Mono', monospace"
+              font-size="2.2"
+              fill="#334155">hi@hewig.dev・東京</text>
+            <text
+              x="7"
+              y="50.2"
+              font-family="'Noto Sans JP', sans-serif"
+              font-size="2"
+              fill="#64748b">AI・ブロックチェーン・ソフトウェア開発</text>
+            <rect x="78" y="43.5" width="6.5" height="6.5" rx="1" fill="#0891b2" />
+            <text
+              x="81.25"
+              y="48.1"
+              font-family="'Inter', 'Noto Sans JP', sans-serif"
+              font-size="2.8"
+              font-weight="800"
+              fill="#ffffff"
+              text-anchor="middle">TX</text>
+          </svg>
+        </div>
+        <figcaption class="mt-2 text-center text-xs text-gray-500">表 / Front</figcaption>
+      </figure>
+
+      <figure class="w-full max-w-md">
+        <div class="overflow-hidden rounded-xl shadow-2xl ring-1 ring-white/10">
+          <svg
+            class="block h-auto w-full"
+            viewBox="0 0 91 55"
+            xmlns="http://www.w3.org/2000/svg"
+            role="img"
+            aria-label="business card back (English)"
+          >
+            <defs>
+              <linearGradient id="gradB" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#0ea5e9" />
+                <stop offset="1" stop-color="#22d3ee" />
+              </linearGradient>
+            </defs>
+            <rect width="91" height="55" fill="#0f172a" />
+            <path d="M91 0 L91 9 L82 0 Z" fill="url(#gradB)" opacity="0.9" />
+            <text
+              x="7"
+              y="19.5"
+              font-family="'Inter', 'Noto Sans JP', sans-serif"
+              font-size="7"
+              font-weight="800"
+              fill="url(#gradB)">Tao Xu</text>
+            <text
+              x="7"
+              y="26"
+              font-family="'Inter', 'Noto Sans JP', sans-serif"
+              font-size="2.6"
+              font-weight="600"
+              fill="#e2e8f0">Technical Consultant</text>
+            <text
+              x="7"
+              y="30.4"
+              font-family="'Inter', 'Noto Sans JP', sans-serif"
+              font-size="2.3"
+              fill="#94a3b8">AI · Blockchain · Software architecture — Tokyo, Japan</text>
+            <line x1="7" y1="34.8" x2="52" y2="34.8" stroke="#334155" stroke-width="0.3" />
+            <text x="7" y="40.2" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#22d3ee">web</text>
+            <text x="20" y="40.2" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#d1d5db">hewig.dev</text>
+            <text x="7" y="44.6" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#22d3ee">mail</text>
+            <text x="20" y="44.6" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#d1d5db">hi@hewig.dev</text>
+            <text x="7" y="49" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#22d3ee">telegram</text>
+            <text x="20" y="49" font-family="'JetBrains Mono', monospace" font-size="2.3" fill="#d1d5db">@hewig</text>
+            <rect x="68.5" y="34.8" width="16" height="16" rx="1.2" fill="#f8fafc" />
+            <image href="/meishi/qr-line.svg" x="68.5" y="34.8" width="16" height="16" />
+          </svg>
+        </div>
+        <figcaption class="mt-2 text-center text-xs text-gray-500">裏 / Back</figcaption>
+      </figure>
+    </div>
+
+    <div class="mx-auto mt-10 flex max-w-lg flex-wrap items-center justify-center gap-3">
+      <a href={`mailto:${AppConfig.social.email}`} class={btn}>メール</a>
+      <a href={lineUrl} target="_blank" rel="noopener noreferrer" class={btn}>LINE で追加</a>
+      <a href={AppConfig.social.telegram} target="_blank" rel="noopener noreferrer" class={btn}>Telegram</a>
+      <a href="https://hewig.dev" class={btn}>Web</a>
+    </div>
+  </Section>
+</Base>
