@@ -64,20 +64,6 @@ export const projects: ProjectEntry[] = [
     link: { kind: 'external', url: 'https://github.com/hewigovens/jayjay' },
   },
   {
-    name: 'amux',
-    description:
-      'A tiny Rust CLI that keeps your fleet of local AI/code agents organised inside tmux with consistent commands to launch, attach, detach, and prune sessions.',
-    img: { src: '/assets/images/project-amux.svg', alt: 'amux CLI' },
-    category: 'rust',
-    tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.SLATE, label: 'CLI' },
-      { color: ColorTags.GREEN, label: 'tmux' },
-      { color: ColorTags.INDIGO, label: 'Agents' },
-    ],
-    link: { kind: 'external', url: 'https://github.com/hewigovens/amux' },
-  },
-  {
     name: 'Miso',
     description:
       'A lightweight macOS menu bar utility providing a floating HUD overlay for quick input method switching. Zero permissions required.',
