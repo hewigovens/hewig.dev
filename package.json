@@ -38,7 +38,10 @@
       "glob": ">=10.5.0",
       "esbuild": ">=0.28.1",
       "yaml": ">=2.8.3",
-      "postcss": ">=8.5.10"
+      "postcss": ">=8.5.10",
+      "vite": ">=7.3.5 <8",
+      "js-yaml": ">=4.2.0 <5",
+      "@babel/core": ">=7.29.6 <8"
     }
   },
   "author": "Ixartz (https://github.com/ixartz)"
