@@ -10,8 +10,8 @@ type IBlogPostProps = {
 };
 
 const BlogPost = (props: IBlogPostProps) => (
-  <Section>
-    <PostHeader content={props.frontmatter} author={AppConfig.author} />
+  <Section as="article">
+    <PostHeader content={props.frontmatter} author={AppConfig.name} />
 
     <PostContent content={props.frontmatter}>{props.children}</PostContent>
   </Section>

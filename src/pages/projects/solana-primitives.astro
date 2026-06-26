@@ -1,0 +1,78 @@
+---
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import { ColorTags } from "@/components/Tags";
+import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
+
+const description =
+  "Solana Primitives is a lightweight Rust crate providing the core types and builders you need to construct and submit Solana transactions without the full Solana SDK.";
+const url = "https://hewig.dev/projects/solana-primitives/";
+const repo = "https://github.com/hewigovens/solana-primitives";
+const crates = "https://crates.io/crates/solana-primitives";
+
+const jsonLd = [
+  softwareAppNode({
+    name: "Solana Primitives",
+    description,
+    url,
+    operatingSystem: "Cross-platform",
+    applicationCategory: "DeveloperApplication",
+    downloadUrl: repo,
+    sameAs: [repo],
+  }),
+  breadcrumbNode([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects/" },
+    { name: "Solana Primitives", path: "/projects/solana-primitives/" },
+  ]),
+];
+---
+
+<ProjectDetail
+  title="Solana Primitives – Rust Primitives for Building Solana Transactions"
+  description={description}
+  heading="Solana Primitives"
+  tagline="Construct and submit Solana transactions in Rust — without pulling in the entire Solana SDK."
+  img={{ src: "/assets/images/project-cargo.png", alt: "Solana Primitives Rust crate" }}
+  tags={[
+    { color: ColorTags.RUST, label: "Rust" },
+    { color: ColorTags.LIME, label: "Blockchain" },
+    { color: ColorTags.VIOLET, label: "Solana" },
+    { color: ColorTags.INDIGO, label: "SDK" },
+  ]}
+  actions={[
+    { label: "View on GitHub", href: repo, primary: true },
+    { label: "View on crates.io", href: crates },
+  ]}
+  jsonLd={jsonLd}
+>
+  <h2>What it is</h2>
+  <p>
+    Solana Primitives is a lightweight Rust library that gives you the essential
+    building blocks for working with the Solana blockchain — core types like
+    <code>Pubkey</code>, <code>Signature</code>, <code>Instruction</code>,
+    <code>Transaction</code>, and <code>Message</code> — so you can build and
+    submit transactions without depending on the complete Solana SDK.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Core types: <code>Pubkey</code>, <code>Signature</code>, <code>Instruction</code>, <code>Transaction</code>, and <code>Message</code></li>
+    <li>Builder-pattern APIs with automatic account management</li>
+    <li>Type-safe instruction data construction</li>
+    <li>Pre-built helpers for the System, Token, and other programs</li>
+    <li>Program Derived Address (PDA) support</li>
+    <li>Comprehensive error handling with a minimal dependency footprint</li>
+  </ul>
+
+  <h2>How to use</h2>
+  <p>Add the crate to your project, then build a transaction with the builder API:</p>
+  <pre><code>cargo add solana-primitives</code></pre>
+
+  <h2>Why</h2>
+  <p>
+    The full Solana SDK is heavy when all you need is to assemble and sign a
+    transaction. Solana Primitives keeps the dependency footprint small and the
+    API focused, making it a good fit for wallets, services, and tools that
+    construct Solana transactions in Rust.
+  </p>
+</ProjectDetail>

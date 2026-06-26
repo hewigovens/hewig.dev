@@ -1,0 +1,33 @@
+# hewig.dev — Tao Xu (hewig)
+
+> Tao Xu (hewig / hewigovens) is a Tokyo-based software engineer and blockchain developer, and a former founding engineer at Trust Wallet. He builds open-source Rust tools, macOS/iOS apps, and crypto wallet infrastructure, and writes a developer blog called "Tao's Devlog". This site is his personal hub for projects, writing, and consulting.
+
+## Key links
+
+- [Home](https://hewig.dev/)
+- [About Tao Xu](https://hewig.dev/about/)
+- [All projects](https://hewig.dev/projects/)
+- [Blog — Tao's Devlog](https://hewig.dev/posts/)
+- [Consulting (日本語)](https://hewig.dev/consulting/)
+- [RSS feed](https://hewig.dev/rss.xml)
+- [GitHub](https://github.com/hewigovens)
+
+## Projects
+
+- [App Detective](https://hewig.dev/projects/app-detective/) — detect a macOS app's GUI tech stack (SwiftUI, AppKit, Catalyst, Electron, Flutter).
+- [GhostTile](https://ghosttile.hewig.dev) — hide running applications from the macOS Dock.
+- [Miso](https://hewig.dev/projects/miso/) — menu-bar HUD for quick input-method switching on macOS; zero permissions.
+- [Anytime](https://fourplexlabs.github.io/AnyTime) — timezone-aware world clock for Mac and iPhone.
+- [Inspect](https://fourplexlabs.github.io/Inspect) — view and export a website's HTTPS/TLS certificate on iOS.
+- [Staged Launcher](https://hewig.dev/projects/staged-launcher/) — manage and delay app launches across stages on macOS.
+- [hw-core](https://hewig.dev/projects/hw-core/) — cross-platform hardware-wallet library in Rust, incl. the Trezor Host Protocol.
+- [Solana Primitives](https://hewig.dev/projects/solana-primitives/) — Rust crate for constructing and submitting Solana transactions.
+- [reqwest-enum](https://hewig.dev/projects/reqwest-enum/) — type-safe, enum-style HTTP and JSON-RPC API for Rust.
+- [Aya DevContainer](https://hewig.dev/projects/aya-devcontainer/) — Docker dev container for eBPF programming in Rust (aya-rs).
+- [jayjay](https://jayjay.hewig.dev/) — native macOS GUI for Jujutsu (jj) version control.
+
+## Contact
+
+- Email: hi@hewig.dev
+- X / Twitter: https://x.com/hewigovens
+- Telegram: https://t.me/hewig

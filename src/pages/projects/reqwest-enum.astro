@@ -1,0 +1,89 @@
+---
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import { ColorTags } from "@/components/Tags";
+import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
+
+const description =
+  "A type-safe, enum-style API layer for Rust's reqwest — abstracts URL formatting, query/header encoding, and response deserialization; async by default with lightweight JSON-RPC support.";
+const url = "https://hewig.dev/projects/reqwest-enum/";
+const repo = "https://github.com/hewigovens/reqwest-enum";
+const cratesIo = "https://crates.io/crates/reqwest-enum";
+
+const jsonLd = [
+  softwareAppNode({
+    name: "reqwest-enum",
+    description,
+    url,
+    operatingSystem: "Cross-platform",
+    applicationCategory: "DeveloperApplication",
+    downloadUrl: cratesIo,
+    sameAs: [repo],
+  }),
+  breadcrumbNode([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects/" },
+    { name: "reqwest-enum", path: "/projects/reqwest-enum/" },
+  ]),
+];
+---
+
+<ProjectDetail
+  title="reqwest-enum – Type-Safe Enum API Layer for Rust's reqwest"
+  description={description}
+  heading="reqwest-enum"
+  tagline="Describe your HTTP API as an enum and let reqwest-enum handle URLs, headers, encoding, and decoding."
+  img={{ src: "/assets/images/project-cargo.png", alt: "reqwest-enum Rust crate" }}
+  tags={[
+    { color: ColorTags.RUST, label: "Rust" },
+    { color: ColorTags.SWIFT, label: "Enum" },
+    { color: ColorTags.SKY, label: "HTTP" },
+    { color: ColorTags.LIME, label: "JSONRPC" },
+  ]}
+  actions={[
+    { label: "View on GitHub", href: repo, primary: true },
+    { label: "View on crates.io", href: cratesIo },
+  ]}
+  jsonLd={jsonLd}
+>
+  <h2>What it is</h2>
+  <p>
+    reqwest-enum is a Rust library that turns the popular
+    <code>reqwest</code> HTTP client into a type-safe, enum-driven API layer.
+    Instead of scattering URL strings, header maps, and serialization logic
+    across your code, you describe each endpoint as a variant of an enum and
+    implement a target trait — reqwest-enum takes care of building the request
+    and deserializing the response. The design is inspired by Swift's Moya, so
+    each API becomes a single, exhaustive definition the compiler can check.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>Type-safe, enum-style HTTP API that centralizes endpoint definitions.</li>
+    <li>Handles URL formatting, query and header encoding, and response deserialization for you.</li>
+    <li>Async by default, built directly on top of reqwest.</li>
+    <li>Lightweight JSON-RPC support with batching, via the <code>JsonRpcTarget</code> trait.</li>
+    <li>Optional <code>reqwest-middleware</code> integration and per-request customization through closures.</li>
+  </ul>
+
+  <h2>How to use</h2>
+  <p>
+    Add the crate with Cargo, then define your endpoints as an enum, implement
+    the target trait, create a <code>Provider</code>, and call its request
+    methods — <code>request</code> for plain HTTP and <code>request_json</code>
+    for JSON-RPC.
+  </p>
+  <pre><code>cargo add reqwest-enum</code></pre>
+  <p>
+    See the README and examples on GitHub for full target and JSON-RPC usage.
+  </p>
+
+  <h2>Why</h2>
+  <p>
+    Hand-written HTTP clients tend to drift: a typo in a path, a forgotten
+    header, or a mismatched response type only surfaces at runtime. By modeling
+    an API as an enum, reqwest-enum moves those mistakes to compile time and
+    keeps every endpoint in one place — which is especially handy for things
+    like blockchain JSON-RPC providers where the method surface is large and
+    strongly typed.
+  </p>
+</ProjectDetail>

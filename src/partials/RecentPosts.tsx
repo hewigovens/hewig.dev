@@ -12,19 +12,20 @@ type IRecentPostsProps = {
 };
 
 const RecentPosts = (props: IRecentPostsProps) => (
-  <Section
-    title={
-      <div className="flex items-baseline justify-between">
-        <div>
-          Recent <GradientText>Posts</GradientText>
-        </div>
-
-        <div className="text-sm">
-          <a href="/posts/">View all Posts →</a>
-        </div>
+  <Section>
+    <div className="mb-8 flex items-end justify-between">
+      <div>
+        <div className="eyebrow">// writing</div>
+        <h2 className="mt-2 text-3xl font-bold text-ink">
+          From the <GradientText>devlog</GradientText>
+        </h2>
       </div>
-    }
-  >
+
+      <a className="shrink-0 text-sm font-semibold text-accent hover:text-accent-bright" href="/posts/">
+        View all posts →
+      </a>
+    </div>
+
     <BlogGallery postList={props.postList} perColumn={props.perColumn} />
   </Section>
 );

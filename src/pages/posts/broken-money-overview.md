@@ -17,7 +17,7 @@ One of the most compelling parts of "Broken Money" is its discussion on Bitcoin.
 
 For those interested in a distilled version of Alden's arguments, a [YouTube video](https://www.youtube.com/watch?v=jk_HWmmwiAs) provides a concise overview of the book's key points.
 
-![Broken Money Video](/assets/images/broken-money-video.jpg)
+![Broken Money Video](/assets/images/broken-money-video.webp)
 
 "Broken Money" is not just a critique of the current financial system but also a call to action. It encourages readers to rethink their understanding of money, its history, and its future. By exploring the rise of Bitcoin and the concept of money as a ledger with both commodity and credit properties, Alden offers a hopeful perspective on how we can address the financial system's shortcomings.
 

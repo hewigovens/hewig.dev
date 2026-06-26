@@ -3,7 +3,7 @@ layout: '@/templates/BasePost.astro'
 title: 'Closing Loops'
 description: 'Three old apps, a decade apart — and what rewriting them taught me about indie dev in the AI coding era.'
 pubDate: 2026-04-22T00:00:00Z
-imgSrc: '/assets/images/closing-loops.jpg'
+imgSrc: '/assets/images/closing-loops.webp'
 imgAlt: 'Glowing concentric rings'
 draft: false
 ---

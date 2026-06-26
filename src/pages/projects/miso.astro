@@ -1,0 +1,83 @@
+---
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import { ColorTags } from "@/components/Tags";
+import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
+
+const description =
+  "Miso is a lightweight macOS menu bar utility that provides a floating HUD overlay for quick input method switching — with zero permissions required.";
+const url = "https://hewig.dev/projects/miso/";
+const repo = "https://github.com/hewigovens/miso";
+
+const jsonLd = [
+  softwareAppNode({
+    name: "Miso",
+    description,
+    url,
+    operatingSystem: "macOS",
+    applicationCategory: "UtilitiesApplication",
+    downloadUrl: repo,
+    sameAs: [repo],
+  }),
+  breadcrumbNode([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects/" },
+    { name: "Miso", path: "/projects/miso/" },
+  ]),
+];
+---
+
+<ProjectDetail
+  title="Miso – Quick Input Method Switching from the macOS Menu Bar"
+  description={description}
+  heading="Miso"
+  tagline="A floating HUD overlay for switching input methods on macOS — no special permissions needed."
+  img={{ src: "/assets/images/project-miso.png", alt: "Miso macOS menu bar app icon" }}
+  tags={[
+    { color: ColorTags.SWIFT, label: "Swift" },
+    { color: ColorTags.FUCHSIA, label: "macOS" },
+    { color: ColorTags.SLATE, label: "Menu Bar" },
+    { color: ColorTags.EMERALD, label: "Input Method" },
+  ]}
+  actions={[
+    { label: "View on GitHub", href: repo, primary: true },
+  ]}
+  jsonLd={jsonLd}
+>
+  <h2>What it is</h2>
+  <p>
+    Miso is a lightweight macOS menu bar utility that lives quietly in your
+    system menu bar and gives you a fast way to change input methods. Instead of
+    digging through system menus, you get a floating HUD overlay listing your
+    input methods — click one to switch immediately. Because it relies on the
+    macOS Text Input Source APIs, Miso needs zero special permissions to work.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li><strong>Floating HUD overlay</strong> — see your available input methods at a glance and switch with a click</li>
+    <li><strong>Menu bar integration</strong> — toggle the overlay on or off straight from the menu bar icon</li>
+    <li><strong>Zero permissions required</strong> — uses standard Text Input Source APIs, no accessibility access to grant</li>
+    <li><strong>Draggable interface</strong> — reposition the overlay anywhere on screen</li>
+    <li><strong>Configurable</strong> — choose which input methods appear in the overlay from Preferences</li>
+  </ul>
+
+  <h2>How to use</h2>
+  <p>
+    Install with Homebrew, or grab a build from the GitHub Releases page:
+  </p>
+  <pre><code>brew tap hewigovens/tap
+brew install --cask miso</code></pre>
+  <p>
+    Launch Miso from the menu bar, pick the input methods you want in
+    Preferences, then toggle the floating overlay and drag it wherever suits
+    your workflow. Miso runs on macOS 12.0 or later.
+  </p>
+
+  <h2>Why</h2>
+  <p>
+    Switching between input methods on macOS is more fiddly than it should be,
+    especially when you juggle several languages. Miso keeps the choice visible
+    and one click away — without asking for the kind of system access most
+    switching tools demand.
+  </p>
+</ProjectDetail>

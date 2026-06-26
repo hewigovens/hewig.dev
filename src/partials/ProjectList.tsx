@@ -6,11 +6,8 @@ const recentNames = [
   'jayjay',
   'hw-core',
   'Solana Primitives',
-  'Inspect',
   'App Detective',
-  'Staged Launcher',
-  'Miso',
-  'Wallet Core',
+  'Inspect',
   'GhostTile',
 ];
 
@@ -19,14 +16,15 @@ const recentProjects = recentNames
   .filter(Boolean);
 
 const ProjectList = () => (
-  <Section
-    title={
-      <>
-        Recent <GradientText>Projects</GradientText>
-      </>
-    }
-  >
-    <div className="flex flex-col gap-6">
+  <Section>
+    <div className="mb-8">
+      <div className="eyebrow">// recent work</div>
+      <h2 className="mt-2 text-3xl font-bold text-ink">
+        Selected <GradientText>projects</GradientText>
+      </h2>
+    </div>
+
+    <div className="grid gap-6 lg:grid-cols-2">
       {recentProjects.map((entry) => (
         <Project
           key={entry.name}
@@ -49,7 +47,7 @@ const ProjectList = () => (
 
     <div className="mt-8 text-center">
       <a
-        className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300 font-semibold"
+        className="inline-flex items-center gap-1 text-accent hover:text-accent-bright font-semibold"
         href="/projects/"
       >
         View all projects

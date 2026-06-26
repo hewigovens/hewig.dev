@@ -1,0 +1,30 @@
+---
+import { GradientText, Section } from "@/components";
+import Base from "@/templates/Base.astro";
+
+const title = "Page not found — hewig.dev";
+const description = "That page doesn't exist. Head back home or browse projects and posts.";
+---
+
+<Base head={{ title, description, noindex: true }}>
+  <Section>
+    <div class="mx-auto max-w-xl py-16 text-center">
+      <p class="text-6xl font-bold"><GradientText>404</GradientText></p>
+      <h1 class="mt-4 text-2xl font-bold">Page not found</h1>
+      <p class="mt-3 text-muted">
+        The page you're looking for doesn't exist or has moved.
+      </p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="/" class="btn btn-primary">
+          Home
+        </a>
+        <a href="/projects/" class="btn btn-outline">
+          Projects
+        </a>
+        <a href="/posts/" class="btn btn-outline">
+          Blog
+        </a>
+      </div>
+    </div>
+  </Section>
+</Base>

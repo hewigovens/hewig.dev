@@ -3,7 +3,7 @@ layout: '@/templates/BasePost.astro'
 title: 'Native Obsession'
 description: 'Exploring the philosophy of embracing native environments from hardware to cloud, crypto and AI.'
 pubDate: 2025-06-04T00:00:00Z
-imgSrc: '/assets/images/native-concept.jpg'
+imgSrc: '/assets/images/native-concept.webp'
 imgAlt: 'Native concept image'
 ---
 

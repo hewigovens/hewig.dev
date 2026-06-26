@@ -1,6 +1,7 @@
 import type { ReactNode } from 'react';
 
 type IHeroAvatarProps = {
+  tag?: ReactNode;
   title: ReactNode;
   description: ReactNode;
   avatar: ReactNode;
@@ -8,13 +9,15 @@ type IHeroAvatarProps = {
 };
 
 const HeroAvatar = (props: IHeroAvatarProps) => (
-  <div className="flex flex-col items-center md:flex-row md:justify-between md:gap-x-24">
-    <div>
-      <h1 className="text-3xl font-bold">{props.title}</h1>
+  <div className="flex flex-col items-center gap-10 md:flex-row md:justify-between md:gap-x-16">
+    <div className="max-w-xl">
+      {props.tag && <div className="mb-5">{props.tag}</div>}
 
-      <p className="mt-6 text-xl leading-9">{props.description}</p>
+      <h1 className="text-4xl font-bold leading-[1.1] sm:text-5xl">{props.title}</h1>
 
-      <div className="mt-3 flex gap-1">{props.socialButtons}</div>
+      <p className="mt-5 text-lg leading-relaxed text-muted">{props.description}</p>
+
+      <div className="mt-7">{props.socialButtons}</div>
     </div>
 
     <div className="shrink-0">{props.avatar}</div>

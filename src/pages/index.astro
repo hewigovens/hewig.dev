@@ -7,19 +7,20 @@ import { ProjectList } from "@/partials/ProjectList";
 import { RecentPosts } from "@/partials/RecentPosts";
 import Base from "@/templates/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
-import { sortByDate } from "@/utils/Posts";
+import { publishedPosts, sortByDate } from "@/utils/Posts";
+import { personNode, websiteNode } from "@/utils/seo";
 
 const allPosts = Object.values(import.meta.glob<MarkdownInstance<IFrontmatter>>("./posts/*.md", { eager: true }));
-const sortedPosts = sortByDate(allPosts);
-const lastThreePosts = sortedPosts.slice(0, 3);
+const sortedPosts = sortByDate(publishedPosts(allPosts));
+const recentPosts = sortedPosts.slice(0, 6);
 
-const { title } = AppConfig;
-const { description } = AppConfig;
+const title = `${AppConfig.name} — Blockchain & Software Engineer in Tokyo`;
+const description = AppConfig.description;
 ---
 
-<Base head={{ title, description }}>
+<Base head={{ title, description, jsonLd: [websiteNode(), personNode()] }}>
   <Hero />
   <ProjectList />
-  <RecentPosts postList={lastThreePosts} perColumn={3} />
+  <RecentPosts postList={recentPosts} perColumn={3} />
   <SubscribeForm />
 </Base>

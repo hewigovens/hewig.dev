@@ -1,0 +1,70 @@
+---
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import { ColorTags } from "@/components/Tags";
+import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
+
+const description =
+  "App Detective inspects any macOS app and reveals its GUI tech stack — SwiftUI, AppKit, Catalyst, Electron, Flutter, and more — so you can see what an app is really built with.";
+const url = "https://hewig.dev/projects/app-detective/";
+const repo = "https://github.com/hewigovens/app-detective";
+
+const jsonLd = [
+  softwareAppNode({
+    name: "App Detective",
+    description,
+    url,
+    operatingSystem: "macOS",
+    applicationCategory: "DeveloperApplication",
+    downloadUrl: repo,
+    sameAs: [repo],
+  }),
+  breadcrumbNode([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects/" },
+    { name: "App Detective", path: "/projects/app-detective/" },
+  ]),
+];
+---
+
+<ProjectDetail
+  title="App Detective – Detect a macOS App's GUI Tech Stack"
+  description={description}
+  heading="App Detective"
+  tagline="See what any macOS app is really built with — SwiftUI, AppKit, Electron, and beyond."
+  img={{ src: "/assets/images/project-app-detective.png", alt: "App Detective macOS app icon" }}
+  tags={[
+    { color: ColorTags.SWIFT, label: "Swift" },
+    { color: ColorTags.FUCHSIA, label: "macOS" },
+    { color: ColorTags.VIOLET, label: "Reverse Engineering" },
+    { color: ColorTags.EMERALD, label: "Diagnostics" },
+  ]}
+  actions={[
+    { label: "View on GitHub", href: repo, primary: true },
+  ]}
+  jsonLd={jsonLd}
+>
+  <h2>What it is</h2>
+  <p>
+    Ever wondered whether a Mac app is a polished native build or an Electron
+    window in disguise? App Detective inspects the applications on your Mac and
+    reports the GUI technology behind each one — so developers, reviewers, and
+    curious users can understand how an app was actually made.
+  </p>
+
+  <h2>What it detects</h2>
+  <ul>
+    <li><strong>Native macOS</strong> — AppKit and SwiftUI</li>
+    <li><strong>Apple cross-platform</strong> — Mac Catalyst</li>
+    <li><strong>Web-based</strong> — Electron and other Chromium wrappers</li>
+    <li><strong>Cross-platform toolkits</strong> — Flutter, Qt, and friends</li>
+  </ul>
+
+  <h2>Why</h2>
+  <p>
+    It's surprisingly hard to tell from the outside whether a Mac app is native
+    or a web view in a window. App Detective makes that visible at a glance —
+    handy when you're benchmarking competitors, auditing your own shipping app,
+    deciding whether to trust a download, or just curious about the macOS
+    ecosystem. It's one of the most popular tools in my open-source lineup.
+  </p>
+</ProjectDetail>

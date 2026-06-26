@@ -61,7 +61,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.FUCHSIA, label: 'macOS' },
       { color: ColorTags.VIOLET, label: 'Jujutsu' },
     ],
-    link: { kind: 'external', url: 'https://github.com/hewigovens/jayjay' },
+    link: { kind: 'external', url: 'https://jayjay.hewig.dev' },
   },
   {
     name: 'Miso',
@@ -75,7 +75,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.SLATE, label: 'Menu Bar' },
       { color: ColorTags.EMERALD, label: 'Input Method' },
     ],
-    link: { kind: 'external', url: 'https://github.com/hewigovens/miso' },
+    link: { kind: 'internal', path: '/projects/miso/' },
   },
   {
     name: 'hw-core',
@@ -89,7 +89,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.GREEN, label: 'Trezor' },
       { color: ColorTags.INDIGO, label: 'BLE' },
     ],
-    link: { kind: 'external', url: 'https://github.com/hewigovens/hw-core' },
+    link: { kind: 'internal', path: '/projects/hw-core/' },
   },
   {
     name: 'App Detective',
@@ -106,10 +106,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.VIOLET, label: 'Reverse Engineering' },
       { color: ColorTags.EMERALD, label: 'Diagnostics' },
     ],
-    link: {
-      kind: 'external',
-      url: 'https://github.com/hewigovens/app-detective',
-    },
+    link: { kind: 'internal', path: '/projects/app-detective/' },
   },
   {
     name: 'Solana Primitives',
@@ -123,10 +120,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.VIOLET, label: 'Solana' },
       { color: ColorTags.INDIGO, label: 'SDK' },
     ],
-    link: {
-      kind: 'external',
-      url: 'https://github.com/hewigovens/solana-primitives',
-    },
+    link: { kind: 'internal', path: '/projects/solana-primitives/' },
   },
   {
     name: 'Staged Launcher',
@@ -143,10 +137,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.ROSE, label: 'Productivity' },
       { color: ColorTags.INDIGO, label: 'Automation' },
     ],
-    link: {
-      kind: 'external',
-      url: 'https://glance.hewig.dev/staged/',
-    },
+    link: { kind: 'internal', path: '/projects/staged-launcher/' },
   },
   {
     name: 'Aya DevContainer',
@@ -163,10 +154,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.VIOLET, label: 'eBPF' },
       { color: ColorTags.EMERALD, label: 'DevContainer' },
     ],
-    link: {
-      kind: 'external',
-      url: 'https://github.com/hewigovens/aya-devcontainer',
-    },
+    link: { kind: 'internal', path: '/projects/aya-devcontainer/' },
   },
   {
     name: 'reqwest-enum',
@@ -180,10 +168,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.SKY, label: 'HTTP' },
       { color: ColorTags.LIME, label: 'JSONRPC' },
     ],
-    link: {
-      kind: 'external',
-      url: 'https://github.com/hewigovens/reqwest-enum',
-    },
+    link: { kind: 'internal', path: '/projects/reqwest-enum/' },
   },
   {
     name: 'GhostTile',
@@ -199,14 +184,14 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.ROSE, label: 'Code injection' },
       { color: ColorTags.FUCHSIA, label: 'macOS' },
     ],
-    link: { kind: 'internal', path: '/projects/ghosttile/' },
+    link: { kind: 'external', url: 'https://ghosttile.hewig.dev' },
   },
   {
     name: 'Anytime',
     description:
       'A timezone-aware world clock app for Mac and iPhone. Quickly see what time it is for your team, anywhere.',
     img: {
-      src: '/assets/images/project-anytime.png',
+      src: '/assets/images/project-anytime.webp',
       alt: 'Anytime',
     },
     category: 'ios',
@@ -216,7 +201,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.SKY, label: 'iOS' },
       { color: ColorTags.EMERALD, label: 'Productivity' },
     ],
-    link: { kind: 'internal', path: '/projects/anytime/' },
+    link: { kind: 'external', url: 'https://fourplexlabs.github.io/AnyTime' },
   },
   {
     name: 'Inspect',
@@ -233,7 +218,7 @@ export const projects: ProjectEntry[] = [
       { color: ColorTags.BLUE, label: 'OpenSSL' },
       { color: ColorTags.FUCHSIA, label: 'iOS' },
     ],
-    link: { kind: 'internal', path: '/projects/inspect/' },
+    link: { kind: 'external', url: 'https://fourplexlabs.github.io/Inspect' },
   },
   {
     name: 'Wallet Core',

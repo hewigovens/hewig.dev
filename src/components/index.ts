@@ -3,11 +3,6 @@ import { BlogGallery } from './BlogGallery';
 import { FooterCopyright } from './FooterCopyright';
 import { GradientText } from './GradientText';
 import { HeroAvatar } from './HeroAvatar';
-import { HeroSocial } from './HeroSocial';
-import { Logo } from './Logo';
-import { NavbarTwoColumns } from './NavbarTwoColumns';
-import { NavMenu } from './NavMenu';
-import { NavMenuItem } from './NavMenuItem';
 import { NewerOlderPagination } from './NewerOlderPagination';
 import { Newsletter } from './Newsletter';
 import { PaginationHeader } from './PaginationHeader';
@@ -34,11 +29,6 @@ export {
   FooterCopyright,
   GradientText,
   HeroAvatar,
-  HeroSocial,
-  Logo,
-  NavbarTwoColumns,
-  NavMenu,
-  NavMenuItem,
   NewerOlderPagination,
   Newsletter,
   PaginationHeader,

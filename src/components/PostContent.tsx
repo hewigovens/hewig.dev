@@ -14,11 +14,12 @@ const PostContent = (props: IPostContentProps) => (
         className="h-full w-full rounded-lg object-cover object-center"
         src={props.content.imgSrc}
         alt={props.content.imgAlt}
-        loading="lazy"
+        loading="eager"
+        fetchPriority="high"
       />
     </div>
 
-    <div className="prose prose-invert mt-8 prose-img:rounded-lg">
+    <div className="prose mt-8 dark:prose-invert prose-img:rounded-lg prose-a:text-accent">
       {props.children}
     </div>
   </div>

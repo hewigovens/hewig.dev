@@ -16,6 +16,7 @@ const ProjectsByCategory = () => {
 
   return (
     <Section
+      titleAs="h1"
       title={
         <>
           All <GradientText>Projects</GradientText>
@@ -25,10 +26,10 @@ const ProjectsByCategory = () => {
       <div className="flex flex-col gap-10">
         {grouped.map(({ category, label, items }) => (
           <div key={category}>
-            <h3 className="text-lg font-semibold mb-4 text-gray-300">
+            <h2 className="text-lg font-semibold mb-4 text-muted">
               {label.prefix}{' '}
               <GradientText>{label.highlight}</GradientText>
-            </h3>
+            </h2>
             <div className="flex flex-col gap-6">
               {items.map((entry) => (
                 <Project

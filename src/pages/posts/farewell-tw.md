@@ -4,7 +4,7 @@ title: Farewell to Trust Wallet
 description: Serendipity, ikigai, it's time to start a new journey.
 pubDate: 2024-04-12T00:00:00Z
 imgSrc: '/assets/images/image-tw-farewell.png'
-imgAlt: 'Image post 3'
+imgAlt: 'Trust Wallet farewell'
 ---
 
 Saying goodbye is bittersweet, I hold dear the recollections and wisdom gleaned during my time at TW. The Japanese concept of `Ikigai`, which means a reason for being, resonates profoundly with the state of fulfillment and purpose I experienced throughout these years.

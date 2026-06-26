@@ -1,0 +1,93 @@
+---
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import { ColorTags } from "@/components/Tags";
+import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
+
+const description =
+  "hw-core is a cross-platform hardware wallet interface — a Rust library implementing low-level wallet functionality, including the Trezor Host Protocol.";
+const url = "https://hewig.dev/projects/hw-core/";
+const repo = "https://github.com/hewigovens/hw-core";
+
+const jsonLd = [
+  softwareAppNode({
+    name: "hw-core",
+    description,
+    url,
+    operatingSystem: "Cross-platform",
+    applicationCategory: "DeveloperApplication",
+    downloadUrl: repo,
+    sameAs: [repo],
+  }),
+  breadcrumbNode([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects/" },
+    { name: "hw-core", path: "/projects/hw-core/" },
+  ]),
+];
+---
+
+<ProjectDetail
+  title="hw-core – Cross-platform Hardware Wallet Interface in Rust"
+  description={description}
+  heading="hw-core"
+  tagline="A Rust library for low-level hardware wallet communication, including the Trezor Host Protocol."
+  img={{ src: "/assets/images/project-hw-core.png", alt: "hw-core Rust library" }}
+  tags={[
+    { color: ColorTags.RUST, label: "Rust" },
+    { color: ColorTags.CYAN, label: "Hardware Wallet" },
+    { color: ColorTags.GREEN, label: "Trezor" },
+    { color: ColorTags.INDIGO, label: "BLE" },
+  ]}
+  actions={[
+    { label: "View on GitHub", href: repo, primary: true },
+  ]}
+  jsonLd={jsonLd}
+>
+  <h2>What it is</h2>
+  <p>
+    hw-core is a cross-platform hardware wallet interface written in Rust. It
+    provides the low-level wallet functionality needed to talk to a hardware
+    device, with an initial focus on the Trezor Host Protocol (THP) introduced
+    by the Trezor Safe 7.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>
+      <strong>Trezor Host Protocol</strong> — low-level support for THP and the
+      Trezor Safe 7.
+    </li>
+    <li>
+      <strong>Interactive CLI</strong> — commands for scanning, pairing,
+      deriving addresses, and signing.
+    </li>
+    <li>
+      <strong>BLE transport</strong> — communicate with devices over Bluetooth
+      Low Energy.
+    </li>
+    <li>
+      <strong>Shared core</strong> — wallet orchestration logic reusable across
+      multiple application surfaces.
+    </li>
+    <li>
+      <strong>FFI bindings</strong> — a UniFFI layer for integrating with
+      mobile and desktop apps.
+    </li>
+  </ul>
+
+  <h2>How to use</h2>
+  <p>
+    hw-core is a Rust library and CLI. The interactive CLI exposes scan, pair,
+    address, and sign operations, while the UniFFI bindings let you embed the
+    same core in Swift or Kotlin applications. See the repository for build and
+    setup details.
+  </p>
+
+  <h2>Why</h2>
+  <p>
+    Hardware wallet integrations are often locked to a single platform or
+    transport. hw-core aims to keep the wallet logic in one well-tested Rust
+    core and reuse it everywhere — desktop, mobile, and command line — so the
+    same protocol implementation backs every surface.
+  </p>
+</ProjectDetail>

@@ -1,0 +1,89 @@
+---
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import { ColorTags } from "@/components/Tags";
+import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
+
+const description =
+  "The easiest way to manage and delay the launch of applications across different stages on your Mac.";
+const url = "https://hewig.dev/projects/staged-launcher/";
+const site = "https://glance.hewig.dev/staged/";
+const releases =
+  "https://github.com/hewigovens/StagedLauncher/releases/latest";
+
+const jsonLd = [
+  softwareAppNode({
+    name: "Staged Launcher",
+    description,
+    url,
+    operatingSystem: "macOS",
+    applicationCategory: "UtilitiesApplication",
+    downloadUrl: releases,
+    sameAs: [site],
+  }),
+  breadcrumbNode([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects/" },
+    { name: "Staged Launcher", path: "/projects/staged-launcher/" },
+  ]),
+];
+---
+
+<ProjectDetail
+  title="Staged Launcher – Stagger Your Mac's Startup Apps"
+  description={description}
+  heading="Staged Launcher"
+  tagline="Manage and delay the launch of your apps across stages for faster, smoother Mac startups."
+  img={{ src: "/assets/images/project-staged-launcher.png", alt: "Staged Launcher macOS app icon" }}
+  tags={[
+    { color: ColorTags.SWIFT, label: "Swift" },
+    { color: ColorTags.FUCHSIA, label: "macOS" },
+    { color: ColorTags.ROSE, label: "Productivity" },
+    { color: ColorTags.INDIGO, label: "Automation" },
+  ]}
+  actions={[
+    { label: "Visit Website", href: site, primary: true },
+    { label: "Download", href: releases },
+  ]}
+  jsonLd={jsonLd}
+>
+  <h2>What it is</h2>
+  <p>
+    Staged Launcher is a lightweight macOS utility that controls when your
+    startup apps actually open. Instead of every login item racing to launch at
+    once, it staggers non-critical apps — like wallpaper switchers, window
+    managers, and VPNs — into stages, so your essential apps come up first and
+    your Mac reaches a usable desktop sooner.
+  </p>
+
+  <h2>Features</h2>
+  <ul>
+    <li>
+      <strong>Intuitive configuration</strong> — add your apps and adjust their
+      launch delays through a simple UI.
+    </li>
+    <li>
+      <strong>Seamless macOS integration</strong> — built natively with minimal
+      resource demands.
+    </li>
+    <li>
+      <strong>Open source &amp; transparent</strong> — the code is available on
+      GitHub and open to community contributions.
+    </li>
+  </ul>
+
+  <h2>How to use</h2>
+  <p>
+    Add the apps you want to manage, then set a delay for each one to place it
+    into the right startup stage. Critical apps can launch immediately, while
+    less essential programs start sequentially after their configured delays —
+    all from a single, intuitive window.
+  </p>
+
+  <h2>Why use it</h2>
+  <p>
+    Logging into a Mac with a long list of startup items can mean a sluggish,
+    stuttering first few minutes as everything fights for resources. By spacing
+    those launches out across stages, Staged Launcher gives you faster boots and
+    a smoother desktop without giving up any of the apps you rely on.
+  </p>
+</ProjectDetail>

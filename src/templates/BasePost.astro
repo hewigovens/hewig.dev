@@ -5,6 +5,7 @@ import { BlogPost } from "@/partials/BlogPost";
 
 import Base from "@/templates/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
+import { PERSON_ID, abs, breadcrumbNode } from "@/utils/seo";
 
 export interface Props {
   content: IFrontmatter;
@@ -12,11 +13,41 @@ export interface Props {
 
 const { content } = Astro.props as Props;
 const title = `${content.title} - ${AppConfig.site_name}`;
+const isDraft = content.draft === true;
+const publishedTime = new Date(content.pubDate).toISOString();
+
+const blogPosting = {
+  "@type": "BlogPosting",
+  headline: content.title,
+  description: content.description,
+  datePublished: publishedTime,
+  image: abs(content.imgSrc),
+  mainEntityOfPage: abs(Astro.url.pathname),
+  author: { "@id": PERSON_ID },
+  publisher: { "@id": PERSON_ID },
+  inLanguage: "en",
+};
+
+const breadcrumb = breadcrumbNode([
+  { name: "Home", path: "/" },
+  { name: "Blog", path: "/posts/" },
+  { name: content.title, path: Astro.url.pathname },
+]);
 ---
 
-<Base head={{ title, description: content.description }}>
+<Base
+  head={{
+    title,
+    description: content.description,
+    image: content.imgSrc,
+    imageAlt: content.imgAlt,
+    type: "article",
+    publishedTime,
+    noindex: isDraft,
+    jsonLd: isDraft ? undefined : [blogPosting, breadcrumb],
+  }}
+>
   <BlogPost frontmatter={content}>
     <slot></slot>
   </BlogPost>
-
 </Base>

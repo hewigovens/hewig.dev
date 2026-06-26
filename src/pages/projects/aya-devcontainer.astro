@@ -1,0 +1,80 @@
+---
+import ProjectDetail from "@/components/ProjectDetail.astro";
+import { ColorTags } from "@/components/Tags";
+import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
+
+const description =
+  "A DevContainer (Docker) image for Aya-rs — a pre-configured development environment for eBPF programming with Rust.";
+const url = "https://hewig.dev/projects/aya-devcontainer/";
+const repo = "https://github.com/hewigovens/aya-devcontainer";
+
+const jsonLd = [
+  softwareAppNode({
+    name: "Aya DevContainer",
+    description,
+    url,
+    operatingSystem: "Linux",
+    applicationCategory: "DeveloperApplication",
+    downloadUrl: repo,
+    sameAs: [repo],
+  }),
+  breadcrumbNode([
+    { name: "Home", path: "/" },
+    { name: "Projects", path: "/projects/" },
+    { name: "Aya DevContainer", path: "/projects/aya-devcontainer/" },
+  ]),
+];
+---
+
+<ProjectDetail
+  title="Aya DevContainer – Ready-Made eBPF + Rust Dev Environment"
+  description={description}
+  heading="Aya DevContainer"
+  tagline="A pre-configured Docker dev container for writing eBPF programs in Rust with Aya."
+  img={{ src: "/assets/images/project-aya-container.png", alt: "Aya DevContainer" }}
+  tags={[
+    { color: ColorTags.RUST, label: "Rust" },
+    { color: ColorTags.BLUE, label: "Docker" },
+    { color: ColorTags.VIOLET, label: "eBPF" },
+    { color: ColorTags.EMERALD, label: "DevContainer" },
+  ]}
+  actions={[
+    { label: "View on GitHub", href: repo, primary: true },
+  ]}
+  jsonLd={jsonLd}
+>
+  <h2>What it is</h2>
+  <p>
+    Aya DevContainer is a Docker-based development environment for building eBPF
+    programs in Rust with <a href="https://github.com/aya-rs/aya">Aya</a>. eBPF
+    tooling like <code>bpf-linker</code> targets Linux x86_64, which makes local
+    setup awkward on other platforms. This container ships the right Linux
+    environment and build tools so you can skip the manual dependency wrangling
+    and start writing probes.
+  </p>
+
+  <h2>What's included</h2>
+  <ul>
+    <li>A <code>.devcontainer/devcontainer.json</code> for VS Code Dev Containers</li>
+    <li>A custom <code>Dockerfile</code> with the eBPF/Rust build toolchain</li>
+    <li>Support for scaffolding new apps from the <code>aya-template</code></li>
+  </ul>
+
+  <h2>How to use it</h2>
+  <p>
+    Install the <strong>Dev Containers</strong> extension in VS Code, open the
+    command palette, and choose <em>Dev Containers: Reopen in Container</em>.
+    Once inside, generate and build an eBPF app:
+  </p>
+  <pre><code>cargo generate https://github.com/aya-rs/aya-template
+cd &lt;your_app_path&gt;
+cargo xtask build</code></pre>
+
+  <h2>Why use it</h2>
+  <p>
+    Setting up an eBPF toolchain from scratch is fiddly and platform-specific.
+    A reproducible dev container gives everyone on the project the same working
+    environment, so you can focus on the kernel-side logic instead of fighting
+    your local setup.
+  </p>
+</ProjectDetail>

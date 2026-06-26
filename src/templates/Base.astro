@@ -8,30 +8,143 @@ export interface Props {
   head: {
     title: string;
     description: string;
+    /** Root-relative or absolute share image. Defaults to the site OG card. */
+    image?: string;
+    imageAlt?: string;
+    type?: 'website' | 'article' | 'profile';
+    /** OG locale, e.g. 'en_US' or 'ja_JP'. */
+    locale?: string;
+    /** ISO date for og:type=article. */
+    publishedTime?: string;
+    /** Suppress indexing for thin/utility pages. */
+    noindex?: boolean;
+    /** One JSON-LD object or an array of them. @context is added automatically. */
+    jsonLd?: Record<string, unknown> | Record<string, unknown>[];
   };
+  /** Document language. Defaults to 'en'; pass 'ja' for Japanese pages. */
+  lang?: string;
 }
 
+const { head, lang = 'en' } = Astro.props as Props;
 const {
-  head: { title, description },
-} = Astro.props as Props;
+  title,
+  description,
+  image = AppConfig.og_image,
+  imageAlt = AppConfig.title,
+  type = 'website',
+  locale = 'en_US',
+  publishedTime,
+  noindex = false,
+  jsonLd,
+} = head;
+
+const site = Astro.site ?? new URL(`${AppConfig.url}/`);
+const canonical = new URL(Astro.url.pathname, site).href;
+const ogImage = new URL(image, site).href;
+// Only advertise dimensions for the known 1200x630 default card; per-page
+// images (post heroes) vary, so omitting lets scrapers measure them.
+const isDefaultCard = image === AppConfig.og_image;
+const twitterHandle = `@${AppConfig.social.twitter.split('/').filter(Boolean).pop()}`;
+
+const jsonLdNodes = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
+const withContext = (node: Record<string, unknown>) =>
+  node['@context'] ? node : { '@context': 'https://schema.org', ...node };
 ---
 
-<html lang='en'>
+<html lang={lang}>
   <head>
     <meta charset='UTF-8' />
     <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    {/* Set theme before paint to avoid a flash. Follows saved choice, else OS. */}
+    <script is:inline>
+      (function () {
+        try {
+          var s = localStorage.getItem('hewig-theme');
+          var dark = s ? s === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+          document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+        } catch (e) {}
+      })();
+    </script>
     <title>{title}</title>
     <meta name='description' content={description} />
-    <meta name='author' content={AppConfig.author} />
+    <meta name='author' content={AppConfig.name} />
+    {noindex && <meta name='robots' content='noindex, nofollow' />}
+    <link rel='canonical' href={canonical} />
+    <meta name='theme-color' content='#fbfcfe' media='(prefers-color-scheme: light)' />
+    <meta name='theme-color' content='#080b14' media='(prefers-color-scheme: dark)' />
 
-    <link rel='alternate' type='application/rss+xml' href='/rss.xml' />
+    <link rel='preconnect' href='https://fonts.googleapis.com' />
+    <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin />
+    <link
+      rel='stylesheet'
+      href='https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=JetBrains+Mono:wght@400;500;700&display=swap'
+    />
+
+    <!-- Open Graph -->
+    <meta property='og:type' content={type} />
+    <meta property='og:site_name' content={AppConfig.site_name} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:url' content={canonical} />
+    <meta property='og:locale' content={locale} />
+    <meta property='og:image' content={ogImage} />
+    {isDefaultCard && <meta property='og:image:width' content='1200' />}
+    {isDefaultCard && <meta property='og:image:height' content='630' />}
+    <meta property='og:image:alt' content={imageAlt} />
+    {type === 'article' && publishedTime && (
+      <meta property='article:published_time' content={publishedTime} />
+    )}
+    {type === 'article' && <meta property='article:author' content={AppConfig.name} />}
+
+    <!-- Twitter / X -->
+    <meta name='twitter:card' content='summary_large_image' />
+    <meta name='twitter:site' content={twitterHandle} />
+    <meta name='twitter:creator' content={twitterHandle} />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+    <meta name='twitter:image' content={ogImage} />
+    <meta name='twitter:image:alt' content={imageAlt} />
+
+    <link rel='alternate' type='application/rss+xml' title={AppConfig.title} href='/rss.xml' />
+    <link rel='icon' type='image/svg+xml' href='/icon.svg' />
     <link rel='icon' type='image/x-icon' href='/favicon.ico' />
+    <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
+
+    {jsonLdNodes.map((node) => (
+      <script type='application/ld+json' set:html={JSON.stringify(withContext(node))} />
+    ))}
+
+    <slot name='head' />
   </head>
-  <body class='bg-slate-900 text-gray-100'>
+  <body>
     <Navbar />
 
-    <slot></slot>
+    <main>
+      <slot></slot>
+    </main>
 
     <Footer />
+
+    {/* Theme toggle: buttons render as static HTML, wired here (no React hydration). */}
+    <script is:inline>
+      (function () {
+        function paint(theme) {
+          document.querySelectorAll('[data-theme-icon]').forEach(function (el) {
+            el.textContent = theme === 'dark' ? '☀' : '☾';
+          });
+        }
+        window.toggleTheme = function () {
+          var cur = document.documentElement.getAttribute('data-theme');
+          var next = cur === 'dark' ? 'light' : 'dark';
+          document.documentElement.setAttribute('data-theme', next);
+          try { localStorage.setItem('hewig-theme', next); } catch (e) {}
+          paint(next);
+        };
+        document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
+          btn.addEventListener('click', window.toggleTheme);
+        });
+        paint(document.documentElement.getAttribute('data-theme'));
+      })();
+    </script>
   </body>
 </html>

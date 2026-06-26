@@ -1,0 +1,90 @@
+---
+import { Section } from '@/components';
+import { GradientText } from '@/components';
+import { ColorTags, Tags } from '@/components/Tags';
+import Base from '@/templates/Base.astro';
+import type { Values } from '@/components/types/TypeUnion';
+
+export interface ProjectAction {
+  label: string;
+  href: string;
+  primary?: boolean;
+}
+
+export interface Props {
+  /** Full <title> / og:title (include a short value-prop suffix). */
+  title: string;
+  /** Meta + og description (~110-160 chars). */
+  description: string;
+  /** H1 text, rendered in the brand gradient. */
+  heading: string;
+  /** One-line sub-headline under the H1. */
+  tagline: string;
+  img: { src: string; alt: string };
+  tags: { color: Values<typeof ColorTags>; label: string }[];
+  actions: ProjectAction[];
+  /** SoftwareApplication + BreadcrumbList (and optional FAQPage) JSON-LD. */
+  jsonLd?: Record<string, unknown> | Record<string, unknown>[];
+  lang?: string;
+}
+
+const { title, description, heading, tagline, img, tags, actions, jsonLd, lang } =
+  Astro.props as Props;
+const hasBody = Astro.slots.has('default');
+---
+
+<Base head={{ title, description, jsonLd }} lang={lang}>
+  <Section as='article'>
+    <div class='mx-auto max-w-2xl'>
+      <div
+        class='flex flex-col items-center gap-6 rounded-2xl border border-line bg-panel p-8 shadow-glow'
+      >
+        <img
+          class='h-32 w-32 rounded-2xl bg-white ring-1 ring-line shadow-sm dark:bg-transparent dark:shadow-none'
+          src={img.src}
+          alt={img.alt}
+          width='128'
+          height='128'
+          loading='eager'
+          fetchpriority='high'
+        />
+
+        <h1 class='text-center text-3xl font-bold'>
+          <GradientText>{heading}</GradientText>
+        </h1>
+
+        <p class='text-center text-lg text-muted'>{tagline}</p>
+
+        {
+          tags.length > 0 && (
+            <div class='flex flex-wrap justify-center gap-2'>
+              {tags.map((t) => (
+                <Tags color={t.color}>{t.label}</Tags>
+              ))}
+            </div>
+          )
+        }
+
+        {
+          actions.length > 0 && (
+            <div class='flex flex-wrap justify-center gap-3'>
+              {actions.map((a) => (
+                <a href={a.href} class={a.primary ? 'btn btn-primary' : 'btn btn-outline'}>
+                  {a.label}
+                </a>
+              ))}
+            </div>
+          )
+        }
+      </div>
+
+      {
+        hasBody && (
+          <div class='prose mt-10 max-w-none dark:prose-invert prose-headings:text-accent prose-a:text-accent'>
+            <slot />
+          </div>
+        )
+      }
+    </div>
+  </Section>
+</Base>

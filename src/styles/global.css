@@ -1,3 +1,128 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ──────────────────────────────────────────────────────────────
+   Design tokens — jayjay.hewig.dev aesthetic, cyan accent.
+   Light is the default; [data-theme="dark"] is set before paint.
+   ────────────────────────────────────────────────────────────── */
+:root {
+  --bg: #fbfcfe;
+  --bg-grad: radial-gradient(1100px 520px at 78% -10%, rgba(8, 145, 178, 0.1), transparent 60%);
+  --panel: #ffffff;
+  --panel-2: #f5f8fc;
+  --ink: #0b1020;
+  --muted: #566381;
+  --line: #e3eaf5;
+  --accent: #0e7490;        /* cyan-700 — readable text/links on light */
+  --accent-bright: #0891b2; /* cyan-600 — hovers / large text */
+  --accent-solid: linear-gradient(135deg, #06b6d4, #0e7490); /* vibrant cyan gradient */
+  --on-accent: #ffffff;     /* white text on the light-mode gradient button */
+  --green: #16a34a;
+  --amber: #b45309;
+  --grad: linear-gradient(120deg, #06b6d4, #0891b2 55%, #155e75);
+  --glow: 0 40px 110px -55px rgba(8, 145, 178, 0.4);
+  --nav-bg: rgba(251, 252, 254, 0.72);
+}
+
+[data-theme="dark"] {
+  --bg: #080b14;
+  --bg-grad: radial-gradient(1100px 540px at 78% -8%, rgba(34, 211, 238, 0.16), transparent 60%);
+  --panel: #0e1424;
+  --panel-2: #0b1120;
+  --ink: #eaf0fb;
+  --muted: #8595b8;
+  --line: #1b2540;
+  --accent: #22d3ee;        /* cyan-400 — bright on dark */
+  --accent-bright: #67e8f9;
+  --accent-solid: #22d3ee;  /* bright cyan filled button on dark */
+  --on-accent: #051022;     /* dark text on the bright button */
+  --green: #4ade80;
+  --amber: #fbbf24;
+  --grad: linear-gradient(120deg, #a5f3fc, #22d3ee 55%, #0891b2);
+  --glow: 0 44px 130px -55px rgba(34, 211, 238, 0.5);
+  --nav-bg: rgba(8, 11, 20, 0.68);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: var(--bg);
+    background-image: var(--bg-grad);
+    background-repeat: no-repeat;
+    color: var(--ink);
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    background: color-mix(in srgb, var(--accent) 28%, transparent);
+  }
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Brand gradient text (theme-aware via --grad). */
+  .gradient-text {
+    background: var(--grad);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* Mono eyebrow label, e.g. "// recent projects". */
+  .eyebrow {
+    font-family: 'JetBrains Mono', 'SF Mono', ui-monospace, monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  /* Surface card. */
+  .panel {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 0.875rem;
+  }
+
+  /* Buttons. */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    line-height: 1.2;
+    border-radius: 0.625rem;
+    padding: 0.55rem 1.05rem;
+    text-decoration: none;
+    transition: transform 0.12s ease, filter 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
+  }
+  .btn:active {
+    transform: translateY(1px);
+  }
+  .btn-primary {
+    background: var(--accent-solid);
+    color: var(--on-accent);
+  }
+  .btn-primary:hover {
+    filter: brightness(1.05);
+  }
+  .btn-outline {
+    border: 1px solid var(--line);
+    color: var(--ink);
+  }
+  .btn-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+}

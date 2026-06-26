@@ -10,7 +10,7 @@ import {
 import { SubscribeForm } from "@/partials/SubscribeForm";
 import Base from "@/templates/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
-import { sortByDate } from "@/utils/Posts";
+import { publishedPosts, sortByDate } from "@/utils/Posts";
 
 type GetStaticPaths = {
   paginate: any;
@@ -18,7 +18,7 @@ type GetStaticPaths = {
 
 export async function getStaticPaths({ paginate }: GetStaticPaths) {
   const allPosts = Object.values(import.meta.glob<MarkdownInstance<IFrontmatter>>("./*.md", { eager: true }));
-  const sortedPosts = sortByDate(allPosts);
+  const sortedPosts = sortByDate(publishedPosts(allPosts));
 
   // Return a paginated collection of paths for all posts
   return paginate(sortedPosts, { pageSize: 6 });

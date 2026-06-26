@@ -4,7 +4,7 @@ title: 'VMWare Fusion/Workstation Pro is free for personal use.'
 description: There aren't many free virtual machine options for Apple M series Macs, now you can use VMWare for free.
 pubDate: 2024-05-15T00:00:00Z
 imgSrc: '/assets/images/vmware-about.png'
-imgAlt: 'Image post 2'
+imgAlt: 'VMware Fusion About window on macOS'
 ---
 
 VMWare Fusion/Workstation Pro is free for personal use.
@@ -30,7 +30,7 @@ In a few clicks you can download ARM Windows 11 and install it.
 
 Enjoy!
 
-<div class="flex justify-center">
-<img src="/assets/images/vmware-screen.png" alt="Windows 11 VM" width="%45"/>
-<img src="/assets/images/vmware-desktop.png" alt="Windows 11 VM" width="%45"/>
+<div class="flex justify-center gap-2">
+<img src="/assets/images/vmware-screen.webp" alt="Windows 11 running in a VMware Fusion virtual machine" class="w-[45%]" loading="lazy"/>
+<img src="/assets/images/vmware-desktop.webp" alt="Windows 11 desktop inside VMware Fusion" class="w-[45%]" loading="lazy"/>
 </div>
