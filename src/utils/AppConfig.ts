@@ -2,7 +2,7 @@ export const AppConfig = {
   site_name: 'hewig.dev',
   title: 'Tao\'s Devlog',
   description:
-    'Tao Xu (hewig) — Tokyo-based software engineer and blockchain developer, former founding engineer at Trust Wallet. Open-source Rust tools, macOS apps, and crypto wallet infrastructure.',
+    'Tao Xu (hewig) — Tokyo-based software engineer and blockchain developer, former core engineer at Trust Wallet. Open-source Rust tools, macOS apps, and crypto wallet infrastructure.',
   // Real / display name — used for <meta name="author">, Person JSON-LD, and meta copy.
   name: 'Tao Xu',
   // GitHub handle — kept as Person.alternateName and the legacy author byline.

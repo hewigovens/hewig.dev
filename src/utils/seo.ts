@@ -25,7 +25,7 @@ export const personNode = () => ({
   jobTitle: AppConfig.jobTitle,
   image: abs('/assets/images/avatar.png'),
   description:
-    'Tokyo-based software engineer and blockchain developer; former founding engineer at Trust Wallet.',
+    'Tokyo-based software engineer and blockchain developer; former core engineer at Trust Wallet.',
   knowsAbout: [
     'Blockchain',
     'Cryptocurrency wallets',

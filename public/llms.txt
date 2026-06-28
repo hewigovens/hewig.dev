@@ -1,6 +1,6 @@
 # hewig.dev — Tao Xu (hewig)
 
-> Tao Xu (hewig / hewigovens) is a Tokyo-based software engineer and blockchain developer, and a former founding engineer at Trust Wallet. He builds open-source Rust tools, macOS/iOS apps, and crypto wallet infrastructure, and writes a developer blog called "Tao's Devlog". This site is his personal hub for projects, writing, and consulting.
+> Tao Xu (hewig / hewigovens) is a Tokyo-based software engineer and blockchain developer, and a former core engineer at Trust Wallet. He builds open-source Rust tools, macOS/iOS apps, and crypto wallet infrastructure, and writes a developer blog called "Tao's Devlog". This site is his personal hub for projects, writing, and consulting.
 
 ## Key links
 

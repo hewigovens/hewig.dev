@@ -10,7 +10,7 @@ const Hero = () => (
       tag={
         <span className="eyebrow inline-flex items-center gap-2">
           <span className="inline-block h-[7px] w-[7px] rounded-full bg-[var(--green)] shadow-[0_0_10px_var(--green)]" />
-          ex-Trust Wallet · Rust · SwiftUI
+          Crypto · Rust · SwiftUI
         </span>
       }
       title={
