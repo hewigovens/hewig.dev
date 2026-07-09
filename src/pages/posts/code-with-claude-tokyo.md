@@ -5,8 +5,12 @@ description: 'Notes from Anthropic’s Code w/ Claude in Tokyo — the sessions,
 pubDate: 2026-06-14T00:00:00Z
 imgSrc: '/assets/images/cwc-tokyo.webp'
 imgAlt: 'Code w/ Claude Tokyo venue'
-draft: true
+draft: false
 ---
+
+<div style="margin:0 0 1.5rem;padding:0.9rem 1.1rem;border-left:3px solid var(--accent);background:var(--panel-2);border-radius:0.375rem;font-size:0.95em;">
+<strong>Update:</strong> Bun's team has since published <a href="https://bun.com/blog/bun-in-rust">a deep dive on the Rust rewrite</a> discussed below — much more detail than I captured from the talk, worth reading in full.
+</div>
 
 Last week I went to [*Code w/ Claude* Tokyo Extended](https://claude.com/code-with-claude/tokyo-extended) expecting a casual hands-on meetup — a room full of people who like the same tools I do. It turned out to be much more than that.
 
