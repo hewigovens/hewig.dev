@@ -1,0 +1,136 @@
+---
+import { GradientText, Section } from "@/components";
+import Base from "@/templates/Base.astro";
+import { PERSON_ID } from "@/utils/seo";
+
+const title = "Zoey's Lab — small learning apps for children | Tao Xu";
+const description =
+  "Two free, ad-free learning apps built for my daughter and anyone else who wants them. Huely mixes colour in ink and light; Ditty teaches Morse code by sending it. Both install to a home screen and work offline.";
+
+const apps = [
+  {
+    name: "Huely",
+    tagline: "A colour-mixing lab",
+    url: "https://huely.hewig.dev",
+    img: "/assets/images/project-huely.svg",
+    blurb:
+      "Drip cyan, magenta, yellow and black and watch them blend the way real ink does — magenta and yellow make red, not mud. Then turn the lights off and cross red, green and blue beams that add up to white instead. Two opposite kinds of colour over one engine.",
+    bullets: [
+      "58 quests across both media, scored on how close you get",
+      "77 colours the world's cultures named, with their stories",
+      "Palettes pulled from your own photos, entirely on device",
+      "A jar you keep, printable as a palette sheet",
+    ],
+    tags: ["TypeScript", "React", "PWA", "Colour science"],
+  },
+  {
+    name: "Ditty",
+    tagline: "A Morse code lab",
+    url: "https://ditty.hewig.dev",
+    img: "/assets/images/project-ditty.svg",
+    blurb:
+      "Tap for a dit, hold for a dah. Every mark is drawn as long as you held it, so the ratio that makes Morse readable — one for a dit, three for a dah — is something you can see before anyone explains it. Or send it as light from a signal lamp instead.",
+    bullets: [
+      "Quests in Koch order, the way Morse is actually taught",
+      "A playable alphabet where every key wears its own code",
+      "Farnsworth timing: letters stay honest, the gaps stretch",
+      "The history of Morse, from 1838 to the amateurs still on air",
+    ],
+    tags: ["TypeScript", "React", "PWA", "Web Audio"],
+  },
+];
+
+const collection = {
+  "@type": "CollectionPage",
+  name: "Zoey's Lab",
+  description,
+  url: "https://hewig.dev/zoeys-lab/",
+  author: { "@id": PERSON_ID },
+  hasPart: apps.map((app) => ({
+    "@type": "SoftwareApplication",
+    name: app.name,
+    url: app.url,
+    applicationCategory: "EducationalApplication",
+    operatingSystem: "Any (web browser, installable)",
+    isAccessibleForFree: true,
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+    description: app.blurb,
+    author: { "@id": PERSON_ID },
+  })),
+};
+---
+
+<Base head={{ title, description, jsonLd: collection }}>
+  <Section>
+    <div class="mb-10">
+      <div class="eyebrow">// for a curious eight-year-old</div>
+      <h1 class="mt-2 text-4xl font-bold text-ink">
+        <GradientText>Zoey's Lab</GradientText>
+      </h1>
+      <p class="mt-4 max-w-2xl text-lg text-muted">
+        My daughter asked for an app that mixes colours. Building it turned out to be more fun than
+        anything else I did that month, so there are two now. Both are free, both work offline once
+        installed, and neither has ads, tracking, or an account to make.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {
+        apps.map((app) => (
+          <article class="rounded-lg border border-line bg-panel p-6">
+            <div class="flex flex-col gap-5 sm:flex-row sm:items-start">
+              <img
+                src={app.img}
+                alt={`${app.name} icon`}
+                width="88"
+                height="88"
+                loading="lazy"
+                class="h-[88px] w-[88px] flex-none rounded-2xl"
+              />
+              <div class="min-w-0">
+                <div class="flex flex-wrap items-baseline gap-x-3">
+                  <h2 class="text-2xl font-bold text-ink">{app.name}</h2>
+                  <p class="text-muted">{app.tagline}</p>
+                </div>
+
+                <p class="mt-3 text-muted">{app.blurb}</p>
+
+                <ul class="mt-4 list-inside list-disc space-y-1 text-muted">
+                  {app.bullets.map((b) => (
+                    <li>{b}</li>
+                  ))}
+                </ul>
+
+                <div class="mt-4 flex flex-wrap gap-2">
+                  {app.tags.map((t) => (
+                    <span class="rounded-full border border-line px-2.5 py-0.5 text-xs text-muted">
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <a
+                  href={app.url}
+                  class="mt-5 inline-flex items-center gap-1 font-semibold text-accent hover:underline"
+                >
+                  Open {app.name} <span aria-hidden="true">→</span>
+                </a>
+              </div>
+            </div>
+          </article>
+        ))
+      }
+    </div>
+
+    <div class="mt-10 rounded-lg border border-line bg-panel p-6">
+      <h2 class="mb-3 text-xl font-bold text-accent">How they are built</h2>
+      <p class="text-muted">
+        Both are Vite, React and TypeScript, sharing one set of conventions in a small monorepo: an
+        engine with a test suite written before any interface, hash routing so the whole thing is a
+        static file, a service worker for offline use, and English, Japanese and Chinese throughout.
+        Nothing leaves the device — photos are read in the browser, and progress lives in local
+        storage.
+      </p>
+    </div>
+  </Section>
+</Base>

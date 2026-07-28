@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Huely">
+  <rect width="512" height="512" rx="96" fill="#F4F2F4"/>
+  <circle cx="180" cy="180" r="92" fill="#00AEEF"/>
+  <circle cx="332" cy="180" r="92" fill="#EC008C"/>
+  <circle cx="180" cy="332" r="92" fill="#FFE800"/>
+  <circle cx="332" cy="332" r="92" fill="#211B29"/>
+</svg>

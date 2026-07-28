@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Ditty">
+  <rect width="512" height="512" rx="96" fill="#1A1613"/>
+  <rect x="72" y="150" width="368" height="123" rx="61" fill="#FFC46B"/>
+  <circle cx="133" cy="362" r="61" fill="#FFC46B"/>
+  <circle cx="379" cy="362" r="61" fill="#FFC46B"/>
+</svg>
