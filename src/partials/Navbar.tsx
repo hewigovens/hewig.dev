@@ -3,7 +3,7 @@ import { AppConfig } from '@/utils/AppConfig';
 const links = [
   { href: '/projects/', label: 'Projects' },
   { href: '/posts/', label: 'Blog' },
-  { href: '/zoeys-lab/', label: "Zoey's Lab" },
+  { href: '/zoeys-lab/', label: 'Lab' },
   { href: '/about/', label: 'About' },
   { href: '/consulting/', label: 'Consulting' },
 ];
