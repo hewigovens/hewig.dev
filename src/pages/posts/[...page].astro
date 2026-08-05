@@ -31,7 +31,8 @@ interface Props {
 const { page } = Astro.props as Props;
 
 const title = `${AppConfig.title} - Blog (${page.currentPage})`;
-const description = "Tao Xu (hewig)'s Devlog";
+const description =
+  "Blog posts by Tao Xu (hewig), a Tokyo-based software engineer: Rust and macOS development, crypto wallet infrastructure, AI coding agents, and life in Japan.";
 ---
 
 <Base head={{ title, description }}>

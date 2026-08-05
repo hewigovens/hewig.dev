@@ -1,7 +1,7 @@
 ---
 layout: '@/templates/BasePost.astro'
 title: Farewell to Trust Wallet
-description: Serendipity, ikigai, it's time to start a new journey.
+description: Saying goodbye to Trust Wallet after years as a core engineer — bittersweet reflections on serendipity, ikigai, and the start of a new journey.
 pubDate: 2024-04-12T00:00:00Z
 imgSrc: '/assets/images/image-tw-farewell.png'
 imgAlt: 'Trust Wallet farewell'
