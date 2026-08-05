@@ -1,7 +1,7 @@
 ---
 layout: '@/templates/BasePost.astro'
 title: 'Do AI Agents Really Need New Wallets?'
-description: AI agents don't need new wallets. They need a protocol to talk to the ones you already trust.
+description: AI agents don't need new wallets. They need a protocol to talk to the ones you already trust — a WalletConnect skill that keeps every approval in your hands.
 pubDate: 2026-02-15T00:00:00Z
 imgSrc: '/assets/images/image-post.webp'
 imgAlt: 'WalletConnect Skill'

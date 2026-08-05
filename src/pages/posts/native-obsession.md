@@ -1,7 +1,7 @@
 ---
 layout: '@/templates/BasePost.astro'
 title: 'Native Obsession'
-description: 'Exploring the philosophy of embracing native environments from hardware to cloud, crypto and AI.'
+description: 'Native is more than a marketing term: what it means to treat the default environment as first-class, from hardware to cloud, crypto and AI — and what you gain.'
 pubDate: 2025-06-04T00:00:00Z
 imgSrc: '/assets/images/native-concept.webp'
 imgAlt: 'Native concept image'
