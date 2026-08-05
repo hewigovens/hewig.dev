@@ -5,7 +5,7 @@ import { PERSON_ID } from "@/utils/seo";
 
 const title = "Zoey's Lab — small learning apps for children | Tao Xu";
 const description =
-  "Two free, ad-free learning apps that started as my daughter's ideas, shaped together until they ran. Huely mixes colour in ink and light; Ditty teaches Morse code by sending it. Both install to a home screen and work offline.";
+  "Three free, ad-free learning apps that started as my daughter's ideas, shaped together until they ran. Huely mixes colour in ink and light; Ditty teaches Morse code by sending it; Tessa climbs shapes from a point to a tesseract. All install to a home screen and work offline.";
 
 const apps = [
   {
@@ -37,6 +37,21 @@ const apps = [
       "The history of Morse, from 1838 to the amateurs still on air",
     ],
     tags: ["TypeScript", "React", "PWA", "Web Audio"],
+  },
+  {
+    name: "Tessa",
+    tagline: "A shape lab",
+    url: "https://tessa.zoeyslab.com",
+    img: "/assets/images/project-tessa.svg",
+    blurb:
+      "Every shape is the shape below it, dragged — a point to a line, a square to a cube, one more drag to the tesseract. Draw a shape with one finger and it is named and scored; pull flat shapes into prisms and pyramids by hand; fold six squares into a cube; slice solids to find the hexagon hiding in every cube.",
+    bullets: [
+      "Sixteen shapes recognised and scored, hearts and teardrops included",
+      "The dimensional ladder from 0D to 4D, with every name's story",
+      "Exactly 11 cube nets to find, and a fold that proves each one",
+      "Apple Pencil support: pressure strokes, palm rejection, hover",
+    ],
+    tags: ["TypeScript", "React", "PWA", "Geometry"],
   },
 ];
 
@@ -70,8 +85,10 @@ const collection = {
       <p class="mt-4 max-w-2xl text-lg text-muted">
         The ideas here are my daughter's. She works out what an app should do and how it ought to
         feel, and we shape it together until it runs — which has been more fun than anything else I
-        built this year. Two so far. Both are free, both work offline once installed, and neither has
-        ads, tracking, or an account to make.
+        built this year. Three so far, living together at <a
+          href="https://zoeyslab.com"
+          class="font-semibold text-accent hover:underline">zoeyslab.com</a>. All are free, all work
+        offline once installed, and none has ads, tracking, or an account to make.
       </p>
     </div>
 
@@ -126,7 +143,7 @@ const collection = {
     <div class="mt-10 rounded-lg border border-line bg-panel p-6">
       <h2 class="mb-3 text-xl font-bold text-accent">How they are built</h2>
       <p class="text-muted">
-        Both are Vite, React and TypeScript, sharing one set of conventions in a small monorepo: an
+        All three are Vite, React and TypeScript, sharing one set of conventions in a small monorepo: an
         engine with a test suite written before any interface, hash routing so the whole thing is a
         static file, a service worker for offline use, and English, Japanese and Chinese throughout.
         Nothing leaves the device — photos are read in the browser, and progress lives in local
