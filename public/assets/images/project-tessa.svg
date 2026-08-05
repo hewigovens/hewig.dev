@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512" role="img" aria-label="Tessa">
+  <rect width="512" height="512" rx="96" fill="#F4F2F4"/>
+  <circle cx="256" cy="258" r="168" fill="#F9AECF"/>
+  <g fill="none" stroke="#E0439A" stroke-width="9">
+    <ellipse cx="256" cy="158" rx="116" ry="33"/>
+    <ellipse cx="256" cy="258" rx="166" ry="50"/>
+    <ellipse cx="256" cy="358" rx="116" ry="33"/>
+  </g>
+  <circle cx="256" cy="258" r="168" fill="none" stroke="#E0439A" stroke-width="11"/>
+</svg>
