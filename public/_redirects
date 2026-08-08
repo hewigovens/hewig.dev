@@ -1,0 +1,8 @@
+# Pages removed in the 2026 revamp — send old URLs (still in Google's index)
+# to the closest surviving hub instead of a 404.
+/projects/anytime /projects/ 301
+/projects/anytime/ /projects/ 301
+/projects/inspect /projects/ 301
+/projects/inspect/ /projects/ 301
+/posts/typography-example /posts/ 301
+/posts/typography-example/ /posts/ 301

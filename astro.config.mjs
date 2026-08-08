@@ -71,6 +71,10 @@ export default defineConfig({
         return item;
       },
     }),
-    robotsTxt(),
+    // Keep Cloudflare's email-protection stub (/cdn-cgi/) out of Google's
+    // crawl queue — it 404s and shows up in Search Console otherwise.
+    robotsTxt({
+      policy: [{ userAgent: '*', allow: '/', disallow: '/cdn-cgi/' }],
+    }),
   ],
 });
