@@ -31,18 +31,5 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
-  "pnpm": {
-    "overrides": {
-      "brace-expansion": ">=2.0.3",
-      "minimatch": ">=9.0.7",
-      "glob": ">=10.5.0",
-      "esbuild": ">=0.28.1",
-      "yaml": ">=2.8.3",
-      "postcss": ">=8.5.10",
-      "vite": ">=8.0.13 <9",
-      "js-yaml": ">=4.2.0 <5",
-      "@babel/core": ">=7.29.6 <8"
-    }
-  },
   "author": "Ixartz (https://github.com/ixartz)"
 }
