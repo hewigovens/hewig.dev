@@ -25,6 +25,7 @@
 - [reqwest-enum](https://hewig.dev/projects/reqwest-enum/) — type-safe, enum-style HTTP and JSON-RPC API for Rust.
 - [Aya DevContainer](https://hewig.dev/projects/aya-devcontainer/) — Docker dev container for eBPF programming in Rust (aya-rs).
 - [jayjay](https://jayjay.hewig.dev/) — native macOS GUI for Jujutsu (jj) version control.
+- [Hearvia](https://hearvia.hewig.dev/) — live translated subtitles for other apps' audio or the microphone, on iPhone and Mac.
 
 ## Contact
 

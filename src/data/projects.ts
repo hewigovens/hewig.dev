@@ -50,6 +50,20 @@ export function resolveLink(entry: ProjectEntry): string {
  */
 export const projects: ProjectEntry[] = [
   {
+    name: 'Hearvia',
+    description:
+      "Live translated subtitles for anything you hear on iPhone and Mac, from other apps' audio or the microphone. Translate with Apple on-device, OpenAI Realtime, Gemini Live, or a local model.",
+    img: { src: '/assets/images/project-hearvia.png', alt: 'Hearvia app icon' },
+    category: 'ios',
+    tags: [
+      { color: ColorTags.SWIFT, label: 'SwiftUI' },
+      { color: ColorTags.SKY, label: 'iOS' },
+      { color: ColorTags.FUCHSIA, label: 'macOS' },
+      { color: ColorTags.TEAL, label: 'Translation' },
+    ],
+    link: { kind: 'external', url: 'https://hearvia.hewig.dev' },
+  },
+  {
     name: 'jayjay',
     description:
       'A native macOS GUI for Jujutsu (jj) with a DAG, side-by-side diffs, interdiff, and conflict resolution. Built with Rust and SwiftUI.',
