@@ -6,3 +6,11 @@
 /projects/inspect/ /projects/ 301
 /posts/typography-example /posts/ 301
 /posts/typography-example/ /posts/ 301
+# Thin 2024 news blurbs removed in 2026 ("Crawled - currently not indexed").
+/posts/kraken-wallet /posts/ 301
+/posts/kraken-wallet/ /posts/ 301
+/posts/vm-fusion-free /posts/ 301
+/posts/vm-fusion-free/ /posts/ 301
+# Blog fits on one page now; page 2 no longer exists.
+/posts/2 /posts/ 301
+/posts/2/ /posts/ 301
