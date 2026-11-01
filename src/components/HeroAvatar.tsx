@@ -13,7 +13,7 @@ const HeroAvatar = (props: IHeroAvatarProps) => (
     <div className="max-w-xl">
       {props.tag && <div className="mb-5">{props.tag}</div>}
 
-      <h1 className="text-4xl font-bold leading-[1.1] sm:text-5xl">{props.title}</h1>
+      <h1 className="text-4xl font-semibold leading-tight sm:text-5xl">{props.title}</h1>
 
       <p className="mt-5 text-lg leading-relaxed text-muted">{props.description}</p>
 

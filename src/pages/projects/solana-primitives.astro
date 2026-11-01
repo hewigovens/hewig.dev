@@ -1,6 +1,5 @@
 ---
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import { ColorTags } from "@/components/Tags";
 import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
 
 const description =
@@ -34,10 +33,10 @@ const jsonLd = [
   tagline="Construct and submit Solana transactions in Rust — without pulling in the entire Solana SDK."
   img={{ src: "/assets/images/project-cargo.png", alt: "Solana Primitives Rust crate" }}
   tags={[
-    { color: ColorTags.RUST, label: "Rust" },
-    { color: ColorTags.LIME, label: "Blockchain" },
-    { color: ColorTags.VIOLET, label: "Solana" },
-    { color: ColorTags.INDIGO, label: "SDK" },
+    "Rust",
+    "Blockchain",
+    "Solana",
+    "SDK",
   ]}
   actions={[
     { label: "View on GitHub", href: repo, primary: true },

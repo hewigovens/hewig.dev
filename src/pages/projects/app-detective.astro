@@ -1,6 +1,5 @@
 ---
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import { ColorTags } from "@/components/Tags";
 import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
 
 const description =
@@ -33,10 +32,10 @@ const jsonLd = [
   tagline="See what any macOS app is really built with — SwiftUI, AppKit, Electron, and beyond."
   img={{ src: "/assets/images/project-app-detective.png", alt: "App Detective macOS app icon" }}
   tags={[
-    { color: ColorTags.SWIFT, label: "Swift" },
-    { color: ColorTags.FUCHSIA, label: "macOS" },
-    { color: ColorTags.VIOLET, label: "Reverse Engineering" },
-    { color: ColorTags.EMERALD, label: "Diagnostics" },
+    "Swift",
+    "macOS",
+    "Reverse Engineering",
+    "Diagnostics",
   ]}
   actions={[
     { label: "View on GitHub", href: repo, primary: true },

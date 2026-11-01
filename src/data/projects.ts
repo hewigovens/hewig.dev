@@ -1,41 +1,32 @@
-import { ColorTags } from '@/components/Tags';
 
-import type { Values } from '@/components/types/TypeUnion';
-
-export type ProjectCategory = 'rust' | 'macos' | 'ios' | 'contributions';
+export type ProjectCategory = 'rust' | 'macos' | 'ios' | 'web' | 'contributions';
 
 export type ProjectLink =
   | { kind: 'internal'; path: string }
   | { kind: 'external'; url: string };
 
-export type TagEntry = {
-  color: Values<typeof ColorTags>;
-  label: string;
-};
-
 export type ProjectEntry = {
   name: string;
   description: string;
-  img: { src: string; alt: string };
+  img: { src: string; alt: string; compact?: boolean };
   category: ProjectCategory;
-  tags: TagEntry[];
+  tags: string[];
   link: ProjectLink;
 };
 
-export const categoryLabels: Record<
-  ProjectCategory,
-  { prefix: string; highlight: string }
-> = {
-  rust: { prefix: 'Rust', highlight: 'Libraries & Tools' },
-  macos: { prefix: 'macOS', highlight: 'Apps' },
-  ios: { prefix: 'iOS', highlight: 'Apps' },
-  contributions: { prefix: 'Open Source', highlight: 'Contributions' },
+export const categoryLabels: Record<ProjectCategory, string> = {
+  rust: 'Rust libraries & tools',
+  macos: 'macOS apps',
+  ios: 'iOS apps',
+  web: 'Web apps',
+  contributions: 'Open source contributions',
 };
 
 export const categoryOrder: ProjectCategory[] = [
   'rust',
   'macos',
   'ios',
+  'web',
   'contributions',
 ];
 
@@ -50,16 +41,30 @@ export function resolveLink(entry: ProjectEntry): string {
  */
 export const projects: ProjectEntry[] = [
   {
+    name: 'Crypto Playground',
+    description:
+      'Interactive, visual cryptography from Caesar to SNARKs and lattices, with live intermediate values on real small numbers.',
+    img: { src: '/assets/images/project-crypto-playground.svg', alt: 'Crypto Playground icon', compact: true },
+    category: 'web',
+    tags: [
+      'Cryptography',
+      'SNARKs',
+      'Lattices',
+      'Web',
+    ],
+    link: { kind: 'external', url: 'https://crypto-learn.hewig.dev' },
+  },
+  {
     name: 'Hearvia',
     description:
       "Live translated subtitles for anything you hear on iPhone and Mac, from other apps' audio or the microphone. Translate with Apple on-device, OpenAI Realtime, Gemini Live, or a local model.",
-    img: { src: '/assets/images/project-hearvia.png', alt: 'Hearvia app icon' },
+    img: { src: '/assets/images/project-hearvia.png', alt: 'Hearvia app icon', compact: true },
     category: 'ios',
     tags: [
-      { color: ColorTags.SWIFT, label: 'SwiftUI' },
-      { color: ColorTags.SKY, label: 'iOS' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.TEAL, label: 'Translation' },
+      'SwiftUI',
+      'iOS',
+      'macOS',
+      'Translation',
     ],
     link: { kind: 'external', url: 'https://hearvia.hewig.dev' },
   },
@@ -67,13 +72,13 @@ export const projects: ProjectEntry[] = [
     name: 'jayjay',
     description:
       'A native macOS GUI for Jujutsu (jj) with a DAG, side-by-side diffs, interdiff, and conflict resolution. Built with Rust and SwiftUI.',
-    img: { src: '/assets/images/project-jayjay.svg', alt: 'jayjay macOS app' },
+    img: { src: '/assets/images/project-jayjay.svg', alt: 'jayjay macOS app', compact: true },
     category: 'macos',
     tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.SWIFT, label: 'SwiftUI' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.VIOLET, label: 'Jujutsu' },
+      'Rust',
+      'SwiftUI',
+      'macOS',
+      'Jujutsu',
     ],
     link: { kind: 'external', url: 'https://jayjay.hewig.dev' },
   },
@@ -84,10 +89,10 @@ export const projects: ProjectEntry[] = [
     img: { src: '/assets/images/project-miso.png', alt: 'Miso' },
     category: 'macos',
     tags: [
-      { color: ColorTags.SWIFT, label: 'Swift' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.SLATE, label: 'Menu Bar' },
-      { color: ColorTags.EMERALD, label: 'Input Method' },
+      'Swift',
+      'macOS',
+      'Menu Bar',
+      'Input Method',
     ],
     link: { kind: 'internal', path: '/projects/miso/' },
   },
@@ -98,10 +103,10 @@ export const projects: ProjectEntry[] = [
     img: { src: '/assets/images/project-hw-core.png', alt: 'hw-core' },
     category: 'rust',
     tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.CYAN, label: 'Hardware Wallet' },
-      { color: ColorTags.GREEN, label: 'Trezor' },
-      { color: ColorTags.INDIGO, label: 'BLE' },
+      'Rust',
+      'Hardware Wallet',
+      'Trezor',
+      'BLE',
     ],
     link: { kind: 'internal', path: '/projects/hw-core/' },
   },
@@ -115,10 +120,10 @@ export const projects: ProjectEntry[] = [
     },
     category: 'macos',
     tags: [
-      { color: ColorTags.SWIFT, label: 'Swift' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.VIOLET, label: 'Reverse Engineering' },
-      { color: ColorTags.EMERALD, label: 'Diagnostics' },
+      'Swift',
+      'macOS',
+      'Reverse Engineering',
+      'Diagnostics',
     ],
     link: { kind: 'internal', path: '/projects/app-detective/' },
   },
@@ -129,10 +134,10 @@ export const projects: ProjectEntry[] = [
     img: { src: '/assets/images/project-cargo.png', alt: 'Solana Primitives' },
     category: 'rust',
     tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.LIME, label: 'Blockchain' },
-      { color: ColorTags.VIOLET, label: 'Solana' },
-      { color: ColorTags.INDIGO, label: 'SDK' },
+      'Rust',
+      'Blockchain',
+      'Solana',
+      'SDK',
     ],
     link: { kind: 'internal', path: '/projects/solana-primitives/' },
   },
@@ -146,10 +151,10 @@ export const projects: ProjectEntry[] = [
     },
     category: 'macos',
     tags: [
-      { color: ColorTags.SWIFT, label: 'Swift' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.ROSE, label: 'Productivity' },
-      { color: ColorTags.INDIGO, label: 'Automation' },
+      'Swift',
+      'macOS',
+      'Productivity',
+      'Automation',
     ],
     link: { kind: 'internal', path: '/projects/staged-launcher/' },
   },
@@ -163,10 +168,10 @@ export const projects: ProjectEntry[] = [
     },
     category: 'rust',
     tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.BLUE, label: 'Docker' },
-      { color: ColorTags.VIOLET, label: 'eBPF' },
-      { color: ColorTags.EMERALD, label: 'DevContainer' },
+      'Rust',
+      'Docker',
+      'eBPF',
+      'DevContainer',
     ],
     link: { kind: 'internal', path: '/projects/aya-devcontainer/' },
   },
@@ -177,10 +182,10 @@ export const projects: ProjectEntry[] = [
     img: { src: '/assets/images/project-cargo.png', alt: 'reqwest-enum' },
     category: 'rust',
     tags: [
-      { color: ColorTags.RUST, label: 'Rust' },
-      { color: ColorTags.SWIFT, label: 'Enum' },
-      { color: ColorTags.SKY, label: 'HTTP' },
-      { color: ColorTags.LIME, label: 'JSONRPC' },
+      'Rust',
+      'Enum',
+      'HTTP',
+      'JSONRPC',
     ],
     link: { kind: 'internal', path: '/projects/reqwest-enum/' },
   },
@@ -193,10 +198,10 @@ export const projects: ProjectEntry[] = [
     },
     category: 'macos',
     tags: [
-      { color: ColorTags.OBJC, label: 'ObjcC' },
-      { color: ColorTags.GREEN, label: 'XPC' },
-      { color: ColorTags.ROSE, label: 'Code injection' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
+      'ObjcC',
+      'XPC',
+      'Code injection',
+      'macOS',
     ],
     link: { kind: 'external', url: 'https://ghosttile.hewig.dev' },
   },
@@ -206,14 +211,14 @@ export const projects: ProjectEntry[] = [
       'A timezone-aware world clock app for Mac and iPhone. Quickly see what time it is for your team, anywhere.',
     img: {
       src: '/assets/images/project-anytime.webp',
-      alt: 'Anytime',
+      alt: 'Anytime', compact: true
     },
     category: 'ios',
     tags: [
-      { color: ColorTags.SWIFT, label: 'Swift' },
-      { color: ColorTags.FUCHSIA, label: 'macOS' },
-      { color: ColorTags.SKY, label: 'iOS' },
-      { color: ColorTags.EMERALD, label: 'Productivity' },
+      'Swift',
+      'macOS',
+      'iOS',
+      'Productivity',
     ],
     link: { kind: 'external', url: 'https://fourplexlabs.github.io/AnyTime' },
   },
@@ -227,10 +232,10 @@ export const projects: ProjectEntry[] = [
     },
     category: 'ios',
     tags: [
-      { color: ColorTags.SWIFT, label: 'Swift' },
-      { color: ColorTags.INDIGO, label: 'TLS' },
-      { color: ColorTags.BLUE, label: 'OpenSSL' },
-      { color: ColorTags.FUCHSIA, label: 'iOS' },
+      'Swift',
+      'TLS',
+      'OpenSSL',
+      'iOS',
     ],
     link: { kind: 'external', url: 'https://fourplexlabs.github.io/Inspect' },
   },
@@ -244,10 +249,10 @@ export const projects: ProjectEntry[] = [
     },
     category: 'contributions',
     tags: [
-      { color: ColorTags.CPP, label: 'C++' },
-      { color: ColorTags.YELLOW, label: 'Cross Platform' },
-      { color: ColorTags.WEBASSEMBLY, label: 'Web Assembly' },
-      { color: ColorTags.FUCHSIA, label: 'SDK' },
+      'C++',
+      'Cross Platform',
+      'Web Assembly',
+      'SDK',
     ],
     link: {
       kind: 'external',

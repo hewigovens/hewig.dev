@@ -1,5 +1,5 @@
 ---
-import { GradientText, Section } from "@/components";
+import { Section } from "@/components";
 import Base from "@/templates/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
 import { PERSON_ID, breadcrumbNode, personNode } from "@/utils/seo";
@@ -65,7 +65,7 @@ const jsonLd = [
   <Section as="article">
     <div class="flex flex-col items-start gap-6 sm:flex-row sm:items-center">
       <img
-        class="h-28 w-28 shrink-0 rounded-full shadow-glow ring-1 ring-line"
+        class="h-28 w-28 shrink-0 rounded-full ring-1 ring-line"
         src="/assets/images/avatar.png"
         alt="Tao Xu"
         width="112"
@@ -74,47 +74,83 @@ const jsonLd = [
       />
       <div>
         <div class="eyebrow">// about</div>
-        <h1 class="mt-2 text-3xl font-bold text-ink">Tao <GradientText>Xu</GradientText></h1>
+        <h1 class="mt-2 text-3xl font-semibold text-ink">Tao Xu</h1>
         <p class="mt-1 text-muted">Blockchain &amp; software engineer · Tokyo, Japan</p>
       </div>
     </div>
 
-    <div class="prose mt-8 max-w-none dark:prose-invert prose-headings:text-accent prose-a:text-accent">
+    <div class="prose mt-8 max-w-none dark:prose-invert prose-headings:text-ink prose-a:text-accent">
       <p>
         I'm Tao Xu (also known online as <strong>hewig</strong> / hewigovens) — a
-        Tokyo-based software engineer and blockchain developer. I was a core
-        engineer at <a href="https://trustwallet.com/">Trust Wallet</a>, where I
-        helped build crypto wallet infrastructure used by millions of people.
+        Tokyo-based software engineer focused on open-source wallets, cryptography,
+        and tooling. I was a core engineer at
+        <a href="https://trustwallet.com/">Trust Wallet</a>, where I helped build
+        crypto wallet infrastructure used by millions of people.
       </p>
 
       <p>
-        Today I design scalable blockchain infrastructure, cross-platform SDKs,
-        and decentralized applications across Ethereum, Solana, Bitcoin, and
-        other leading networks — and I build native macOS and iOS apps and Rust
-        developer tooling on the side.
+        These days I'm deep in Rust, ZK, and LLM agents, building in public and
+        sharing what I learn. I also design blockchain infrastructure and
+        cross-platform SDKs across Ethereum, Solana, Bitcoin, and other networks.
       </p>
 
       <h2>What I work on</h2>
       <ul>
         <li>
-          <strong>Crypto &amp; wallet infrastructure</strong> — low-level wallet
-          libraries, hardware-wallet protocols, and chain primitives in Rust and
-          C++ (Wallet Core, <a href="/projects/hw-core/">hw-core</a>,
+          <strong>Crypto &amp; wallet infrastructure</strong> — hardware-wallet
+          protocols and chain primitives in Rust
+          (<a href="/projects/hw-core/">hw-core</a>,
           <a href="/projects/solana-primitives/">Solana Primitives</a>).
         </li>
         <li>
           <strong>Rust tools &amp; libraries</strong> — small, focused crates and
-          developer tooling (<a href="/projects/reqwest-enum/">reqwest-enum</a>,
+          developer tooling, including tools for coding agents
+          (<a href="https://github.com/hewigovens/clifpad">clifpad</a>, Control Room,
+          <a href="/projects/reqwest-enum/">reqwest-enum</a>,
           <a href="/projects/aya-devcontainer/">Aya DevContainer</a>).
         </li>
         <li>
-          <strong>macOS &amp; iOS apps</strong> — native utilities like
+          <strong>macOS apps</strong> — native tools like
+          <a href="https://jayjay.hewig.dev">jayjay</a>,
+          <a href="https://github.com/hewigovens/remote-launcher">Remote Launcher</a>,
           <a href="/projects/app-detective/">App Detective</a>,
           <a href="https://ghosttile.hewig.dev">GhostTile</a>,
           <a href="/projects/miso/">Miso</a>, and
-          <a href="https://fourplexlabs.github.io/AnyTime">Anytime</a>.
+          <a href="/projects/staged-launcher/">Staged Launcher</a>.
+        </li>
+        <li>
+          <strong>iOS apps</strong> —
+          <a href="https://hearvia.hewig.dev">Hearvia</a>,
+          <a href="https://fourplexlabs.github.io/AnyTime">Anytime</a>, and
+          <a href="https://fourplexlabs.github.io/Inspect">Inspect</a>.
+        </li>
+        <li>
+          <strong>Web apps</strong> —
+          <a href="/zoeys-lab/">Zoey's Lab</a>, built with my daughter;
+          <a href="https://crypto-learn.hewig.dev">Crypto Playground</a>; and
+          <a href="https://budokan.hewig.dev">Budokan event today</a>.
+        </li>
+        <li>
+          <strong>Smaller things</strong> — the experimental
+          <a href="https://github.com/hewigovens/hanori-sans">Hanori</a> font, the
+          <a href="https://github.com/hewigovens/BTMParser">BTMParser</a> and
+          <a href="https://github.com/hewigovens/LSAppCategory">LSAppCategory</a>
+          macOS utilities, and patches to
+          <a href="https://github.com/hewigovens/github-desktop">GitHub Desktop</a> and
+          <a href="https://github.com/hewigovens/diffnav">diffnav</a>.
         </li>
       </ul>
+
+      <h2>Previous work</h2>
+      <p>
+        At Trust Wallet I shipped and maintained
+        <a href="https://github.com/trustwallet/trust-wallet-ios">Trust Wallet iOS</a>,
+        <a href="https://github.com/trustwallet/wallet-core">Wallet Core</a>,
+        <a href="https://github.com/trustwallet/wallet-connect-swift">WalletConnect Swift</a>,
+        <a href="https://github.com/trustwallet/trust-web3-provider">Trust Web3 Provider</a>,
+        <a href="https://github.com/trustwallet/ens-coincodec">ens-coincodec</a>, and
+        work on Trezor's <a href="https://github.com/trezor/blockbook">blockbook</a>.
+      </p>
 
       <h2>Consulting</h2>
       <p>
@@ -142,7 +178,7 @@ const jsonLd = [
               rel="noopener noreferrer"
               aria-label={s.label}
               title={s.label}
-              class="flex h-11 w-11 items-center justify-center rounded-full border border-line bg-panel text-muted transition hover:border-accent hover:text-accent hover:-translate-y-0.5"
+              class="flex h-11 w-11 items-center justify-center rounded-lg border border-line bg-panel text-muted transition-colors hover:border-accent hover:text-accent"
             >
               <svg
                 viewBox="0 0 24 24"

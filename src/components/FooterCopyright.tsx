@@ -20,7 +20,7 @@ const FooterCopyright = (props: IFooterCopyrightProps) => (
             target="_blank"
             rel="noopener noreferrer"
         >
-            ShioriX 🔖
+            ShioriX
         </a>
     </div>
 );

@@ -1,6 +1,5 @@
 ---
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import { ColorTags } from "@/components/Tags";
 import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
 
 const description =
@@ -34,10 +33,10 @@ const jsonLd = [
   tagline="Describe your HTTP API as an enum and let reqwest-enum handle URLs, headers, encoding, and decoding."
   img={{ src: "/assets/images/project-cargo.png", alt: "reqwest-enum Rust crate" }}
   tags={[
-    { color: ColorTags.RUST, label: "Rust" },
-    { color: ColorTags.SWIFT, label: "Enum" },
-    { color: ColorTags.SKY, label: "HTTP" },
-    { color: ColorTags.LIME, label: "JSONRPC" },
+    "Rust",
+    "Enum",
+    "HTTP",
+    "JSONRPC",
   ]}
   actions={[
     { label: "View on GitHub", href: repo, primary: true },

@@ -8,8 +8,8 @@ type IBlogCardProps = {
 };
 
 const BlogCard = (props: IBlogCardProps) => (
-  <a className="group block" href={props.instance.url}>
-    <div className="overflow-hidden rounded-xl border border-line bg-panel transition-all duration-200 group-hover:-translate-y-1 group-hover:border-accent/40 group-hover:shadow-glow">
+  <a className="group block h-full" href={props.instance.url}>
+    <div className="h-full overflow-hidden rounded-xl border border-line bg-panel transition-colors group-hover:border-accent/40">
       <div className="aspect-w-3 aspect-h-2">
         <img
           className="h-full w-full object-cover object-center"
@@ -19,12 +19,12 @@ const BlogCard = (props: IBlogCardProps) => (
         />
       </div>
 
-      <div className="px-4 pt-4 pb-6 text-center">
+      <div className="p-4">
         <h2 className="text-xl font-semibold text-ink">
           {props.instance.frontmatter.title}
         </h2>
 
-        <div className="mt-1 text-xs text-muted">
+        <div className="mt-1 font-mono text-xs text-muted">
           {format(new Date(props.instance.frontmatter.pubDate), 'LLL d, yyyy')}
         </div>
 

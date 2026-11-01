@@ -1,6 +1,5 @@
 ---
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import { ColorTags } from "@/components/Tags";
 import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
 
 const description =
@@ -33,10 +32,10 @@ const jsonLd = [
   tagline="A pre-configured Docker dev container for writing eBPF programs in Rust with Aya."
   img={{ src: "/assets/images/project-aya-container.png", alt: "Aya DevContainer" }}
   tags={[
-    { color: ColorTags.RUST, label: "Rust" },
-    { color: ColorTags.BLUE, label: "Docker" },
-    { color: ColorTags.VIOLET, label: "eBPF" },
-    { color: ColorTags.EMERALD, label: "DevContainer" },
+    "Rust",
+    "Docker",
+    "eBPF",
+    "DevContainer",
   ]}
   actions={[
     { label: "View on GitHub", href: repo, primary: true },

@@ -17,7 +17,7 @@ const Section = (props: ISectionProps) => {
   return (
     <Wrapper id={props.id} className="mx-auto max-w-wrap px-5 py-8 sm:px-8">
       {props.title && (
-        <Title className="mb-6 text-2xl font-bold text-ink">{props.title}</Title>
+        <Title className="mb-6 text-2xl font-semibold text-ink">{props.title}</Title>
       )}
 
       {props.children}

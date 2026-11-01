@@ -1,6 +1,5 @@
 ---
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import { ColorTags } from "@/components/Tags";
 import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
 
 const description =
@@ -35,10 +34,10 @@ const jsonLd = [
   tagline="Manage and delay the launch of your apps across stages for faster, smoother Mac startups."
   img={{ src: "/assets/images/project-staged-launcher.png", alt: "Staged Launcher macOS app icon" }}
   tags={[
-    { color: ColorTags.SWIFT, label: "Swift" },
-    { color: ColorTags.FUCHSIA, label: "macOS" },
-    { color: ColorTags.ROSE, label: "Productivity" },
-    { color: ColorTags.INDIGO, label: "Automation" },
+    "Swift",
+    "macOS",
+    "Productivity",
+    "Automation",
   ]}
   actions={[
     { label: "Visit Website", href: site, primary: true },

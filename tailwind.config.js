@@ -22,9 +22,6 @@ module.exports = {
         sans: ['DM Sans', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'sans-serif'],
         mono: ['JetBrains Mono', 'SF Mono', 'ui-monospace', 'monospace'],
       },
-      boxShadow: {
-        glow: 'var(--glow)',
-      },
       maxWidth: {
         wrap: '1140px',
       },

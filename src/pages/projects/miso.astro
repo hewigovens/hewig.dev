@@ -1,6 +1,5 @@
 ---
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import { ColorTags } from "@/components/Tags";
 import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
 
 const description =
@@ -33,10 +32,10 @@ const jsonLd = [
   tagline="A floating HUD overlay for switching input methods on macOS — no special permissions needed."
   img={{ src: "/assets/images/project-miso.png", alt: "Miso macOS menu bar app icon" }}
   tags={[
-    { color: ColorTags.SWIFT, label: "Swift" },
-    { color: ColorTags.FUCHSIA, label: "macOS" },
-    { color: ColorTags.SLATE, label: "Menu Bar" },
-    { color: ColorTags.EMERALD, label: "Input Method" },
+    "Swift",
+    "macOS",
+    "Menu Bar",
+    "Input Method",
   ]}
   actions={[
     { label: "View on GitHub", href: repo, primary: true },

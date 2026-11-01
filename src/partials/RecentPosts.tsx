@@ -2,7 +2,6 @@ import type { MarkdownInstance } from 'astro';
 import type { IFrontmatter } from '@/components';
 import {
   BlogGallery,
-  GradientText,
   Section,
 } from '@/components';
 
@@ -16,8 +15,8 @@ const RecentPosts = (props: IRecentPostsProps) => (
     <div className="mb-8 flex items-end justify-between">
       <div>
         <div className="eyebrow">// writing</div>
-        <h2 className="mt-2 text-3xl font-bold text-ink">
-          From the <GradientText>devlog</GradientText>
+        <h2 className="mt-2 text-3xl font-semibold text-ink">
+          Notes on wallets, native apps and AI agents
         </h2>
       </div>
 

@@ -1,15 +1,15 @@
-import { Project, Section, Tags } from '@/components';
-import { GradientText } from '@/components/GradientText';
+import { Project, Section } from '@/components';
 import { projects, resolveLink } from '@/data/projects';
 
 const recentNames = [
-  'Hearvia',
   'jayjay',
+  'Hearvia',
   'hw-core',
   'Solana Primitives',
   'App Detective',
   'Inspect',
   'GhostTile',
+  'Crypto Playground',
 ];
 
 const recentProjects = recentNames
@@ -20,8 +20,8 @@ const ProjectList = () => (
   <Section>
     <div className="mb-8">
       <div className="eyebrow">// recent work</div>
-      <h2 className="mt-2 text-3xl font-bold text-ink">
-        Selected <GradientText>projects</GradientText>
+      <h2 className="mt-2 text-3xl font-semibold text-ink">
+        Wallet libraries, developer tools and Apple apps
       </h2>
     </div>
 
@@ -33,15 +33,7 @@ const ProjectList = () => (
           description={entry.description}
           link={resolveLink(entry)}
           img={entry.img}
-          category={
-            <>
-              {entry.tags.map((tag) => (
-                <Tags key={tag.label} color={tag.color}>
-                  {tag.label}
-                </Tags>
-              ))}
-            </>
-          }
+          tags={entry.tags}
         />
       ))}
     </div>

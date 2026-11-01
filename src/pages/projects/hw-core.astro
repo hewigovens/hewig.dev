@@ -1,6 +1,5 @@
 ---
 import ProjectDetail from "@/components/ProjectDetail.astro";
-import { ColorTags } from "@/components/Tags";
 import { breadcrumbNode, softwareAppNode } from "@/utils/seo";
 
 const description =
@@ -33,10 +32,10 @@ const jsonLd = [
   tagline="A Rust library for low-level hardware wallet communication, including the Trezor Host Protocol."
   img={{ src: "/assets/images/project-hw-core.png", alt: "hw-core Rust library" }}
   tags={[
-    { color: ColorTags.RUST, label: "Rust" },
-    { color: ColorTags.CYAN, label: "Hardware Wallet" },
-    { color: ColorTags.GREEN, label: "Trezor" },
-    { color: ColorTags.INDIGO, label: "BLE" },
+    "Rust",
+    "Hardware Wallet",
+    "Trezor",
+    "BLE",
   ]}
   actions={[
     { label: "View on GitHub", href: repo, primary: true },

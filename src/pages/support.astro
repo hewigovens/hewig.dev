@@ -1,0 +1,103 @@
+---
+import { Section } from "@/components";
+import Base from "@/templates/Base.astro";
+import { AppConfig } from "@/utils/AppConfig";
+import { renderQrSvg } from "@/utils/qr";
+
+const title = "Support — Tao Xu";
+const description = "Support Tao Xu's open-source work with Zcash, Railgun, or GitHub Sponsors.";
+
+// QR codes render from these strings at build time, with no URI scheme.
+const wallets = [
+  {
+    name: "Zcash",
+    ticker: "ZEC",
+    logo: "/support/zcash.png",
+    address:
+      "u1xvht8zqzqxy4hrnz3fqsc7cnzd98ks4fhr3v8mwt9v8suk0hunzgh8292et0vr79mux2xpzlpdglex7tm3l0s4shpqz7s8hey5ae2wwc",
+    note: "Shielded unified address",
+  },
+  {
+    name: "Railgun",
+    ticker: "0zk",
+    logo: "/support/railgun.svg",
+    address:
+      "0zk1qyxmxmtvsvfp4dckpx7l6hgfpgvjfulmthvn2yazzjq75vm9avhcdrv7j6fe3z53l70q27zrs9l0kakccpqsge5qydwxw273ymm870xzyl06u54kcxknsm5q46l",
+    note: "Private 0zk address from the Railgun protocol",
+  },
+];
+---
+
+<Base head={{ title, description, noindex: true }}>
+  <Section>
+    <div class="mx-auto max-w-3xl">
+      <h1 class="text-3xl font-semibold sm:text-4xl">Support</h1>
+      <p class="mt-3 text-lg text-muted">
+        If my open-source work has been useful, you can send a tip here. Thank you.
+      </p>
+
+      <div class="mt-8 grid gap-5 sm:grid-cols-2">
+        {
+          wallets.map((w) => (
+            <section class="panel flex flex-col p-5" aria-labelledby={`wallet-${w.ticker}`}>
+              <h2 id={`wallet-${w.ticker}`} class="text-lg font-semibold text-ink">
+                {w.name} <span class="ml-1 font-mono text-sm font-normal text-muted">{w.ticker}</span>
+              </h2>
+
+              <div
+                class="mx-auto mt-4 w-full max-w-[300px] [&>svg]:block [&>svg]:h-auto [&>svg]:w-full"
+                set:html={renderQrSvg(w.address, w.logo, `QR code for the ${w.name} address`)}
+              />
+
+              <details class="mt-4 text-center">
+                <summary class="cursor-pointer font-mono text-sm font-medium text-ink">
+                  {w.address.slice(0, 12)} … {w.address.slice(-12)}
+                </summary>
+                <code class="mt-2 block select-all break-all rounded-lg border border-line p-3 text-left font-mono text-xs leading-relaxed text-ink">
+                  {w.address}
+                </code>
+              </details>
+              <button
+                type="button"
+                class="btn btn-outline mt-3 text-sm"
+                data-copy={w.address}
+                aria-live="polite"
+              >
+                Copy address
+              </button>
+              <p class="mt-3 text-sm text-muted">{w.note}</p>
+            </section>
+          ))
+        }
+      </div>
+
+      <p class="mt-8 text-muted">
+        Prefer fiat? Use <a class="text-accent hover:underline" href={AppConfig.social.sponsor}>GitHub Sponsors</a>.
+      </p>
+    </div>
+  </Section>
+
+  {/* Wired inline like the theme toggle in Base.astro: plain JS, no hydration. */}
+  <script is:inline>
+    document.querySelectorAll("[data-copy]").forEach(function (button) {
+      var label = button.textContent;
+      var reset;
+
+      button.addEventListener("click", function () {
+        function show(text) {
+          button.textContent = text;
+          clearTimeout(reset);
+          reset = setTimeout(function () {
+            button.textContent = label;
+          }, 2000);
+        }
+
+        // Clipboard access can be denied; the address itself stays selectable.
+        navigator.clipboard.writeText(button.dataset.copy).then(
+          function () { show("Copied"); },
+          function () { show("Copy failed, select the address"); },
+        );
+      });
+    });
+  </script>
+</Base>

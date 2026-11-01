@@ -128,22 +128,15 @@ const withContext = (node: Record<string, unknown>) =>
     {/* Theme toggle: buttons render as static HTML, wired here (no React hydration). */}
     <script is:inline>
       (function () {
-        function paint(theme) {
-          document.querySelectorAll('[data-theme-icon]').forEach(function (el) {
-            el.textContent = theme === 'dark' ? '☀' : '☾';
-          });
-        }
         window.toggleTheme = function () {
           var cur = document.documentElement.getAttribute('data-theme');
           var next = cur === 'dark' ? 'light' : 'dark';
           document.documentElement.setAttribute('data-theme', next);
           try { localStorage.setItem('hewig-theme', next); } catch (e) {}
-          paint(next);
         };
         document.querySelectorAll('[data-theme-toggle]').forEach(function (btn) {
           btn.addEventListener('click', window.toggleTheme);
         });
-        paint(document.documentElement.getAttribute('data-theme'));
       })();
     </script>
   </body>

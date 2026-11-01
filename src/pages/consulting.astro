@@ -1,6 +1,5 @@
 ---
 import { Section } from "@/components";
-import { GradientText } from "@/components";
 import Base from "@/templates/Base.astro";
 import { AppConfig } from "@/utils/AppConfig";
 import { PERSON_ID } from "@/utils/seo";
@@ -32,8 +31,8 @@ const professionalService = {
 <Base head={{ title, description, locale: "ja_JP", jsonLd: professionalService }} lang="ja">
   <Section>
     <div class="mb-8">
-      <h1 class="text-center text-4xl font-bold">
-        <GradientText>技術コンサルティング</GradientText>
+      <h1 class="text-center text-4xl font-semibold">
+        技術コンサルティング
       </h1>
       <p class="mt-4 text-center text-xl text-muted">
         ブロックチェーン・暗号資産技術コンサルティング
@@ -43,7 +42,7 @@ const professionalService = {
     <div class="space-y-8">
       <!-- Business Overview -->
       <div class="rounded-lg border border-line bg-panel p-6">
-        <h2 class="mb-4 text-2xl font-bold text-accent">事業概要</h2>
+        <h2 class="mb-4 text-2xl font-semibold text-ink">事業概要</h2>
         <p class="text-muted">
           当事業は、ブロックチェーン技術および関連分野を中心とした技術コンサルティングを行います。
           業務要件の分析、最適な技術構成の立案、システム設計・実装支援を提供します。
@@ -52,7 +51,7 @@ const professionalService = {
 
       <!-- Services -->
       <div class="rounded-lg border border-line bg-panel p-6">
-        <h2 class="mb-4 text-2xl font-bold text-accent">具体的業務内容</h2>
+        <h2 class="mb-4 text-2xl font-semibold text-ink">具体的業務内容</h2>
         <div class="space-y-4">
           <div>
             <h3 class="mb-2 text-lg font-semibold text-ink">新技術の調査・評価</h3>
@@ -108,7 +107,7 @@ const professionalService = {
 
       <!-- Contract Types -->
       <div class="rounded-lg border border-line bg-panel p-6">
-        <h2 class="mb-4 text-2xl font-bold text-accent">取引形態</h2>
+        <h2 class="mb-4 text-2xl font-semibold text-ink">取引形態</h2>
         <div class="space-y-3 text-muted">
           <p>業務委託契約に基づき、主としてオンラインで役務提供します。</p>
           <div class="space-y-2">
@@ -133,7 +132,7 @@ const professionalService = {
 
       <!-- Target Clients -->
       <div class="rounded-lg border border-line bg-panel p-6">
-        <h2 class="mb-4 text-2xl font-bold text-accent">取引先の想定</h2>
+        <h2 class="mb-4 text-2xl font-semibold text-ink">取引先の想定</h2>
         <p class="text-muted">
           国内外の企業・スタートアップ・開発チーム等。
         </p>
@@ -141,7 +140,7 @@ const professionalService = {
 
       <!-- Contact -->
       <div class="rounded-lg border border-line bg-panel p-6 text-center">
-        <h2 class="mb-4 text-2xl font-bold text-accent">お問い合わせ</h2>
+        <h2 class="mb-4 text-2xl font-semibold text-ink">お問い合わせ</h2>
         <p class="mb-4 text-muted">
           プロジェクトのご相談やサービスについてのお問い合わせはこちらから
         </p>

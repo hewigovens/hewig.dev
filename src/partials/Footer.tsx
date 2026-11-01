@@ -5,6 +5,7 @@ const footerLinks = [
   { href: 'https://glance.hewig.dev', label: 'Glance' },
   { href: AppConfig.social.github, label: 'GitHub' },
   { href: '/rss.xml', label: 'RSS' },
+  { href: '/support/', label: 'Support' },
 ];
 
 const Footer = () => (

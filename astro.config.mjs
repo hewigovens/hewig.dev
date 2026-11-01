@@ -36,6 +36,9 @@ export default defineConfig({
   // base: '.', // Set a path prefix.
   site: 'https://hewig.dev/', // Use to generate your sitemap and canonical URLs in your final build.
   trailingSlash: 'always', // Use to always append '/' at end of url
+  // Compression drops the line break between text and an inline tag, which
+  // joins words like "like<a>" on hand-wrapped pages.
+  compressHTML: false,
   markdown: {
     shikiConfig: {
       // Choose from Shiki's built-in themes (or add your own)
@@ -48,7 +51,7 @@ export default defineConfig({
     sitemap({
       filter: (page) => {
         const { pathname } = new URL(page);
-        return !postMeta[pathname]?.draft;
+        return pathname !== '/support/' && !postMeta[pathname]?.draft;
       },
       serialize(item) {
         const { pathname } = new URL(item.url);
