@@ -1,5 +1,5 @@
 
-export type ProjectCategory = 'rust' | 'macos' | 'ios' | 'web' | 'contributions';
+export type ProjectCategory = 'rust' | 'macos' | 'ios' | 'web' | 'fonts' | 'contributions';
 
 export type ProjectLink =
   | { kind: 'internal'; path: string }
@@ -19,6 +19,7 @@ export const categoryLabels: Record<ProjectCategory, string> = {
   macos: 'macOS apps',
   ios: 'iOS apps',
   web: 'Web apps',
+  fonts: 'Fonts',
   contributions: 'Open source contributions',
 };
 
@@ -27,6 +28,7 @@ export const categoryOrder: ProjectCategory[] = [
   'macos',
   'ios',
   'web',
+  'fonts',
   'contributions',
 ];
 
@@ -40,6 +42,60 @@ export function resolveLink(entry: ProjectEntry): string {
  * The `category` field drives grouping on the All Projects page.
  */
 export const projects: ProjectEntry[] = [
+  {
+    name: 'Hanori',
+    description:
+      'Fonts for English, Simplified Chinese, and Japanese reading, with Sans and Serif designs and optional built-in furigana.',
+    img: { src: '/assets/images/project-hanori.png', alt: 'Hanori app icon' },
+    category: 'fonts',
+    tags: [
+      'Font',
+      'Furigana',
+      'Chinese',
+      'Japanese',
+    ],
+    link: { kind: 'external', url: 'https://github.com/hewigovens/hanori-sans' },
+  },
+  {
+    name: 'Budokan event today',
+    description:
+      "Quick way to view today's event at Nippon Budokan, with start times, details, and the upcoming schedule.",
+    img: { src: '/assets/images/project-budokan.svg', alt: 'Budokan event today icon', compact: true },
+    category: 'web',
+    tags: [
+      'TypeScript',
+      'Web',
+      'Tokyo',
+    ],
+    link: { kind: 'external', url: 'https://budokan.hewig.dev' },
+  },
+  {
+    name: 'Remote Launcher',
+    description:
+      'Native macOS launcher for multiple High Performance Screen Sharing sessions.',
+    img: { src: '/assets/images/project-remote-launcher.png', alt: 'Remote Launcher app icon' },
+    category: 'macos',
+    tags: [
+      'Swift',
+      'macOS',
+      'Screen Sharing',
+    ],
+    link: { kind: 'external', url: 'https://github.com/hewigovens/remote-launcher' },
+  },
+  {
+    name: 'clifpad',
+    description:
+      'A native scratchpad for Cranelift IR: agents write CLIF, it JIT-compiles and runs in an isolated worker, and every run reports value, optimized IR, disassembly, and timing. Ships an MCP server.',
+    img: { src: '/assets/images/project-cargo.png', alt: 'Rust crate' },
+    category: 'rust',
+    tags: [
+      'Rust',
+      'Cranelift',
+      'JIT',
+      'MCP',
+    ],
+    link: { kind: 'external', url: 'https://github.com/hewigovens/clifpad' },
+  },
   {
     name: 'Crypto Playground',
     description:

@@ -25,6 +25,10 @@
 - [reqwest-enum](https://hewig.dev/projects/reqwest-enum/) — type-safe, enum-style HTTP and JSON-RPC API for Rust.
 - [Aya DevContainer](https://hewig.dev/projects/aya-devcontainer/) — Docker dev container for eBPF programming in Rust (aya-rs).
 - [jayjay](https://jayjay.hewig.dev/) — native macOS GUI for Jujutsu (jj) version control.
+- [clifpad](https://github.com/hewigovens/clifpad) — native scratchpad for Cranelift IR for coding agents, with an MCP server.
+- [Remote Launcher](https://github.com/hewigovens/remote-launcher) — macOS launcher for multiple High Performance Screen Sharing sessions.
+- [Budokan event today](https://budokan.hewig.dev/) — today's event and upcoming schedule at Nippon Budokan.
+- [Hanori](https://github.com/hewigovens/hanori-sans) — fonts for English, Simplified Chinese, and Japanese reading, with optional furigana.
 - [Crypto Playground](https://crypto-learn.hewig.dev/) — interactive, visual cryptography from Caesar to SNARKs and lattices.
 - [Hearvia](https://hearvia.hewig.dev/) — live translated subtitles for other apps' audio or the microphone, on iPhone and Mac.
 
